@@ -2,7 +2,7 @@
 DADBE7
 F3F3F7
 E7E7EF */
-body{
+body {
 	/* background-color: #DADBE7; */
 	/* background-image: linear-gradient(to right,white , #DADBE7); */
 }
@@ -29,7 +29,7 @@ header {
 	/* background-image: linear-gradient(to left,white , #DADBE7); */
 }
 
-#name {
+#class {
 	font-weight: 300;
 	padding-bottom: 30px;
 }
@@ -43,6 +43,10 @@ header {
 	display: flex;
 	justify-content: space-evenly;
 	/* position: relative; */
+
+	animation-name: typetext;
+    /* animation-duration: 300s; */
+    animation-iteration-count: infinite;
 	
 }
 
@@ -73,37 +77,61 @@ header {
 	border-bottom: 2px solid rgb(170, 170, 170);
 	border-radius: 5px;
 	margin: auto;
+	
+	animation-name: bookStackChange;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+	animation-direction: alternate;
+	
 
 }
 
 .book p {
-	margin: 0;
+	/* margin: auto; */
+	margin:0;
 	text-align: center;
+	/* align-self: center; */
 }
 
 #book1 {
 	height: 30px;
 	width: 200px;
+	
+	animation-delay: -8s;
 }
 #book2 {
 	height: 20px;
 	width: 200px;
+	
+	animation-delay: -7s;
+	
 }
 #book3 {
 	height: 20px;
 	width: 200px;
+	
+	animation-delay: -6s;
 }
 #book4 {
 	height: 20px;
 	width: 150px;
+	
+   
+	animation-delay: -5s;
 }
 #book5 {
 	height: 30px;
 	width: 150px;
+	
+	animation-delay: -4s;
 }
 #book6 {
 	height: 50px;
 	width: 100px;
+
+	animation-delay: -3s;
+	
+	
 }
 
 
@@ -116,27 +144,23 @@ header {
 	/* flex-grow: 2; */
 }
 
-/* .shelves {
-	width: 33%;
-	height: 225px;
-	margin: 12.5px 0 12.5px 0;
+/* #quote::after{
+	content: ' - Six of Crows';
+	font-weight: 300;
+} */
+#quote:hover::after{
+	content: ' - Six of Crows';
+	/* content: url('images/six-of-crows.jpg'); */
+	font-weight: 700;
 	
 }
 
-#left-shelf{
-	border-radius: 16px 0 0 16px;
-	margin-left: 12.5px;
+#quote:hover {
+	/* width: 66%; */
+	transform: scale(1.1, 1.1);
+	/* box-shadow: 0 0 20px #e6e4e4;
+	border-radius: 20px; */
 }
-
-#middle-shelf {
-	margin-left: 12.5px;
-	margin-right: 12.5px;
-}
-
-#right-shelf {
-	border-radius: 0 16px 16px 0;
-	margin-right: 12.5px;
-} */
 
 main {
 	display: flex;
@@ -149,13 +173,8 @@ main {
 	width: 16%;
 	padding: 20px;
 	margin: 50px 20px;
-	/* border: 1px solid gray; */
-	/* background-color: beige; */
-	/* background-color: #F3F3F7; */
-	/* border-top: 10px solid #8585a7 ; */
-	/* border-left: 10px solid #8585a7 ; */
-	/* border-radius: 20px; */
-	box-shadow: 0 0 1px white;
+	box-shadow: 0 0 1px gray;
+	border-radius: 20px;
 	
 }
 
@@ -188,4 +207,17 @@ footer a {
 	text-decoration: none;
 	padding:20px;
 	color: black;
+}
+
+
+
+@keyframes typetext {
+
+}
+
+@keyframes bookStackChange {
+	0% {margin-left: -9999px;}
+	95% {margin-left: auto;}
+	100%{margin-left: auto;}
+	
 }
