@@ -2,218 +2,250 @@
 DADBE7
 F3F3F7
 E7E7EF */
+
 body {
-	/* background-color: #DADBE7; */
-	/* background-image: linear-gradient(to right,white , #DADBE7); */
+	margin: 50px;
 }
+
 #container {
     width: 100%;
 	max-width: 1366px;
 	min-width: 900px;
+
 	font-family: 'Poppins', sans-serif;
 	text-transform: lowercase;
 	margin: auto; 
+	padding-bottom: 30px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	
+}
+
+/*** HEADER **/
+
+h1, h2 {
+	color: rgb(92, 92, 92);
 }
 
 header {
+	margin: auto;
 	width: 1100px;
 	padding-top: 30px;
 	display: flex;
   	flex-direction: column;
-	margin: auto;
 	
-	/* border-right: 5px solid #F3F3F7; */
-	/* background-image: linear-gradient(to left,white , #DADBE7); */
 }
 
-#class {
-	font-weight: 300;
-	padding-bottom: 30px;
+#name, #class-name {
+	text-align: center;
 }
+
+#class-name {
+	font-weight: 300;
+	padding-bottom: 80px;
+	margin: 0;
+}
+
+/*** BANNER ***/
+
 #banner {
 	width: 1100px;
 	height: 250px;
 	border-radius: 20px;
-	/* background-color: #F3F3F7; */
 	box-shadow: 0 0 20px #e6e4e4;
-	/* border: 2px solid rgb(141, 141, 141); */
 	display: flex;
 	justify-content: space-evenly;
-	/* position: relative; */
 
-	animation-name: typetext;
-    /* animation-duration: 300s; */
-    animation-iteration-count: infinite;
-	
 }
 
+/*** BOOK STACK IN BANNER ***/
 #book-stack {
 	width: 33%;
-	/* height: 200px; */
-	margin-top: 5%;
+	margin-top: 4%;
 	display: flex;
 	flex-direction: column;
-	/* flex-wrap: wrap;
-	justify-content: center; */
 	align-items: flex-end;
-	/* align-content: center; */
-	/* position: absolute; */
-	bottom: 0;
-	left: 0;
-	/* flex-grow: 1; */
-	
-	
 	
 }
 
 .book {
-	/* height: 20px;
-	width: 200px; */
-	background-color: rgb(228, 228, 228);
+	
+	background-color: rgb(243, 243, 243);
 	border-top: 2px solid rgb(170, 170, 170);
 	border-bottom: 2px solid rgb(170, 170, 170);
 	border-radius: 5px;
 	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
 	
 	animation-name: bookStackChange;
     animation-duration: 10s;
     animation-iteration-count: infinite;
-	animation-direction: alternate;
-	
-
+	animation-direction: alternate; 
+	position: relative;
 }
 
 .book p {
-	/* margin: auto; */
-	margin:0;
 	text-align: center;
-	/* align-self: center; */
+	color: rgb(160, 160, 165);
 }
+
 
 #book1 {
 	height: 30px;
 	width: 200px;
-	
 	animation-delay: -8s;
 }
+
 #book2 {
 	height: 20px;
 	width: 200px;
-	
 	animation-delay: -7s;
-	
 }
+
 #book3 {
 	height: 20px;
 	width: 200px;
-	
 	animation-delay: -6s;
 }
+
 #book4 {
 	height: 20px;
 	width: 150px;
-	
-   
 	animation-delay: -5s;
 }
+
 #book5 {
 	height: 30px;
 	width: 150px;
-	
 	animation-delay: -4s;
 }
+
 #book6 {
 	height: 50px;
 	width: 100px;
-
 	animation-delay: -3s;
-	
 	
 }
 
+/*** BANNER QUOTE ***/
 
 #quote {
 	width: 66%;
 	padding: 50px;
-	font-size: 2em;
+	font-size: 1.6em;
 	margin: auto;
-	/* position: absolute; */
-	/* flex-grow: 2; */
+	font-style: italic;
+	color: rgb(160, 160, 165);
 }
 
-/* #quote::after{
-	content: ' - Six of Crows';
-	font-weight: 300;
-} */
+
 #quote:hover::after{
-	content: ' - Six of Crows';
-	/* content: url('images/six-of-crows.jpg'); */
+	content: '- Six of Crows';
 	font-weight: 700;
-	
+	padding: 30px;
+
 }
 
 #quote:hover {
-	/* width: 66%; */
-	transform: scale(1.1, 1.1);
-	/* box-shadow: 0 0 20px #e6e4e4;
-	border-radius: 20px; */
+	transform: scale(1.05, 1.05);
 }
+
+
+/*** MAIN SECTION ***/
 
 main {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	
+	
 }
 
-.columns {
+.section {
 	width: 16%;
 	padding: 20px;
 	margin: 50px 20px;
-	box-shadow: 0 0 1px gray;
-	border-radius: 20px;
 	
 }
 
-.columns:hover {
-	/* width: 40%; */
+.section:hover {
 	transform: scale(1.1, 1.1);
-	/* background-color: #fdfdfd;  */
 	box-shadow: 0 0 20px #e6e4e4;
 	border-radius: 20px;
-
 }
 
-li {
-	line-height: 2em;
+.section a {
+	text-decoration: none;
+	color: rgb(160, 160, 165);
+	
+}
+
+.section li {
+	padding: 7px 0;
 	list-style-type: none;
+	
 }
 
+.section ol {
+	display: inline-block;
+	padding: 0;
+}
+
+/*** FOOTER ***/
 footer {
 	width: 1100px;
 	height: 50px;
-	border-radius: 15px;
-	/* background-color: #F3F3F7; */
-	
+	display: flex;
+	margin: auto;
+	justify-content: center;
 	text-align: center;
-	
-	
 }
 
 footer a {
 	text-decoration: none;
-	padding:20px;
-	color: black;
+	padding: 1em;
+	color: rgb(160, 160, 165);
 }
 
 
+/*** LINKS UNDERLINE ANIMATION **/
 
-@keyframes typetext {
+.section ol li a:after, footer a:after {
+	content: '';
+	display: flex; 
+	width: 0;
+	background: #bcbecf;
+	transition: width .6s ease-in-out;
+}
+
+.section ol li a:after {
+	margin-top: 2px;
+	height: 2px;
 
 }
+
+ footer a:after {
+	margin: auto;
+	margin-top: 5px;
+	height: 3px;
+	
+}
+
+a:hover {
+	color: rgb(130, 129, 143);
+}
+
+.section ol li a:hover:after, footer a:hover:after {
+	width: 70%;
+	background: #bcbecf;
+	
+}
+
+/*** ANIMATION ***/
 
 @keyframes bookStackChange {
 	0% {margin-left: -9999px;}
