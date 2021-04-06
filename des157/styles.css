@@ -1,19 +1,13 @@
-/* Color Options
-DADBE7
-F3F3F7
-E7E7EF */
-
 body {
-	margin: 50px;
+	font-family: 'Poppins', sans-serif;
+	text-transform: lowercase;
+	
 }
 
 #container {
     width: 100%;
 	max-width: 1366px;
 	min-width: 900px;
-
-	font-family: 'Poppins', sans-serif;
-	text-transform: lowercase;
 	margin: auto; 
 	padding-bottom: 30px;
 	display: flex;
@@ -146,6 +140,7 @@ header {
 #quote:hover::after{
 	content: '- Six of Crows';
 	font-weight: 700;
+	font-style: normal;
 	padding: 30px;
 
 }
@@ -159,16 +154,17 @@ header {
 
 main {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
-	
+	margin: auto;
+	min-width: 900px;
 	
 }
 
 .section {
-	width: 16%;
-	padding: 20px;
+	width: 33%;
+	padding: 20px 40px;
 	margin: 50px 20px;
+	
 	
 }
 
