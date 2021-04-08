@@ -12,10 +12,11 @@
 
                 /* This program reverse the letters in each word in a string of words, 
                 but keeps the words in the same order */
-                
+
                 var userStr = prompt("Enter a string");
                 var finalStr= "";
                 var arr = userStr.split(" ");
+
                 for(var i=0; i <arr.length; i++){
                         var reverseWord="";
                         for( var j=arr[i].length - 1; j >=0; j--){
@@ -23,6 +24,7 @@
                         }
                         finalStr = finalStr + reverseWord + " ";
                 }
+                
                 console.log(finalStr);
 
         </script>
