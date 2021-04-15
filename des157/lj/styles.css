@@ -13,20 +13,19 @@ body {
 }
 
 main {
-	margin-top: 5em;
+	margin-top: 3em;
 }
 
 header {
     text-align: center;
 	margin: auto 0;
 	width: 25%;
-	top:0;
 	
 }
 header h1 {
 	font-size: 4em;
-
 }
+
 header h2 {
 	font-weight: 400;
 	font-size: 1.5em;
@@ -45,7 +44,6 @@ section h3 {
 	font-size: 10em;
 	opacity: 15%;
 	text-align: right;
-	/* margin: auto .2em auto 0; */
 	margin: .4em .2em auto 0;
 }
 
@@ -55,9 +53,10 @@ h2 {
 }
 
 article time {
-	padding-right: 300px;
+	padding-right: 412px;
 	padding-bottom: .5em;
 	border-bottom: 1px solid rgba(74, 73, 75, 0.3);
+	
 }
 
 article {
@@ -74,20 +73,35 @@ article p {
 	line-height: 1.4;
 }
 
+article p a {
+	text-decoration: none;
+	color: rgb(74, 73, 75);
+	border-bottom: 2px solid #f7be33;
+	/* border-bottom: 2px solid #999baa; rgb(74, 73, 75); */
+
+}
+
+article p a:hover {
+	font-weight: 400;
+	color: #f7be33;
+	/* color: #999baa; */
+}
+
 footer {
 	width: 30%;
 	display: flex;
 	justify-content: space-between;
 	margin: 0 auto;
-	padding-top: 2em;
+	padding: 2em 0;
+	
 }
 footer a {
-	/* font-family: 'Roboto', sans-serif; */
 	text-decoration: none;
 	color: rgba(74, 73, 75, 0.7);
+	
 }
 
 footer a:hover {
-	color: rgba(74, 73, 75, 1);
+	color: #f7be33;
 	transform: scale(1.1,1.1);
 }
