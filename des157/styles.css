@@ -178,6 +178,10 @@ main .section a {
 	
 }
 
+.section h2 {
+	margin-bottom: 0;
+}
+
 .section li {
 	padding: .5em 0;
 	list-style-type: none;
