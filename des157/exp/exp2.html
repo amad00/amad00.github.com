@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Experiment 2</title>
+</head>
+<body>
+        <h1>Experiment 2</h1>
+        <h2>Open the console to see the functionality of the code</h2>
+
+        <h3 class="arr"></h3>
+        <p></p>
+        <h3 class="orderedArr"></h3>
+
+        <script>
+                /* This pragram takes a list numbers or words and arranges them either from smallest to largest
+                if numbers, or in alphabetical order if words. If the user entered list of number, the factorial
+                of a random value chosen from the array is also returned */
+
+                var userStr = prompt("Enter either 7 numbers, or 7 words seperated by spaces.");
+                var userArr = userStr.split(" ");
+               
+
+                //This function is from one of the JS exercises did in class
+                //Not one of the function I wrote but it gives more random integer which is why I am using it
+                function randomInt(min, max){
+                        return Math.floor( (max - min + 1) * (Math.random())) + min;
+                }
+
+                function convertToNum (arr){
+                        for(var i=0; i<arr.length; i++){
+                                arr[i] = Number(arr[i]);
+                        }
+                        return arr;
+
+                }
+
+                function factorial (num){
+                        fac = num;
+                        for(var i = num-1; i>0; i--){
+                                fac *= i;
+                        }
+                        
+                        return fac;
+                }
+              
+                function orderedArr (arr){
+                        if (Number(arr[0])){
+                                arr = convertToNum(arr)
+                        }
+                        console.log("The array you entered is: ", arr);
+                        for(var i=0; i<arr.length-1; i++){
+                                for(var j=i+1; j<arr.length; j++){
+                                        if (arr[j] < arr[i]){
+                                                var min = arr[j];
+                                                arr[j] = arr[i];
+                                                arr[i] = min;
+                                        }
+                                }
+                               
+                        }
+                        return arr;
+                }
+
+                var orderedArray =  orderedArr(userArr);
+                console.log("The ordererd array is: ",orderedArray);
+
+                var randomVal = orderedArray[randomInt(0, orderedArray.length - 1)];
+                if (Number(randomVal)){
+                        console.log(`The factorial of ${randomVal}:`, factorial(randomVal));
+                }
+
+        </script>
+        
+</body>
+</html>
