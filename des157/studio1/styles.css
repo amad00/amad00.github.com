@@ -1,0 +1,139 @@
+body {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+#container {
+    width: 1366px;
+	/* height: 768px; */
+    height: 700px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 5% 35% auto;
+    grid-template-rows: 20% auto 10% 20%;
+}
+
+header {
+    width: 80%;
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    font-size: 2.8em;
+    text-align: center;
+}
+
+main {
+    grid-column: 3;
+    grid-row: 2 / span 2;
+    display: grid;
+    font-family: 'Shadows Into Light', cursive;
+    letter-spacing: 0.01em;
+}
+
+label, input {
+    display: block;
+}
+
+label {
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+input {
+    border: none;
+    border-radius: 5px;
+    /* border-bottom: 1px solid black; */
+    /* height: 1.4em; */
+    padding: 10px;
+    color: rgb(54, 54, 54);
+    background-color: rgb(238, 238, 238);
+}
+
+input:focus{
+    background-color: rgb(238, 238, 238);
+
+}
+
+img {
+    width: 100%;
+}
+
+div.image {
+    width: 680px; /* 700 - 20*/
+    height: 430px; /* 450 - 20*/
+    grid-column: 1;
+    grid-row: 1;
+    padding: 20px;
+
+}
+
+div.image.first{
+    background-color: burlywood; /*Placeholder until image*/
+    transform: rotate(5deg);
+}
+
+div.image.second{
+    background-color: green; /*Placeholder until image*/
+    transform: rotate(355deg);
+    z-index: 1;
+}
+
+section {
+    background-image: url('images/post-card.png');
+    /* background-color: white; */
+    width: 660px;
+    height: 415px;
+    margin: 10px 0 0 40px;
+    grid-column: 1;
+    grid-row: 1 / span 1;
+    z-index: 2;
+
+    padding: 30px;
+
+    display: grid;
+    grid-template-columns: auto 25%;
+    grid-template-rows: 10% 10% auto 10%;
+}
+
+#stamp {
+    width: 95px;
+    height: 105px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+
+    grid-column: 2;
+    grid-row: 1 / span 1;
+    justify-self: end;
+    
+}
+div.image, section {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+form {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    padding: 0 30px;
+}
+
+section p {
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 1;
+    justify-self: center;
+
+}
+
+button {
+    width: 60px;
+    height: 30px;
+    grid-column: 2 / span 1 ;
+    grid-row: 4 / span 1;
+    justify-self: end;
+}
+
+
+
+footer {
+    font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1 ;
+   
+}
