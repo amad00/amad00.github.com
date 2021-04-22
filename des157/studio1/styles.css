@@ -1,5 +1,6 @@
 body {
     font-family: 'Luckiest Guy', cursive;
+    background: url('images/bkgd.png');
 }
 
 #container {
@@ -16,7 +17,7 @@ header {
     width: 80%;
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
-    font-size: 2.8em;
+    font-size: 2.6em;
     text-align: center;
 }
 
@@ -66,12 +67,12 @@ div.image {
 }
 
 div.image.first{
-    background-color: burlywood; /*Placeholder until image*/
+    background-color: white; 
     transform: rotate(5deg);
 }
 
 div.image.second{
-    background-color: green; /*Placeholder until image*/
+    background-color: white;
     transform: rotate(355deg);
     z-index: 1;
 }
