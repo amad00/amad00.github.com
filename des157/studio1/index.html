@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link type="text/css" href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
     <script src="script.js" defer></script> 
     <title>Mad Libs</title>
 </head>
@@ -18,29 +19,74 @@
         </header>
 
         <main>
-            <div class="image second"><img src="images/portland.jpg"></div> <!--Add image after sized-->
-            <div class="image first"><img src="images/sunset.jpeg"></div> <!--Add image after sized-->
-            <section>
+            <div class="image second"><img src="images/portland.jpg" alt="sunset"></div> <!--Add image after sized-->
+            <div class="image first"><img src="images/sunset.jpeg" alt="portland"></div> <!--Add image after sized-->
+            <section id="postcard-form">
                 <div id="stamp">Postage</div> <!--Placeholder until image-->
                 <form id="address">
-                    <label>Your name</label>
-                    <input type="text" id="name" placeholder="Ama" required>
+                    <label>Your name
+                    <input type="text" id="user-name" placeholder="Ama" required> </label>
 
-                    <label>Random word</label>
-                    <input type="text" id="travel" placeholder="Chocolate" required>
+                    <label>Three digit number
+                    <input type="number" id="street-num" placeholder="358" step="1" required></label>
 
-                    <label>Three digit number</label>
-                    <input type="text" id="street-num" placeholder="358" required>
+                    <label>Favorite fruit
+                    <input type="text" id="street-name" placeholder="Mango" required></label>
 
-                    <label>Favorite fruit</label>
-                    <input type="text" id="street-name" placeholder="Mango" required>
+                    <label>Random word
+                    <input type="text" id="city" placeholder="Chocolate" required></label>
 
-                    <label>Five digit number</label>
-                    <input type="text" id="zip-code" placeholder="39210" required>
+                    <label>Five digit number
+                    <input type="number" id="zip-code" placeholder="39210" step="1" required></label>
+
+                    <label>A name
+                    <input type="text" id="receiver-name" placeholder="Ama" required> </label>
                 </form>
-                <p>1/3</p> <!-- form number-->
 
-                <button type="button">Next</button>
+                <form id="story">
+                    <label>An exoctic animal
+                    <input type="text" id="animal" placeholder="Panther" required></label>
+
+                    <label>Favorite food
+                    <input type="text" id="food" placeholder="Plantain" required></label>
+
+                    <label>Celebrity
+                    <input type="text" id="celeb" placeholder="Zendaya" required></label>
+
+                    <label>Something you own
+                    <input type="text" id="item" placeholder="Spoon" required></label>
+
+                    <label>An vehicle
+                    <input type="text" id="vehicle" placeholder="Tricycle" required></label>
+
+                    <label>Something you want
+                    <input type="text" id="souvenir" placeholder="Candle" required></label>
+                </form>
+                <!-- <section id="madlib-story"> -->
+                    <div id="story-info">
+                        <p id="pReciever-name"></p>
+                        <p id="story-content">You won't believe the amazing time that I am having! Only yesterday I saw a <span id="s0"></span> and the view was incredible. We are eating so much <span id="s1"></span>. I also ran into <span id="s2"></span> while hiking. That was such a good day! Sadly, I've already lost my <span id="s3"></span> when I was riding my <span id="s4"></span>. But, I'm having a blast and only wish that you were here to experience this with me! No worries though, I'll bring your back a <span id="s5"></span>.</p>
+                        <p id="pUser-name"></p>
+                    </div>
+                    
+                    <div id="addr-info">
+                        <p id="Addr-name"></p>
+                        <p id="Addr-street"></p>
+                        <p id="Addr-city"></p>
+                    </div>
+
+                    <button type="button" id="send-postcard">Send Another Postcard</button>
+
+                   
+
+                <!-- </section> -->
+
+                
+                <p id="page-num">1/2</p> <!-- form number-->
+
+                <button type="button" id="next-btn">Next <i class="fas fa-caret-right"></i></button>
+                <button type="button" id="submit-btn">Submit</button>
+                
             </section>
         </main>
 

@@ -29,13 +29,14 @@ main {
     letter-spacing: 0.01em;
 }
 
-label, input {
-    display: block;
-}
-
 label {
+    display: block;
     font-size: 1.3em;
     margin-top: 10px;
+    height: 50px;
+    line-height: 50px;
+    /* margin: auto; */
+    float: right;
 }
 
 input {
@@ -44,13 +45,19 @@ input {
     /* border-bottom: 1px solid black; */
     /* height: 1.4em; */
     padding: 10px;
-    color: rgb(54, 54, 54);
+    /* color: rgb(54, 54, 54); */
     background-color: rgb(238, 238, 238);
+    margin-left: 20px;
+    float: right;
 }
 
 input:focus{
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(201, 201, 201);
 
+}
+
+::placeholder{
+    color: rgb(192, 192, 192);
 }
 
 img {
@@ -77,7 +84,7 @@ div.image.second{
     z-index: 1;
 }
 
-section {
+#postcard-form {
     background-image: url('images/post-card.png');
     /* background-color: white; */
     width: 660px;
@@ -90,7 +97,7 @@ section {
     padding: 30px;
 
     display: grid;
-    grid-template-columns: auto 25%;
+    grid-template-columns: 50% auto 25%;
     grid-template-rows: 10% 10% auto 10%;
 }
 
@@ -99,42 +106,143 @@ section {
     height: 105px;
     border: 2px solid rgba(0, 0, 0, 0.5);
 
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 1 / span 1;
     justify-self: end;
     
 }
-div.image, section {
+
+div.image, #postcard-form {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
-form {
-    grid-column: 1;
-    grid-row: 2 / span 2;
-    padding: 0 30px;
+#story {
+    display: none;
 }
 
-section p {
-    grid-column: 1 / span 1;
+form {
+    grid-column: 1 /span 2;
+    grid-row: 1 / span 3;
+    padding: 0 30px;
+    /* display: none; */
+}
+
+#postcard-form p {
+    grid-column: 1 / span 2;
     grid-row: 4 / span 1;
     justify-self: center;
+    align-self: center;
+    margin: 0 0 0 30px;
+    font-size: 1.2em;
+    
 
 }
 
-button {
+#next-btn, #submit-btn {
     width: 60px;
     height: 30px;
-    grid-column: 2 / span 1 ;
+    grid-column: 3 ;
     grid-row: 4 / span 1;
     justify-self: end;
+    border: none;
+    border-radius: 5px;
+}
+
+#submit-btn {
+    display: none;
+}
+
+button:hover {
+    background-color: black;
+    /* background-color: rgb(201, 201, 201); */
+    color: white;
+}
+
+/* #madlib-story {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 10% auto 10%;
+     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto; 
+} */
+
+#story-info, #addr-info {
+    margin: 0 20px;
+    display: none;
+}
+
+#story-info {
+    /* width: 50%; */
+    grid-column: 1 / span 1 ;
+    grid-row: 3 / span 2;
+   
+}
+
+#story-content{
+    margin: 5px 0;
+
+}
+#story-info p{
+    font-size: 1.1em;
+    letter-spacing: 0.035em;
+    margin: 0;
+}
+
+#story-info p:nth-child(2){
+    margin: 10px 0;
+}
+
+#story-info p:last-child{
+    margin-right:40px;
+    float: right;
+}
+
+#addr-info {
+    /* width: 30%; */
+    grid-column: 2 / span 2 ;
+    grid-row: 3 / span 1;
+    margin: auto 0;
+    padding: 20px;
+    border-left: 2px solid black;
+}
+
+#addr-info p{
+    width: 80%;
+    font-size: 1.8em;
+    border-bottom: 2px solid black;
+    padding: 10px 0 2px 15px;
+}
+
+#send-postcard{
+    margin: 0 auto;
+    grid-column: 2 / span 2 ;
+    grid-row: 4 / span 1;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    display: none;
 }
 
 
 
 footer {
     font-family: 'Shadows Into Light', cursive;
+    width: 80%;
     text-align: center;
     grid-column: 2 / span 1;
     grid-row: 3 / span 1 ;
    
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color: #4873B9;
+    transform: scale(2, 2);
 }
