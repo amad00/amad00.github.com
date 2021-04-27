@@ -52,8 +52,8 @@
     let flip;
 
     let post = document.querySelector('#postcard-form');
-    let secondImg = document.querySelector('.second');
-    let firstImg = document.querySelector('.first');
+    let secondImg = document.querySelectorAll('main img')[0];
+    let firstImg = document.querySelectorAll('main img')[1];
 
 
     /* Once user hits submit, show postcard with thier inputs in the story */
