@@ -5,8 +5,8 @@ body {
 
 #container {
     width: 1366px;
-	/* height: 768px; */
-    height: 700px;
+	height: 768px;
+    /* height: 700px; */
     margin: auto;
     display: grid;
     grid-template-columns: 5% 35% auto;
