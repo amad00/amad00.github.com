@@ -1,7 +1,8 @@
 (function () {
     "use strict";
-    // your code starts here
     
+    /***  GETTING USER INPUT AND MAKING SURE ALL FIELDS ARE FILLED ***/
+
     const addressData = document.querySelectorAll("#address input[type=text]");
     const addressDataN = document.querySelectorAll("#address input[type=number]");
     const storyData = document.querySelectorAll("#story input[type=text]");
@@ -14,6 +15,7 @@
     const addrW = [];
     const story = [];
 
+    /* Display next form */
     nextBtn.addEventListener('click', function(event){
         event.preventDefault();
         let retW = getFormInfo(addrW, addressData);
@@ -34,23 +36,9 @@
 
     })
 
-    function getFormInfo(arr, formData){
-        let empytyFields = 0;
-        for(const eachWord of formData){
-            if(eachWord.value){
-                arr.push(eachWord.value);
-                eachWord.value="";
-            } else { empytyFields++}
-        }
-        return empytyFields;
 
-    }
-
+    /*** PUTTING THE STORY TOGETHER ***/
     
-    
-
-
-    /* Putting story together */
     const storyInfo = document.querySelector('#story-info');
     const addrInfo = document.querySelector('#addr-info')
 
@@ -63,7 +51,14 @@
     const addrCity = document.querySelector('#Addr-city');
 
     const sendAnotherCardBtn = document.querySelector('#send-postcard');
+    let flip;
 
+    let post = document.querySelector('#postcard-form');
+    let secondImg = document.querySelector('.second');
+    let firstImg = document.querySelector('.first');
+
+
+    /* Once user hits submit, show postcard with thier inputs in the story */
     submitBtn.addEventListener('click', function(){
         let s = getFormInfo(story, storyData);
         console.log(s);
@@ -81,12 +76,13 @@
             sendAnotherCardBtn.style.display = 'block';
             
             displayPostCard();
+            flip = setTimeout(function() { flipThroughCards();}, 2000); //timer so the event listeners aren't added right away
         }
         
        
     })
 
-    /* DISPLAY ANOTHER POST CARD */
+    /* Display another postcard (i.e display the form from the beginning) */
     sendAnotherCardBtn.addEventListener('click', function(){
         sendAnotherCardBtn.style.display = 'none';
         storyInfo.style.display = 'none';
@@ -96,8 +92,11 @@
         pageNum.style.display = 'block';
         pageNum.textContent = '1/2';
         
-
-
+        stopFlipThroughCards();
+       /*  post.removeEventListener('click', portlandInFront);
+        secondImg.removeEventListener('click', sunsetInFront);
+        firstImg.removeEventListener('click', postcardInFront); */
+        
     });
 
     function displayPostCard (){
@@ -109,6 +108,10 @@
         const allPsStory = document.querySelectorAll('#story-info p');
         const allPsAddr = document.querySelectorAll('#addr-info p');
         const allSpans = document.querySelectorAll("#story-content span");
+
+        let states = ['CA', 'NV', 'NY', 'FL', 'MI', 'CO'];
+        let streets = ['Ave', 'Street', 'Blvd', 'Hill', 'Rd', 'Dr'];
+        let randomNum = randomInt(0, 6);
        
         colorSpans(allSpans);
         console.log(allPsAddr);
@@ -118,24 +121,32 @@
         allSpans[3].textContent = `${story[3]}`;
         allSpans[4].textContent = `${story[4]}`;
         allSpans[5].textContent = `${story[5]}`;
-        // displayPs(allPsAddr);
-        // displayPs(allPsStory);
-        //name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
+       
         pReciever.textContent = `${addrW[3]}!`;
-        /* storyContent.textContent = `You won't believe the amazing time that I am having! Only yesterday I saw a ${story[0]} and the view was incredible. We are eating so much ${story[1]}. I also ran into ${story[2]} and while hiking. Sadly, I've already lost my ${story[3]} when I was riding my ${story[4]}. But, I'm having a blast and only wish that you were here to experience this with me! No worries though, I'll bring your back some ${story[5]}.`; */
         pUser.textContent = `${addrW[0]}`;
 
         addrName.textContent = `${addrW[3]}`;
-        addrStreet.textContent = `${addrN[0]} ${addrW[1]} Ave`;
-        addrCity.textContent =`${addrW[2]}, CA, ${addrN[1]}`;
+        addrStreet.textContent = `${addrN[0]} ${addrW[1]} ${streets[randomNum]}`;
+        addrCity.textContent =`${addrW[2]}, ${states[randomNum]}, ${addrN[1]}`;
     }
     
-   /*  function displayPs (pArr){
-        for(const p of pArr){
-            p.style.display = 'block';
-        }
-    } */
 
+    /*** FUNCTIONS ***/
+
+    /* Put form info into arrays */
+    function getFormInfo(arr, formData){
+        let empytyFields = 0;
+        for(const eachWord of formData){
+            if(eachWord.value){
+                arr.push(eachWord.value);
+                eachWord.value="";
+            } else { empytyFields++}
+        }
+        return empytyFields;
+
+    }
+
+    /* Change user input to uppercase or lowercase and color the post text */
     function capitalizeFirstLetter(arr) {
         for(let i=0; i <arr.length; i++){
             arr[i] = arr[i].substring(0,1).toUpperCase() + arr[i].substring(1).toLowerCase();
@@ -154,36 +165,44 @@
             arr[i].style.color = '#BD3B46';
         }
     }
+    
+    /* When user clicks on postcard, tt flips throught the post card and images */
+    function flipThroughCards (){
+        post.addEventListener('click', portlandInFront);
+        secondImg.addEventListener('click', sunsetInFront);
+        firstImg.addEventListener('click', postcardInFront);
+    }
 
-    /* let post = document.querySelector('#postcard-form');
-    let secondImg = document.querySelector('.second');
-    let firstImg = document.querySelector('.first');
+    /* When user wants to redo madlib and send another post card, remove event listeners */
+    function stopFlipThroughCards(){
+        post.removeEventListener('click', portlandInFront);
+        secondImg.removeEventListener('click', sunsetInFront);
+        firstImg.removeEventListener('click', postcardInFront);
+    }
 
-
-
-    post.addEventListener('click', function(){
-        // post.style.transform = 'rotateY(180deg)';
-        // post.style.transition = 'all 1s ease-out';
-        // post.style.backgroundImage = "url('images/portland.jpg')";
+    /* Changing the position so images of postcard */
+    function portlandInFront (){
         post.style.zIndex='0';
         secondImg.style.zIndex = '2';
         firstImg.style.zIndex = '1';
-      //  transform: rotateY(180deg);
-   // transition: all 1s ease-out;
-    })
+    }
 
-    secondImg.addEventListener('click', function(){
+    function sunsetInFront(){
         post.style.zIndex='1';
         secondImg.style.zIndex = '0';
         firstImg.style.zIndex = '2';
+    }
 
-    })
-
-    firstImg.addEventListener('click', function(){
+    function postcardInFront(){
         post.style.zIndex='2';
         secondImg.style.zIndex = '1';
         firstImg.style.zIndex = '0';
+    }
 
-    }) */
+    /* Random integer */
+    function randomInt(min, max){
+        return Math.floor( (max - min + 1) * (Math.random())) + min;
+    }
+
 
 })();
