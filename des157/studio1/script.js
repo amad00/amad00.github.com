@@ -20,8 +20,6 @@
         event.preventDefault();
         let retW = getFormInfo(addrW, addressData);
         let retN = getFormInfo(addrN, addressDataN);
-        console.log(addrW);
-        console.log(addrN);
 
         if(retW > 0 || retN > 0){
             alert("Please fill out the fields!");
@@ -61,7 +59,6 @@
     /* Once user hits submit, show postcard with thier inputs in the story */
     submitBtn.addEventListener('click', function(){
         let s = getFormInfo(story, storyData);
-        console.log(s);
 
         if(s > 0 ){
             alert("Please fill out the fields!");
@@ -100,34 +97,47 @@
 
     /* Display tpostcard with user input */
     function displayPostCard (){
-        console.log("in deisplay post card");
         capitalizeFirstLetter(addrW);
         lowerCaseAll(story);
-        console.log(addrW);
-        console.log(story);
+    
         const allPsStory = document.querySelectorAll('#story-info p');
         const allPsAddr = document.querySelectorAll('#addr-info p');
         const allSpans = document.querySelectorAll("#story-content span");
 
-        let states = ['CA', 'NV', 'NY', 'FL', 'MI', 'CO'];
-        let streets = ['Ave', 'Street', 'Blvd', 'Hill', 'Rd', 'Dr'];
-        let randomNum = randomInt(0, 6);
+        const states = ['CA', 'NV', 'NY', 'FL', 'MI', 'CO'];
+        const streets = ['Ave', 'Street', 'Blvd', 'Hill', 'Rd', 'Dr'];
        
         colorSpans(allSpans);
-        console.log(allPsAddr);
-        allSpans[0].textContent = `${story[0]}`;
-        allSpans[1].textContent = `${story[1]}`;
-        allSpans[2].textContent = `${story[2]}`;
-        allSpans[3].textContent = `${story[3]}`;
-        allSpans[4].textContent = `${story[4]}`;
-        allSpans[5].textContent = `${story[5]}`;
+
+        //If the celebrity name is more than one word, capitalize each word
+        let names = story[2].split(" ");  
+        
+        if (names.length > 1){
+            capitalizeFirstLetter(names);
+            let tempName = names[0].concat(" ", names[1]);
+
+            if(names.length > 2){
+                for (let i=2; i < names.length; i++){
+                    console.log(`names[${i}]`, names[i])
+                    tempName = tempName.concat(" ", names[i]);
+                }
+                
+            }
+            story[2] = tempName;
+        }
+        allSpans[0].textContent = `${story[0]}`; //exotic animal
+        allSpans[1].textContent = `${story[1]}`; //favorite food
+        allSpans[2].textContent = `${story[2]}`; //celebrity
+        allSpans[3].textContent = `${story[3]}`; // something you lost
+        allSpans[4].textContent = `${story[4]}`; //vehicle
+        allSpans[5].textContent = `${story[5]}`; //something you want
        
         pReciever.textContent = `${addrW[3]}!`;
         pUser.textContent = `${addrW[0]}`;
 
         addrName.textContent = `${addrW[3]}`;
-        addrStreet.textContent = `${addrN[0]} ${addrW[1]} ${streets[randomNum]}`;
-        addrCity.textContent =`${addrW[2]}, ${states[randomNum]}, ${addrN[1]}`;
+        addrStreet.textContent = `${addrN[0]} ${addrW[1]} ${streets[randomInt(0, 6)]}`;
+        addrCity.textContent =`${addrW[2]}, ${states[randomInt(0, 6)]}, ${addrN[1]}`;
     }
 
     /* Put form info into arrays */

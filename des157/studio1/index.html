@@ -15,14 +15,14 @@
 <body>
     <div id="container"> 
         <header>
-            <h1>Let's Take A Roadtrip!</h1>
+            <h1>Let's Take A Trip!</h1>
         </header>
 
         <main>
-            <div class="image second"><img src="images/portland.jpg" alt="sunset"></div> <!--Add image after sized-->
-            <div class="image first"><img src="images/sunset.jpeg" alt="portland"></div> <!--Add image after sized-->
+            <div class="image second"><img class="image second" src="images/portland.jpg"  width="680" height="430" alt="sunset"></div>
+            <div class="image first"><img class="image first" src="images/sunset.jpeg"  width="680" height="430" alt="portland"></div>
             <section id="postcard-form">
-                <div id="stamp"><img src="images/stamp.png" alt="stamp"></div> <!--Placeholder until image-->
+                <img id="stamp" src="images/stamp.png"  width="90" height="105" alt="stamp">
                 <form id="address">
                     <label>Your name
                     <input type="text" id="user-name" placeholder="Ama" required> </label>
@@ -34,13 +34,13 @@
                     <input type="text" id="street-name" placeholder="Mango" required></label>
 
                     <label>Random word
-                    <input type="text" id="city" placeholder="Chocolate" required></label>
+                    <input type="text" id="city" placeholder="Rebel" required></label>
 
                     <label>Five digit number
                     <input type="number" id="zip-code" placeholder="39210" step="1" required></label>
 
                     <label>A name
-                    <input type="text" id="receiver-name" placeholder="Ama" required> </label>
+                    <input type="text" id="receiver-name" placeholder="John" required> </label>
                 </form>
 
                 <form id="story">
