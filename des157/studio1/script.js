@@ -137,8 +137,8 @@
         pUser.textContent = `${addrW[0]}`;
 
         addrName.textContent = `${addrW[3]}`;
-        addrStreet.textContent = `${addrN[0]} ${addrW[1]} ${streets[randomInt(0, 6)]}`;
-        addrCity.textContent =`${addrW[2]}, ${states[randomInt(0, 6)]}, ${addrN[1]}`;
+        addrStreet.textContent = `${addrN[0]} ${addrW[1]} ${streets[randomInt(0, 5)]}`;
+        addrCity.textContent =`${addrW[2]}, ${states[randomInt(0, 5)]}, ${addrN[1]}`;
     }
 
     /* Put form info into arrays */
