@@ -1,5 +1,6 @@
 (function () {
     "use strict";
+    console.log("reading js");
     
     /***  GETTING USER INPUT AND MAKING SURE ALL FIELDS ARE FILLED ***/
 
@@ -153,7 +154,7 @@
 
     }
 
-    /* Change user input to uppercase or lowercase and color the post text */
+    /* Change user input to uppercase or lowercase and color the postcard user input text for the story*/
     function capitalizeFirstLetter(arr) {
         for(let i=0; i <arr.length; i++){
             arr[i] = arr[i].substring(0,1).toUpperCase() + arr[i].substring(1).toLowerCase();
