@@ -100,7 +100,7 @@ div.image.second{
 #stamp {
     width: 95px;
     height: 105px;
-
+    border: 2px solid rgba(201, 201, 201, 0.5);
     grid-column: 3;
     grid-row: 1 / span 1;
     justify-self: end;
