@@ -82,7 +82,7 @@
        
     })
 
-    /* Display another postcard (i.e display the form from the beginning) */
+    /* Display the form from the beginning */
     sendAnotherCardBtn.addEventListener('click', function(){
         sendAnotherCardBtn.style.display = 'none';
         storyInfo.style.display = 'none';
@@ -93,12 +93,12 @@
         pageNum.textContent = '1/2';
         
         stopFlipThroughCards();
-       /*  post.removeEventListener('click', portlandInFront);
-        secondImg.removeEventListener('click', sunsetInFront);
-        firstImg.removeEventListener('click', postcardInFront); */
         
     });
 
+    /*** FUNCTIONS ***/
+
+    /* Display tpostcard with user input */
     function displayPostCard (){
         console.log("in deisplay post card");
         capitalizeFirstLetter(addrW);
@@ -129,9 +129,6 @@
         addrStreet.textContent = `${addrN[0]} ${addrW[1]} ${streets[randomNum]}`;
         addrCity.textContent =`${addrW[2]}, ${states[randomNum]}, ${addrN[1]}`;
     }
-    
-
-    /*** FUNCTIONS ***/
 
     /* Put form info into arrays */
     function getFormInfo(arr, formData){
@@ -166,7 +163,7 @@
         }
     }
     
-    /* When user clicks on postcard, tt flips throught the post card and images */
+    /* When user clicks on postcard, that flips through the post card and images */
     function flipThroughCards (){
         post.addEventListener('click', portlandInFront);
         secondImg.addEventListener('click', sunsetInFront);

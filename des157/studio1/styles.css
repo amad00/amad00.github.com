@@ -21,6 +21,7 @@ header {
     text-align: center;
 }
 
+/***  Post Card Form Info ***/
 main {
     grid-column: 3;
     grid-row: 2 / span 2;
@@ -35,17 +36,13 @@ label {
     margin-top: 10px;
     height: 50px;
     line-height: 50px;
-    /* margin: auto; */
     float: right;
 }
 
 input {
     border: none;
     border-radius: 5px;
-    /* border-bottom: 1px solid black; */
-    /* height: 1.4em; */
     padding: 10px;
-    /* color: rgb(54, 54, 54); */
     background-color: rgb(238, 238, 238);
     margin-left: 20px;
     float: right;
@@ -86,7 +83,6 @@ div.image.second{
 
 #postcard-form {
     background-image: url('images/post-card.png');
-    /* background-color: white; */
     width: 660px;
     height: 415px;
     margin: 10px 0 0 40px;
@@ -104,7 +100,6 @@ div.image.second{
 #stamp {
     width: 95px;
     height: 105px;
-    border: 2px solid rgba(0, 0, 0, 0.5);
 
     grid-column: 3;
     grid-row: 1 / span 1;
@@ -124,7 +119,6 @@ form {
     grid-column: 1 /span 2;
     grid-row: 1 / span 3;
     padding: 0 30px;
-    /* display: none; */
 }
 
 #postcard-form p {
@@ -134,7 +128,6 @@ form {
     align-self: center;
     margin: 0 0 0 30px;
     font-size: 1.2em;
-    
 
 }
 
@@ -154,19 +147,10 @@ form {
 
 button:hover {
     background-color: black;
-    /* background-color: rgb(201, 201, 201); */
     color: white;
 }
 
-/* #madlib-story {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 10% 10% auto 10%;
-     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: auto; 
-} */
+/***  Post Card Story Info ***/
 
 #story-info, #addr-info {
     margin: 0 20px;
@@ -174,7 +158,6 @@ button:hover {
 }
 
 #story-info {
-    /* width: 50%; */
     grid-column: 1 / span 1 ;
     grid-row: 3 / span 2;
    
@@ -200,7 +183,6 @@ button:hover {
 }
 
 #addr-info {
-    /* width: 30%; */
     grid-column: 2 / span 2 ;
     grid-row: 3 / span 1;
     margin: auto 0;
@@ -226,7 +208,7 @@ button:hover {
 }
 
 
-
+/***  Footer ***/
 footer {
     font-family: 'Shadows Into Light', cursive;
     width: 80%;
