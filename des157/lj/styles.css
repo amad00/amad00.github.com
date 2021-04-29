@@ -45,7 +45,8 @@ header h2 {
 section {
     width: 800px;
 	display: flex;
-	margin: auto;
+	/* margin: auto; */
+	padding-bottom: 20px;
 
 }
 
