@@ -12,9 +12,9 @@
     const submitBtn = document.querySelector('#submit-btn');
     const nextBtn = document.querySelector('#next-btn');
     const pageNum = document.querySelector('#page-num');
-    const addrN = [];
-    const addrW = [];
-    const story = [];
+    let addrN = [];
+    let addrW = [];
+    let story = [];
 
     /* Display next form */
     nextBtn.addEventListener('click', function(event){
@@ -60,6 +60,7 @@
     /* Once user hits submit, show postcard with thier inputs in the story */
     submitBtn.addEventListener('click', function(){
         let s = getFormInfo(story, storyData);
+        console.log(story);
 
         if(s > 0 ){
             alert("Please fill out the fields!");
@@ -89,8 +90,14 @@
         nextBtn.style.display = 'block';
         pageNum.style.display = 'block';
         pageNum.textContent = '1/2';
-        
+
         stopFlipThroughCards();
+        
+        //reset arrays to be empty
+        addrN = [];
+        addrW = [];
+        story = [];
+        
         
     });
 
