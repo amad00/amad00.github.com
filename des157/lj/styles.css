@@ -10,13 +10,14 @@ body {
 	display: flex;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
+	min-width: 800px;
 
 }
 
 main {
 	margin-top: 3em;
 	padding-left: 35%;
-
+	
 	
 }
 
@@ -28,6 +29,7 @@ header {
 	top:0;
 	left:0;
 	background-color: white;
+	
 	
 	
 }
@@ -71,7 +73,7 @@ article time {
 }
 
 article {
-    width: 65%;
+    width: 75%;
 }
 
 article p:first-of-type {
@@ -97,6 +99,17 @@ article p a:hover {
 	/* color: #999baa; */
 }
 
+figure {
+	margin-top: 25px;
+	font-weight: 300;
+	font-style: italic;
+	font-size: 12px;
+}
+
+figcaption {
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+}
 
 
 footer {
