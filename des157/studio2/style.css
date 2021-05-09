@@ -1,0 +1,137 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 22.5% 55% 22.5%;
+    width: 1366px;
+    height: 768px;
+    background-color: black;
+}
+
+header {
+    text-align: center;
+    height: 300px;
+    color: white;
+   
+}
+
+header h1{
+    font-size: 5em;
+    font-weight: 700;
+}
+
+header h2 {
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+main{
+    display: flex;
+    justify-content: space-evenly;
+    grid-row: 1 / span 3;
+    grid-column: 2 / span 1;
+    background-color: white;
+   
+}
+
+section {
+    display: grid;
+    grid-template-columns: auto;
+    position: relative;
+    overflow-y: hidden;
+    
+}
+section div{
+    width: 240px;
+    min-height: 400px;
+    max-height: 400px;
+    /* background-color: rgba(128, 128, 128, 1); */
+    /* background-color: grey; */
+}
+
+div img {
+    height: 100%;
+}
+
+section img:nth-child(2){
+    margin: 59px 0;
+}
+
+/*** LOADING PAGE IMAGE PLACEMENT ***/
+#col1{
+    grid-template-rows: 68% 34%;
+}
+
+#col2{
+    grid-template-rows: 16% 68% 16%;
+}
+
+#col3{
+    grid-template-rows: 34% 68%;
+}
+
+#col1 div:nth-child(1),
+#col2 div:nth-child(1),
+#col3 div:nth-child(1){
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+}
+
+#col1 div:nth-child(2),
+#col2 div:nth-child(2),
+#col3 div:nth-child(2){
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    
+   
+}
+#col1 div:nth-child(1){
+    align-self: center;
+}
+
+#col1 div:nth-child(2){
+    margin: 0;
+}
+
+#col2 div:nth-child(1){
+    align-self: end;
+}
+
+#col2 div:nth-child(2){
+    align-self: center;
+}
+
+#col2 div:nth-child(3){
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
+}
+
+#col3 div:nth-child(1){
+    align-self: end;
+}
+
+#col3 div:nth-child(2){
+    align-self: center;
+   
+}
+
+/*** FOOTER ***/
+footer{
+    height: 30px;
+    margin: 10px auto;
+    align-self: end;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+header, footer{
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+}
