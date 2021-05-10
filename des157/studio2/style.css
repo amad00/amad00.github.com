@@ -136,6 +136,59 @@ section img:nth-child(2){
     
 }
  */
+#overlay {
+    width: 100vw;
+    height: 768px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+}
+
+#overlay section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 750px;
+    height: 400px;
+    position: absolute;
+    left: 65%;
+    top: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+ }
+
+ #overlay section p{
+     width: 40%;
+     margin-right: 20px;
+ }
+
+#overlay section figure{
+   /*  width: 80%; */
+    
+    margin: 30px;
+}
+
+#overlay section figure img{
+    width: 100%;
+    height: auto;
+}
+
+figcaption{
+    margin-top: 5px;
+    text-align: center;
+    font-style: italic;
+}
+
+button{
+    position: absolute;
+    top:0;
+    right: 0;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+
+
 /*** FOOTER ***/
 footer{
     height: 30px;
