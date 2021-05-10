@@ -11,7 +11,9 @@
 
     allDivs.forEach(function(eachDiv){
         eachDiv.addEventListener('click', overlay);
-        eachDiv.removeEventListener('click', autoS1);
+        eachDiv.removeEventListener('click', function(){
+            console.log("remove")
+            autoS1(eachDiv, eachDiv, 1)});
     })
 
     const col1Divs = document.querySelectorAll('#col1 div');
@@ -24,8 +26,8 @@
         const secDivs = document.querySelectorAll(`#col${i+1} div`);
 
         if(allCols[i].className == 'top'){
-            secDivs[0].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 1)})
+            /* secDivs[0].addEventListener('click', function(){
+                autoS1(allCols[i], secDivs, 1)}) */
             secDivs[1].addEventListener('click', function(){
                 autoS1(allCols[i], secDivs, 2)})
             secDivs[2].addEventListener('click', function(){
@@ -37,16 +39,16 @@
             secDivs[2].addEventListener('click',function(){
                 autoS1(allCols[i], secDivs, 3)})
 
-            secDivs[1].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 2)})
+           /*  secDivs[1].addEventListener('click', function(){
+                autoS1(allCols[i], secDivs, 2)}) */
 
         } else {
             secDivs[1].addEventListener('click', function(){
                 autoS1(allCols[i], secDivs, 2)})
             secDivs[2].addEventListener('click', function(){
                 autoS1(allCols[i], secDivs, 3)})
-            secDivs[0].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 1)})
+           /*  secDivs[0].addEventListener('click', function(){
+                autoS1(allCols[i], secDivs, 1)}) */
         }
        
     }
