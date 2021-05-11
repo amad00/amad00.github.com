@@ -3,118 +3,43 @@
     console.log("reading js");
 
     const allCols = document.querySelectorAll('section');
-    const allDivs = document.querySelectorAll('section div');
-
-    //event listener for the div images to bring up overlay
-   /*  allDivs.forEach(function(eachDiv){
-        eachDiv.addEventListener('click', overlay);
-    }); */
-
-    const col1Divs = document.querySelectorAll('#col1 div');
-    const col2Divs = document.querySelectorAll('#col2 div');
-    const col3Divs = document.querySelectorAll('#col3 div');
-
 
     /* EVENT LISTENERS FOR SCROLLING THROUGH IMAGES THROUGH CLICK */
     
     for(let i =0; i < allCols.length -1; i++){
-        console.log('in for loop')
         const secDivs = document.querySelectorAll(`#col${i+1} div`);
 
         if(allCols[i].className == 'top'){
             secDivs[0].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 'c1')})
+                changeGrid(allCols[i], secDivs, 'c1')})
             secDivs[1].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 'c2')})
+                changeGrid(allCols[i], secDivs, 'c2')})
             secDivs[2].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 'c3')})
+                changeGrid(allCols[i], secDivs, 'c3')})
 
-           /*  secDivs[0].addEventListener('click', overlay)
-            secDivs[1].removeEventListener('click', overlay) */
             
         } else if(allCols[i].className == 'middle'){
             secDivs[0].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 'c4')})
+                changeGrid(allCols[i], secDivs, 'c4')})
             secDivs[1].addEventListener('click',function(){
-                autoS1(allCols[i], secDivs, 'c5')})
+                changeGrid(allCols[i], secDivs, 'c5')})
             secDivs[2].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 'c6')})
-            
-           /*  secDivs[0].removeEventListener('click', overlay)
-            secDivs[2].removeEventListener('click', overlay)
-            secDivs[1].addEventListener('click', overlay) */
-           
-           
-
-           
+                changeGrid(allCols[i], secDivs, 'c6')})
+         
 
         } else {
             secDivs[0].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 'c7')})
+                changeGrid(allCols[i], secDivs, 'c7')})
             secDivs[1].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 'c8')})
+                changeGrid(allCols[i], secDivs, 'c8')})
             secDivs[2].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 'c9')})
-
-           /*  secDivs[2].addEventListener('click', overlay)
-            secDivs[1].removeEventListener('click', overlay) */
+                changeGrid(allCols[i], secDivs, 'c9')})
            
         }
        
     }
     
 
-    
-    function checkMiddle(section){
-        if(section.className == 'middle'){
-
-        }
-    }
-
-   // function overlayImg(){
-
-   // }
-
-   /*  const timeoutCol1 = setTimeout(createInterval, 2000);
-    const timeoutCol2 = setTimeout(createInterval, 5000);
-    const timeoutCol3 = setTimeout(createInterval, 7000);
-
-    function createInterval(){
-        setInterval(autoScroll, 10000);
-    } */
-
-    
-
-   /*  setTimeout(function(){
-        intervalCol1 = setInterval( autoS1, 3000);
-    }, 1000); */
-    
-    /* setTimeout(function(){
-        let prevGrid1 = 'top';
-        const c1 = document.getElementById('col1');
-        const allDivs = document.querySelectorAll('#col1 div');
-        autoS1(c1, prevGrid1, allDivs)
-    }, 3000);
-
-    setTimeout(function(){
-        let prevGrid2= 'middle';
-        const c2 = document.getElementById('col2');
-        const allDivs = document.querySelectorAll('#col2 div');
-        autoS1(c2, prevGrid2, allDivs)
-    }, 6000);
-
-    setTimeout(function(){
-        let prevGrid3 = 'bottom';
-        const c3 = document.getElementById('col3');
-        const allDivs = document.querySelectorAll('#col3 div');
-        autoS1(c3, prevGrid3, allDivs)
-    }, 9000);
- */
-
-
-   /*  setTimeout(function(){
-        intervalCol3 = setInterval( autoS3, 10000);
-    }, 5000); */
       
    
     const topVisible = '68% 34%';
@@ -123,17 +48,16 @@
    
 
    /* CODE FOR SCROLLING THROUGH THE THREE IMAGES - CHANGES THE GRID LAYOUT */
-    function autoS1(col, allDivs, num){
+    function changeGrid(col, allDivs, num){
       
         const cClass = col.className;
-      
-        console.log("NUM", num)
-     
+    
         let divImg1 = allDivs[0];
         let divImg2 = allDivs[1];
         let divImg3 = allDivs[2];
 
         if(cClass == 'top' || cClass == 'bottom'){ //if at top or bottom scroll to middle
+            //check to see if image is at the right position to display overlay
             if(num == 'c1' || num == 'c3' || num == 'c4' || num == 'c6' || num == 'c7' || num == 'c9'){
                 overlay(num);
             } else{
@@ -187,7 +111,6 @@
         } 
 
     
-        console.log('scrolling1')
     }
 
    /* DISPLAY OVERLAY*/
@@ -196,7 +119,6 @@
         let imgCaption = document.querySelector('#overlay section figure figcaption');
         let img = document.querySelector('#overlay section figure img');
         let pTag = document.querySelector('#overlay section p');
-        //console.log('id', this.id)
 
         switch (num){
             case 'c1':
