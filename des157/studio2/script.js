@@ -129,7 +129,7 @@
             case 'c2':
                 imgCaption.textContent = ' Portland, 2019';
                 img.src = `images/c2.jpeg`;
-                pTag.textContent = "My mom, sister, and I took a roadtrip to Portland for a family friends wedding. It was my first time in Portland. This was taken on a day we decided to drive around to see.";
+                pTag.textContent = "My mom, sister, and I took a roadtrip to Portland for a family friends wedding. It was my first time in Portland. This was taken on a day we decided to drive around to see Portland.";
                 break;
             case 'c3':
                 imgCaption.textContent = '2018';
@@ -139,17 +139,17 @@
             case 'c4':
                 imgCaption.textContent = 'Oakland, 2019';
                 img.src = `images/c4.jpg`;
-                pTag.textContent = "I went to a Shawn Mendes conert with my roommate. We had a blast singing along to all the songs. I ended going to the Q&A portion part as well";
+                pTag.textContent = "I went to a Shawn Mendes conert with my roommate. We had a blast singing along to all the songs. I ended going to the Q&A portion part as well and that was cool. This was not my first Shawn Mendes concert, but it was the first time I ever when to the Q&A portion of a concert.";
                 break;
             case 'c5':
                 imgCaption.textContent = 'San Francicso, 2020';
                 img.src = `images/c5.JPG`;
-                pTag.textContent = "I love poetry and spoken word. And Phil and Sarah are two of my favorites. It was incredible to see them live and was very happy to get my books signed.";
+                pTag.textContent = "I love poetry and spoken word. And Phil and Sarah are two of my favorites. It was incredible to see them live, after watching them on YouTube for so long. I was very happy to get my books signed by them.";
                 break;
             case 'c6':
                 imgCaption.textContent = 'San Francicso, 2019';
                 img.src = `images/c6.jpg`;
-                pTag.textContent = "My rommate and I went to Hamilton. I had avoided listening to any of the songs until I was able to watch the play. So I did not know what to expect, although I did know the premise of the play.";
+                pTag.textContent = "My rommate and I went to Hamilton. I had avoided listening to any of the songs until I was able to watch the play, so I did not know what to expect, although I did know the premise of the play. I though the songs were great.";
                 break;
             case 'c7':
                 imgCaption.textContent = 'El Cerrito, 2017';
@@ -159,12 +159,12 @@
             case 'c8':
                 imgCaption.textContent = 'Palm Springs, 2017';
                 img.src = `images/c8.jpeg`;
-                pTag.textContent = "This is a picture of my dog Rocket I took while on vacation in Palm Springs. It was the first trip my family and I took with him after adopting him.";
+                pTag.textContent = "This is a picture of my dog Rocket I took while on vacation in Palm Springs. It was the first trip my family and I took with him after adopting him. He absolutely loves the sun. So while he avoided the pool and the any body of water, he was always laying in the sun.";
                 break;
             case 'c9':
                 imgCaption.textContent = 'Los Angeles, 2018';
                 img.src = `images/c9.jpeg`;
-                pTag.textContent = "This was my first time in LA with my family. We took a day to drive aorund downtown and drove up to see the Hollywod sign up close.";
+                pTag.textContent = "This was my first time in LA with my family. We took a day to drive around downtown and one of our stops was going to see the Hollywood sign up close.";
                 break;
 
         }
