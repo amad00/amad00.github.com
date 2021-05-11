@@ -2,57 +2,74 @@
     "use strict";
     console.log("reading js");
 
-    let intervalCol1;
-    let intervalCol2;
-    let intervalCol3;
-
     const allCols = document.querySelectorAll('section');
     const allDivs = document.querySelectorAll('section div');
 
-    allDivs.forEach(function(eachDiv){
+    //event listener for the div images to bring up overlay
+   /*  allDivs.forEach(function(eachDiv){
         eachDiv.addEventListener('click', overlay);
-        eachDiv.removeEventListener('click', function(){
-            console.log("remove")
-            autoS1(eachDiv, eachDiv, 1)});
-    })
+    }); */
 
     const col1Divs = document.querySelectorAll('#col1 div');
     const col2Divs = document.querySelectorAll('#col2 div');
     const col3Divs = document.querySelectorAll('#col3 div');
-    //let prevs = [allCols[0].className, allCols[1].className, allCols[2].className];
+
 
     /* EVENT LISTENERS FOR SCROLLING THROUGH IMAGES THROUGH CLICK */
+    
     for(let i =0; i < allCols.length -1; i++){
+        console.log('in for loop')
         const secDivs = document.querySelectorAll(`#col${i+1} div`);
 
         if(allCols[i].className == 'top'){
-            /* secDivs[0].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 1)}) */
+            secDivs[0].addEventListener('click', function(){
+                autoS1(allCols[i], secDivs, 'c1')})
             secDivs[1].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 2)})
+                autoS1(allCols[i], secDivs, 'c2')})
             secDivs[2].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 3)})
+                autoS1(allCols[i], secDivs, 'c3')})
+
+           /*  secDivs[0].addEventListener('click', overlay)
+            secDivs[1].removeEventListener('click', overlay) */
             
         } else if(allCols[i].className == 'middle'){
             secDivs[0].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 1)})
-            secDivs[2].addEventListener('click',function(){
-                autoS1(allCols[i], secDivs, 3)})
+                autoS1(allCols[i], secDivs, 'c4')})
+            secDivs[1].addEventListener('click',function(){
+                autoS1(allCols[i], secDivs, 'c5')})
+            secDivs[2].addEventListener('click', function(){
+                autoS1(allCols[i], secDivs, 'c6')})
+            
+           /*  secDivs[0].removeEventListener('click', overlay)
+            secDivs[2].removeEventListener('click', overlay)
+            secDivs[1].addEventListener('click', overlay) */
+           
+           
 
-           /*  secDivs[1].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 2)}) */
+           
 
         } else {
+            secDivs[0].addEventListener('click', function(){
+                autoS1(allCols[i], secDivs, 'c7')})
             secDivs[1].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 2)})
+                autoS1(allCols[i], secDivs, 'c8')})
             secDivs[2].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 3)})
-           /*  secDivs[0].addEventListener('click', function(){
-                autoS1(allCols[i], secDivs, 1)}) */
+                autoS1(allCols[i], secDivs, 'c9')})
+
+           /*  secDivs[2].addEventListener('click', overlay)
+            secDivs[1].removeEventListener('click', overlay) */
+           
         }
        
     }
+    
 
+    
+    function checkMiddle(section){
+        if(section.className == 'middle'){
+
+        }
+    }
 
    // function overlayImg(){
 
@@ -103,81 +120,85 @@
     const topVisible = '68% 34%';
     const middleVisible = '16% 68% 16%';
     const bottomVisible = '34% 68%';
-   // let prevGrid1 = 'top';
+   
 
-   // setTimeout(autoS1(prevGrid), 4000);
-   // setTimeout( autoS1, 3000);
+   /* CODE FOR SCROLLING THROUGH THE THREE IMAGES - CHANGES THE GRID LAYOUT */
     function autoS1(col, allDivs, num){
-       // const c1 = document.getElementById('col1');
+      
         const cClass = col.className;
-        //const allDivs = document.querySelectorAll('#col1 div');
+      
         console.log("NUM", num)
-        //prevGrid = cClass;
+     
         let divImg1 = allDivs[0];
         let divImg2 = allDivs[1];
         let divImg3 = allDivs[2];
 
         if(cClass == 'top' || cClass == 'bottom'){ //if at top or bottom scroll to middle
-            col.className = 'middle';
-            col.style.gridTemplateRows = middleVisible;
-            divImg1.style.alignSelf = 'end';
-            divImg2.style.margin = '59px 0';
-            divImg2.style.alignSelf = 'center';
-            divImg3.style.alignSelf = 'start';
+            if(num == 'c1' || num == 'c3' || num == 'c4' || num == 'c6' || num == 'c7' || num == 'c9'){
+                overlay(num);
+            } else{
+                col.className = 'middle';
+                col.style.gridTemplateRows = middleVisible;
+                divImg1.style.alignSelf = 'end';
+                divImg2.style.margin = '59px 0';
+                divImg2.style.alignSelf = 'center';
+                divImg3.style.alignSelf = 'start';
 
-            divImg2.style.gridRow = '2 / span 1';
-            divImg2.style.gridColumn = '1 / span 1';
-            divImg3.style.gridRow = '3 / span 1';
-            divImg3.style.gridColumn = '1 / span 1';
-
-        } else if (cClass == 'middle'){
-            if(num == 3){
-                col.className = 'bottom'
-                col.style.gridTemplateRows = bottomVisible;
-                divImg2.style.margin = '0';
-                divImg2.style.alignSelf = 'end';
-                divImg3.style.alignSelf = 'center';
-
-                divImg2.style.gridRow = '1 / span 1';
-                divImg2.style.gridColumn = '1 / span 1';
-                divImg3.style.gridRow = '2 / span 1';
-                divImg3.style.gridColumn = '1 / span 1';
-
-            } else {
-                col.className = 'top';
-                col.style.gridTemplateRows = topVisible;
-                divImg2.style.margin = '0';
-                divImg1.style.alignSelf = 'center';
-                divImg2.style.alignSelf = 'start';
-                
-
-                divImg1.style.gridRow = '1 / span 1';
-                divImg1.style.gridColumn = '1 / span 1';
                 divImg2.style.gridRow = '2 / span 1';
                 divImg2.style.gridColumn = '1 / span 1';
+                divImg3.style.gridRow = '3 / span 1';
+                divImg3.style.gridColumn = '1 / span 1';
+            }
 
+        } else if (cClass == 'middle'){
+            if(num == 'c2' || num == 'c5' || num == 'c8'){
+                overlay(num);
+            } else{
+                if(num == 'c3' || num == 'c6' || num == 'c9'){
+                    col.className = 'bottom'
+                    col.style.gridTemplateRows = bottomVisible;
+                    divImg2.style.margin = '0';
+                    divImg2.style.alignSelf = 'end';
+                    divImg3.style.alignSelf = 'center';
+
+                    divImg2.style.gridRow = '1 / span 1';
+                    divImg2.style.gridColumn = '1 / span 1';
+                    divImg3.style.gridRow = '2 / span 1';
+                    divImg3.style.gridColumn = '1 / span 1';
+
+                } else {
+                    col.className = 'top';
+                    col.style.gridTemplateRows = topVisible;
+                    divImg2.style.margin = '0';
+                    divImg1.style.alignSelf = 'center';
+                    divImg2.style.alignSelf = 'start';
+                    
+
+                    divImg1.style.gridRow = '1 / span 1';
+                    divImg1.style.gridColumn = '1 / span 1';
+                    divImg2.style.gridRow = '2 / span 1';
+                    divImg2.style.gridColumn = '1 / span 1';
+
+                }
             }
 
           
 
         } 
 
-      // prev[num] = cClass;
-       // prevGrid1 = cClass;
+    
         console.log('scrolling1')
-       /*  setTimeout( function(){
-            autoS1 (col, cClass, allDivs)}, 10000); */
-
     }
 
-    function overlay(){
+   /* DISPLAY OVERLAY*/
+    function overlay(num){
         document.querySelector('#overlay').style.display = 'block';
         let imgCaption = document.querySelector('#overlay section figure figcaption');
         let img = document.querySelector('#overlay section figure img');
         let pTag = document.querySelector('#overlay section p');
         //console.log('id', this.id)
 
-        switch (this.id){
+        switch (num){
             case 'c1':
                 imgCaption.textContent = 'Michigan, 2017';
                 img.src = `images/c1.jpeg`;
@@ -225,14 +246,17 @@
                 break;
 
         }
+       
     }
 
+    /* CLOSE THE OVERLY WITH BUTTON */
     const closeBtn = document.querySelector('button');
     closeBtn.addEventListener('click', function(event){
         const overlay = document.querySelector('#overlay').style.display = 'none';
       
     });
 
+    /* CLOSE THE OVERLY WITH ESCAPE KEY */
     document.addEventListener('keydown', function(event){
         if (event.key=="Escape"){
             document.querySelector('#overlay').style.display = 'none';

@@ -41,7 +41,7 @@ section {
     display: grid;
     grid-template-columns: auto;
     position: relative;
-    overflow-y: hidden;
+    overflow: hidden;
     
 }
 section div{
