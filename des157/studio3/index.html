@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Roboto:wght@400;500&display=swap" rel="stylesheet">   
+    <link type="text/css" href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>Game On!</title>
+
+</head>
+<body>
+    <section id="start-overlay">
+
+    </section>
+    <section id="rules">
+        <p>
+            There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a “one”. If this happens, this player's turn is over, and it is the other player’s turn. After each roll, the current player can either roll again, (assuming a “one” was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins. If a player rolls two “ones” (snake eyes), that player's current score gets zeroed out, and they have to start over, accumulating points from zero.
+        </p>
+
+        <footer>
+            <a href="https://validator.w3.org/check?uri=https://amad00.github.io/des157/studio3/">Valid HTML 5</a>
+            <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://amad00.github.io/des157/studio3">Valid CSS</a>
+        </footer>
+
+    </section>
+    <section id="game">
+        <h1>GAME ON!</h1>
+        <section id="player1">
+            <p>Player1 Score</p> 
+            <p>Player1 Name</p>
+            <!-- add img of black triangle in JS?  -->
+        </section>
+
+        <section id="gamearea">
+            <img src="#" alt="cube1">
+            <img src="#" alt="cube2">
+            <p id="gametext"></p>
+            <button id="pass">PASS</button>
+            <button id="roll">ROLL</button>
+        </section>
+
+        <section id="player2">
+            <p>Player2 Score</p>
+            <p>Player2 Name</p>
+        </section>
+        <button id="quit">QUIT</button>
+
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,13 @@
+body {
+    font-family: 'Fascinate', cursive;
+    background: url('images/bkgd.png');
+    display: flex;
+
+}
+
+#rules {
+    width: 30%;
+}
+#rules p {
+    font-family: 'Roboto', sans-serif;
+}
