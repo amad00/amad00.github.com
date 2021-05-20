@@ -24,8 +24,8 @@
             <li>The total of the roll is added to the current player's score. </li>
             <li>If you roll a one, your turn is passes over to the next player.</li>
             <li>After each roll, you call roll again, (assuming a “one” was not rolled) or pass your turn.</li>
-    
         </ul>
+
         <h3>How to Win</h3>
         <p>The first player to get 30 points or higher wins.</p>
         <h3>Be Careful!</h3>
@@ -40,34 +40,35 @@
     <section id="game">
         <img src="images/title.png" alt="colored title">
         <h1>RUBIKS ROLL!</h1>
+
         <section id="player1">
             <p>0</p> 
-            <p>Player1 Name</p>
-             <!-- add img of black triangle in JS?  -->
+            <p>Player 1</p>
+            <img src="" alt="">
         </section>
 
         <section id="gamearea">
-           
             <img src="images/2-cube.png" alt="cube1">
             <img src="images/5-cube.png" alt="cube2">
             <p id="gameroll"></p> <!-- shows the cube numbers-->
             <p id="gametext">Roll the dice for Player 1</p>
-            <button id="pass">PASS</button>
-            <button id="roll">ROLL</button>
+            <button id="pass-btn">PASS</button>
+            <button id="roll-btn">ROLL</button>
         </section>
 
         <section id="player2">
             <p>0</p>
-            <p>Player2 Name</p>
+            <p>Player 2</p>
+            <img src="#" alt="">
         </section>
-        <button id="quit">QUIT</button>
+        <button id="quit-btn">QUIT</button>
 
         <section id="start-overlay">
             <label>Player 1 Name
                 <input type="text" id="p1name" required> </label>
             <label>Player 2 Name
                 <input type="text" id="p2name" required> </label>
-            <button id="start">Start</button>
+            <button id="start-btn">Start</button>
         </section>
 
     </section>
