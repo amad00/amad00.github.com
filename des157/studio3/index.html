@@ -14,21 +14,16 @@
 </head>
 <body>
     <div id="container"> 
-    <!-- <section id="start-overlay">
-        <label>Enter a name for player 1
-            <input type="text" id="user-name" required> </label>
-        <label>Enter a name for player 2
-            <input type="text" id="user-name" required> </label>
-
-    </section> -->
+    
     <section id="rules">
         <h2>RULES</h2>
         
         <ul>
             <li>There are two players.</li>
             <li>The player whose turn it is rolls the dice.</li>
-            <li>The total of the roll is added to the current player's score, unless either die comes up as a “one”. If this happens, this player's turn is over, and it is the other player’s turn.</li>
-            <li>After each roll, the current player can either roll again, (assuming a “one” was not rolled) or if the current player feels that luck is running thin, they can pass to the other player.</li>
+            <li>The total of the roll is added to the current player's score. </li>
+            <li>If you roll a one, your turn is passes over to the next player.</li>
+            <li>After each roll, you call roll again, (assuming a “one” was not rolled) or pass your turn.</li>
     
         </ul>
         <h3>How to Win</h3>
@@ -46,7 +41,7 @@
         <img src="images/title.png" alt="colored title">
         <h1>RUBIKS ROLL!</h1>
         <section id="player1">
-            <p>29</p> 
+            <p>0</p> 
             <p>Player1 Name</p>
              <!-- add img of black triangle in JS?  -->
         </section>
@@ -61,10 +56,18 @@
         </section>
 
         <section id="player2">
-            <p>10</p>
+            <p>0</p>
             <p>Player2 Name</p>
         </section>
         <button id="quit">QUIT</button>
+
+        <!-- <section id="start-overlay">
+            <label>Player 1 Name
+                <input type="text" id="p1name" required> </label>
+            <label>Player 2 Name
+                <input type="text" id="p2name" required> </label>
+            <button id="start">Start</button>
+        </section> -->
 
     </section>
 </div>
