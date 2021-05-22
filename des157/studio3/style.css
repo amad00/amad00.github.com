@@ -10,6 +10,7 @@ body {
     display: flex;
 }
 
+/* GAME RULES */
 #rules {
     width: 340px;
     height: 708px;

@@ -11,7 +11,9 @@
     const rollBtn = document.getElementById('roll-btn');
     const passBtn = document.getElementById('pass-btn');
 
-   
+    const rubiksSound = new Audio('sounds/RubiksSound.m4a');
+    const clappingSound = new Audio('sounds/multipleClapping.m4a');
+
 
     let gameData = {
         dice: ['1-cube.png', '2-cube.png','3-cube.png','4-cube.png','5-cube.png','6-cube.png' ],
@@ -51,6 +53,7 @@
     function initialRoll(){
         rollBtn.addEventListener('click', function(){
             throwDice();
+            rubiksSound.play();
         })
 
         passBtn.addEventListener('click', function(){
@@ -98,7 +101,6 @@
             gameData.index ? (gameData.index = 0) : (gameData.index = 1);
             gameText.textContent = `Sorry, one of your rolls was a one, switching to ${gameData.players[gameData.index]}`;
             setTimeout(displayTurn, 2000);
-            
 
         } else {
             console.log('NO ONES')
@@ -112,7 +114,10 @@
     function checkWinningCondition(){
         if(gameData.score[gameData.index] > gameData.gameEnd){
             showCurrentScore();
-            displayWinner();
+            passBtn.style.display = 'none';
+            rollBtn.style.display = 'none';
+            gameText.style.display = 'none';
+            setTimeout(displayWinner, 1000);
 
         } else {
             showCurrentScore();
@@ -120,21 +125,21 @@
         }
     }
 
-    /* SAY WINNER NAME AND REMOVE ROLL & PASS BTNS */ 
+    /* SAY WINNER NAME AND CHANGE DIE IMAGES*/ 
     function displayWinner(){
+        gameText.style.display = 'flex';
         gameText.textContent  = `${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!`;
 
         gameText.style.fontFamily = "'Fascinate', cursive";
         const quit = document.getElementById('quit-btn')
         quit.textContent = 'Start a New Game?';
         quit.style.width = '300px';
-
-        passBtn.style.display = 'none';
-        rollBtn.style.display = 'none';
         gameRoll.style.display = 'none';
 
         die[0].src = 'images/colored-cube.png';
         die[1].src = 'images/colored-cube.png';
+
+        clappingSound.play();
     }
 
    /* SHOW PLAYER SCORE */ 
