@@ -101,7 +101,6 @@
             setTimeout(displayTurn, 2000);
 
         } else {
-            console.log('NO ONES')
             gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
            
         }
