@@ -147,6 +147,10 @@ input {
     height: 212px;
 }
 
+#player1 img, #player2 img{
+    display: none;
+}
+
 /* BUTTONS */
 #pass-btn, #roll-btn {
     background-color: #AAD0A2;
