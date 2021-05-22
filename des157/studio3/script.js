@@ -66,15 +66,11 @@
     function displayTurn(){
         gameText.textContent = `Roll the dice for the ${gameData.players[gameData.index]}`;
         let currPlayerImg = document.querySelector(`#player${gameData.index + 1} img`);
-        // currPlayerImg.src = 'images/stand.png';
-        // currPlayerImg.alt = 'rubiks cube stand';
-
         currPlayerImg.style.display = 'flex';
-        
+
         let index = gameData.index;
         index ? (index = 0) : (index = 1);
         let otherPlayerImg = document.querySelector(`#player${index + 1} img`);
-        // otherPlayerImg.src = '';
         otherPlayerImg.style.display = 'none';
     }
 
