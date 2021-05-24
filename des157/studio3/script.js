@@ -53,7 +53,7 @@
     function initialRoll(){
         rollBtn.addEventListener('click', function(){
             throwDice();
-            // rubiksSound.play();
+            rubiksSound.play();
         })
 
         passBtn.addEventListener('click', function(){
