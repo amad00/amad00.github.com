@@ -11,8 +11,8 @@
     const rollBtn = document.getElementById('roll-btn');
     const passBtn = document.getElementById('pass-btn');
 
-    const rubiksSound = new Audio('sounds/RubiksSound.m4a');
-    const clappingSound = new Audio('sounds/multipleClapping.m4a');
+    const rubiksSound = new Audio('media/RubiksSound.m4a');
+    const clappingSound = new Audio('media/multipleClapping.m4a');
 
 
     let gameData = {
