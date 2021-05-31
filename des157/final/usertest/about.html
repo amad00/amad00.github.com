@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
     <link type="text/css" href="styles.css" rel="stylesheet">
-    <!-- <script src="script.js" defer></script> -->
+   
     <title>About Me</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
     <header>
         <h1>Ama</h1>
         <ul>
-            <li id="landscape"><a href="landscape.html">Landscape</a></li>
+            <li id="landscape"><a href="index.html">Landscape</a></li>
             <li id="micro"><a href="micro.html">Micro</a></li>
             <li id="sunset"><a href="sunset.html">Sunset</a></li>
             <li id="urban"><a href="urban.html">Urban</a></li>
@@ -24,25 +25,30 @@
         <a href="about.html">About</a>
     </header>
     
-    <main id="about-main" class="about-class">
+    <main id="about-me">
         <!-- <h1>About Me</h1>    -->
-        <section id="about-me">
-            <img src="../images/ama.jpg">
+        <!-- <section id="about-me"> -->
+            <img src="../images/ama.png">
             <section>
                 <h2>About Me</h2>
-                <p>Hello! My name is Ama Dadzie. I am currently a third year Undergraduate student at UC Davis. I am a Computer Science and Design double Major.</p>
-                <p>I love photography and just taking images of things or places that I found interesting</p>
+                <p>Hello! </p>
+                <p>My name is Ama Dadzie. I am currently a third year Undergraduate student at UC Davis. I am a Computer Science and Design double Major.</p>
+                <p>I love photography and just taking images of things or places that I found interesting!</p>
+                <div id="contacts">
+                    <p>Get in contact:</p>
+                    <a class="fa fa-envelope" href="mailto:asdadzie@ucdavis.edu"></a>
+                    <a class="fa fa-instagram" href="https://www.instagram.com/smallmomentcaptured/"></a>
+                </div>
             </section>
-        </section>
-        <section id="contacts">
-            <!-- <i class="far fa-envelope-open"></i> -->
-            <a href="mailto:webmaster@example.com" class="far fa-envelope-open">
-                <!-- <a class="far fa-envelope-open"></i>Email</li> -->
-                <a href="https://www.instagram.com/smallmomentcaptured/" class="fab fa-instagram">
-            <!-- </ul> -->
-        </section>
+        <!-- </section> -->
+        <!-- <section id="contacts">
+             <p>Get in contact:</p> 
+            <a class="fa fa-envelope" href="mailto:asdadzie@ucdavis.edu"></a>
+            <a class="fa fa-instagram" href="https://www.instagram.com/smallmomentcaptured/"></a>
+        </section> -->
     </main>
     <footer>
+       
         <ul>
             <li><a href="https://validator.w3.org/check?uri=https://amad00.github.io/des157/final/proto/about.html"> HTML</a></li>
             <li><a href="https://jigsaw.w3.org/css-validator/validator?uri=https://amad00.github.io/des157/final/proto/styles.css">CSS</a></li>
@@ -50,7 +56,9 @@
         <p>&copy; Ama Dadzie 2021</p>
     </footer>
 </div>
-    
+    <script>
+        document.querySelector('header > a').style.color = 'black'
+    </script>
     
 </body>
 </html>
