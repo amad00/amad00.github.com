@@ -141,7 +141,7 @@
     /*** CHANGE MENU TEXT COLOR FOR THE PAGE CURRENTLY ONE ***/
     function changePageLinkColor(){
         let classNameP = mainTag.className;
-        console.log("change", classNameP)
+ 
         for(let i=0; i<pages.length; i++){
             if(pages[i].textContent.toLowerCase() == classNameP){
                 pages[i].style.color = 'black';
