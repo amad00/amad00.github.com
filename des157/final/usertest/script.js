@@ -17,9 +17,9 @@
 
     let currentImage = 0;
     let interval;
-
+    
     window.addEventListener('load', function(){
-        if(mainTag == 'landscape'){
+        if(mainTag.className == 'landscape'){
             const preloader = document.getElementById('preloader');
             preloader.className = 'fadeout';
 
