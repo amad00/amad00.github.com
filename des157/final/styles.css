@@ -13,7 +13,7 @@ h1{
 }
 
 /*** SECTIONS ***/
-section{
+div > section{
     width: 800px;
     margin: 0 auto;
     display: flex;
@@ -37,9 +37,21 @@ section div {
     width: 75%;;
 }
 
+section > section {
+    width: 600px;
+}
+
+section > section p {
+    width: 100%;
+}
+
 h2, p{
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+h3 {
+    margin-top: 27px;
 }
 
 /*** FIGURE / IMAGE ***/
@@ -54,6 +66,10 @@ figure {
 
 figcaption{
     margin-top: 10px;
+}
+
+section > section img {
+    margin-bottom: 20px;
 }
 
 /*** LINKS ***/
