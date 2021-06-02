@@ -158,11 +158,11 @@
         playImg.removeEventListener('click', playSlideShow);
         playImg.addEventListener('click', pauseSlideShow);
 
-        interval = setInterval(changePhoto, 3000);
+        interval = setInterval(changePhoto, 4000);
         
 
     }
-
+   
     /*** CHANGE OVERLAY IMAGE TO NEXT OR PREVIOUS PHOTO ***/
     function changePhoto(){
         currentImage++;
@@ -175,10 +175,9 @@
         overlayImg.className = 'imageFade'
         figcaptionTag.className = 'imageFade'
         setTimeout(function(){
-       
             overlayImg.src = `../images/${myImages[currentImage]}`;
             slideShowNum.textContent = `${currentImage +1}/6`;
-            overlayImg.className = ''
+            overlayImg.className = 'imageFadeIn'
 
             changeFigcaption(mainTag, currentImage)
             figcaptionTag.className = ''

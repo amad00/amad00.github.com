@@ -181,6 +181,7 @@ li a:hover{
 }
 
 /***  OVERLAY ***/
+
 #overlay{
     width: 1366px;
     height: 768px;
@@ -226,6 +227,7 @@ li a:hover{
     /* padding: 40px 40px 80px 40px; */
     /* background-color: white; */
 }
+
 
 #overlay button {
     border: none;
@@ -276,17 +278,18 @@ figcaption{
 
 .imageFade {
     animation-name: fadeout;
-    animation-duration: 1s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
-@keyframes imageFade{
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
+.imageFadeIn {
+    animation-name: fadein;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
+
+
+
 
 /***  PRELOADER ***/
 
@@ -321,7 +324,7 @@ figcaption{
 
 .fadeout {
     animation-name: fadeout;
-    animation-duration: 2s;
+    animation-duration: 2s; 
     animation-fill-mode: forwards;
 }
 
@@ -334,6 +337,14 @@ figcaption{
     }
 }
 
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 /******************************/
 /********** ABOUT PAGE ********/
 /******************************/
