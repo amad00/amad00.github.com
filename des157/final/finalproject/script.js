@@ -70,12 +70,12 @@
     ];
 
     const myImages = [
-        `${mainTag.className}1.png`,
-        `${mainTag.className}2.png`,
-        `${mainTag.className}3.png`,
-        `${mainTag.className}4.png`,
-        `${mainTag.className}5.png`,
-        `${mainTag.className}6.png`
+        `${mainTag.className}1.jpg`,
+        `${mainTag.className}2.jpg`,
+        `${mainTag.className}3.jpg`,
+        `${mainTag.className}4.jpg`,
+        `${mainTag.className}5.jpg`,
+        `${mainTag.className}6.jpg`
     ];
 
     playImg.addEventListener('click', playSlideShow);
@@ -134,7 +134,7 @@
         let imgSrc1 = imgSrc[1].split('.')
         let imgNum = parseInt(imgSrc1[0][imgSrc1[0].length - 1])
 
-        overlayImg.src = `../images/${imgSrc1[0]}.png`;
+        overlayImg.src = `../images/${imgSrc1[0]}.jpg`;
         changeFigcaption(mainTag, imgNum - 1 )
         slideShowNum.textContent = `${imgNum}/6`;
         currentImage = imgNum - 1;
