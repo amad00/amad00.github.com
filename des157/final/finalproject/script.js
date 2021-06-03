@@ -129,7 +129,7 @@
 
      /*** Display overlay and set with image selected ***/
     function setOverlay(i){
-        overlay.style.display = 'block';
+        overlay.style.display = 'flex';
         let imgSrc = imgTags[i].src.split('-')
         let imgSrc1 = imgSrc[1].split('.')
         let imgNum = parseInt(imgSrc1[0][imgSrc1[0].length - 1])
