@@ -404,11 +404,11 @@ figcaption{
 #contacts a{
     background-color: white;
     margin: 0 5px;
-    
+    color: black;
 }
 
 #contacts a:hover{
-    color:black;
+    color: #939598;
    
 }
 
