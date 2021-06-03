@@ -20,7 +20,6 @@ header{
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
     align-self: end;
-    /* color: ; */
     margin-bottom: 32px;
     margin-left: 100px;
     
@@ -45,9 +44,6 @@ li {
     list-style-type: none;
 }
 
-/* header ul li:hover {
-    cursor: pointer;
-} */
 
 /*** MAIN SECTION ***/
 .photography main {
@@ -58,9 +54,6 @@ li {
 main {
     width: 949px;
     height: 557px;
-    /* display: grid;
-    grid-template-columns: 34% auto 34%;
-    grid-template-rows: 35% auto 24%; */
     display: flex;
     justify-content: space-between;
     margin-top: 105px;
@@ -68,7 +61,6 @@ main {
 }
 
 section div {
-    /* background-color: cadetblue; */
     overflow: hidden;
 }
 
@@ -185,27 +177,26 @@ li a:hover{
 #overlay{
     width: 1366px;
     height: 768px;
-    background-color: rgba(167, 169, 172, 0.8);
     position: absolute;
-    display: flex;
+    display: none;
     flex-direction: column;
     text-transform: initial;
-    display: none;
+    background-color: rgba(167, 169, 172, 0.8);
+   
 }
 #top-bar{
+    height: 60px;
     display: flex;
     justify-content: space-between;
-    height: 60px;
-    color: white;
     margin: 0 30px;
+    color: white;
+    
 }
 
 #top-bar div{
-    display: flex;
     width: 300px;
     height: 100px;
-    /* justify-content: center; */
-    /* align-content: center; */
+    display: flex;
     align-items: center;
     flex-wrap: wrap;
     
@@ -223,7 +214,6 @@ li a:hover{
     display: inline-block;
     height: 65%;
     margin: 0;
-    /* margin: 30px 40px 60px 40px; */
     padding: 40px 40px 80px 40px;
     background-color: white;
     position: absolute;
@@ -235,8 +225,6 @@ li a:hover{
 #overlay figure img{
     height: 100%;
     width: auto;
-    /* padding: 40px 40px 80px 40px; */
-    /* background-color: white; */
 }
 
 
@@ -302,23 +290,19 @@ figcaption{
     animation-fill-mode: forwards;
 }
 
-
-
-
 /***  PRELOADER ***/
 
 #preloader{
     width: 100%;
     height: 100%;
     position: fixed;
-    color: black;
-    background-color: white;
-    /* background: radial-gradient(#ffffff, #bebec4); */
     text-transform: initial;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: black;
+    background-color: white;
     
 }
 
@@ -359,6 +343,7 @@ figcaption{
         opacity: 1;
     }
 }
+
 /******************************/
 /********** ABOUT PAGE ********/
 /******************************/
