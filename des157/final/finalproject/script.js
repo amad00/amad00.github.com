@@ -10,10 +10,10 @@
     const figcaptionTag = document.querySelector('figcaption');
     const closeBtn = document.getElementById('close-btn');
     const overlay = document.getElementById('overlay');
-    const overlayImg = document.querySelector('#overlay figure img')
-    const arrows = document.getElementById('arrows')
-    const leftArrow = document.querySelectorAll('#arrows button')[0]
-    const rightArrow = document.querySelectorAll('#arrows button')[1]
+    const overlayImg = document.querySelector('#overlay figure img');
+    const arrows = document.getElementById('arrows');
+    const leftArrow = document.querySelectorAll('#arrows button')[0];
+    const rightArrow = document.querySelectorAll('#arrows button')[1];
 
     let currentImage = 0;
     let interval;
@@ -84,13 +84,13 @@
     closeBtn.addEventListener('click', function(){
         overlay.style.display = 'none';
         pauseSlideShow();
-        clearInterval(slideShowIntructionTimer)
+        clearInterval(slideShowIntructionTimer);
     });
     document.addEventListener('keydown', function(event){
         if(event.key == "Escape"){
             overlay.style.display = 'none';
             pauseSlideShow();
-            clearInterval(slideShowIntructionTimer)
+            clearInterval(slideShowIntructionTimer);
         }})
 
     for (let i = 0; i < imgTags.length; i++) {
@@ -130,12 +130,12 @@
      /*** Display overlay and set with image selected ***/
     function setOverlay(i){
         overlay.style.display = 'flex';
-        let imgSrc = imgTags[i].src.split('-')
-        let imgSrc1 = imgSrc[1].split('.')
-        let imgNum = parseInt(imgSrc1[0][imgSrc1[0].length - 1])
+        let imgSrc = imgTags[i].src.split('-');
+        let imgSrc1 = imgSrc[1].split('.');
+        let imgNum = parseInt(imgSrc1[0][imgSrc1[0].length - 1]);
 
         overlayImg.src = `../images/${imgSrc1[0]}.jpg`;
-        changeFigcaption(mainTag, imgNum - 1 )
+        changeFigcaption(mainTag, imgNum - 1 );
         slideShowNum.textContent = `${imgNum}/6`;
         currentImage = imgNum - 1;
        
@@ -143,7 +143,7 @@
         slideShowIntruction = document.querySelectorAll('#top-bar div p')[1];
         if(slideShowIntruction) {
             slideShowIntructionTimer =  setInterval(function(){
-                slideShowIntruction.className = (slideShowIntruction.className == 'imageFade' ? 'imageFadeIn' : 'imageFade')
+                slideShowIntruction.className = (slideShowIntruction.className == 'imageFade' ? 'imageFadeIn' : 'imageFade');
             }, 2000)
         }
  
@@ -178,7 +178,7 @@
         if(mainTag.className == 'landscape' && slideShowIntruction){
             slideShowIntruction.className = '';
             slideShowIntruction.style.visibility = 'hidden';
-            clearInterval(slideShowIntructionTimer)
+            clearInterval(slideShowIntructionTimer);
             slideShowIntruction.parentNode.removeChild(slideShowIntruction);
         }
 
@@ -204,21 +204,21 @@
         } else if(currentImage < 0){
             currentImage = 5;
         }
-        overlayImg.className = 'imageFade'
-        figcaptionTag.className = 'imageFade'
+        overlayImg.className = 'imageFade';
+        figcaptionTag.className = 'imageFade';
        
         setTimeout(function(){
             overlayImg.src = `../images/${myImages[currentImage]}`;
             slideShowNum.textContent = `${currentImage +1}/6`;
-            overlayImg.className = 'imageFadeIn'
+            overlayImg.className = 'imageFadeIn';
            
-            changeFigcaption(mainTag, currentImage)
-            figcaptionTag.className = ''
+            changeFigcaption(mainTag, currentImage);
+            figcaptionTag.className = '';
            
         }, 1000)
        
        setTimeout(function(){
-            arrows.className = 'imageFadeIn'
+            arrows.className = 'imageFadeIn';
             arrows.style.width = `${overlayImg.clientWidth - 15}px`;
        }, 1100)
       
