@@ -146,7 +146,11 @@
                 slideShowIntruction.className = (slideShowIntruction.className == 'imageFade' ? 'imageFadeIn' : 'imageFade')
             }, 2000)
         }
-    }
+ 
+        setTimeout(function(){
+            arrows.style.width = `${overlayImg.clientWidth - 15}px`;
+       }, 100)
+    } 
 
     /*** Change menu text color for the page currently on***/
     function changePageLinkColor(){
@@ -202,15 +206,23 @@
         }
         overlayImg.className = 'imageFade'
         figcaptionTag.className = 'imageFade'
+       
         setTimeout(function(){
             overlayImg.src = `../images/${myImages[currentImage]}`;
             slideShowNum.textContent = `${currentImage +1}/6`;
             overlayImg.className = 'imageFadeIn'
-
+           
             changeFigcaption(mainTag, currentImage)
             figcaptionTag.className = ''
+           
         }, 1000)
-        
+       
+       setTimeout(function(){
+            arrows.className = 'imageFadeIn'
+            arrows.style.width = `${overlayImg.clientWidth - 15}px`;
+       }, 1100)
+      
+       
     }
 
 
