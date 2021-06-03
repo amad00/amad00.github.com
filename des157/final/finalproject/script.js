@@ -17,6 +17,10 @@
 
     let currentImage = 0;
     let interval;
+
+    let slideShowIntruction;
+    let slideShowIntructionTimer;
+    
     
     window.addEventListener('load', function(){
         if(mainTag.className == 'landscape'){
@@ -25,15 +29,13 @@
 
             preloader.addEventListener('animationend', function(){
                 preloader.style.display = 'none';
-
-                alert("Hello, welcome to my website! Here are the three tasks for you to complete: \n 1. Select an image to view it's full size \n 2. Use the automatic slideshow in the overlay \n 3. Manually flip through the images in the overlay")
             })
+           
         }
         
     })
-
-    
-    /*** IMAGES AND FIGCAPTION TEXT FOR OVERLAY ***/
+  
+     /*** Images and figcaption text for overlay ***/
     const landscapeText = [
         'Mendocino, 2018',
         'Portland, 2019',
@@ -82,11 +84,13 @@
     closeBtn.addEventListener('click', function(){
         overlay.style.display = 'none';
         pauseSlideShow();
+        clearInterval(slideShowIntructionTimer)
     });
     document.addEventListener('keydown', function(event){
         if(event.key == "Escape"){
             overlay.style.display = 'none';
             pauseSlideShow();
+            clearInterval(slideShowIntructionTimer)
         }})
 
     for (let i = 0; i < imgTags.length; i++) {
@@ -94,7 +98,7 @@
             setOverlay(i)})
     }
 
-    /*** DISPLAY AND HIDE ARROW BUTTONS IF MOUSE IS ON OR OFF IMAGE ***/
+    /*** Display and hide arrwo buttons if mouse is on or off image ***/
     overlayImg.addEventListener('mouseover', function(){
         arrows.style.visibility = 'visible'})
         overlayImg.addEventListener('mouseout', function(){
@@ -105,8 +109,8 @@
         arrows.style.visibility = 'hidden'})
     
 
-/*** EVENT LISTENER TO CHANGE OVERLAY PICTURE IF ARROWS ON IMAGES WERE 
-  CLICKED OR THE LEFT AND RIGHT ARROW KEYS WERE PRESSED ***/
+  /*** Event listener to chnage overlay picture if arrows on images were 
+        clicked or the left and rigght arrow keys were pressed ***/
     leftArrow.addEventListener('click', function(){
         currentImage-= 2;
         changePhoto()})
@@ -123,7 +127,7 @@
         }
     });
 
-    /*** DISPLAY OVERLAY AND SET WITH IMAGE SELECTED ***/
+     /*** Display overlay and set with image selected ***/
     function setOverlay(i){
         overlay.style.display = 'block';
         let imgSrc = imgTags[i].src.split('-')
@@ -135,10 +139,16 @@
         slideShowNum.textContent = `${imgNum}/6`;
         currentImage = imgNum - 1;
        
-
+        //start blinking 'click to start slideshow' text
+        slideShowIntruction = document.querySelectorAll('#top-bar div p')[1];
+        if(slideShowIntruction) {
+            slideShowIntructionTimer =  setInterval(function(){
+                slideShowIntruction.className = (slideShowIntruction.className == 'imageFade' ? 'imageFadeIn' : 'imageFade')
+            }, 2000)
+        }
     }
 
-    /*** CHANGE MENU TEXT COLOR FOR THE PAGE CURRENTLY ONE ***/
+    /*** Change menu text color for the page currently on***/
     function changePageLinkColor(){
         let classNameP = mainTag.className;
  
@@ -160,10 +170,28 @@
 
         interval = setInterval(changePhoto, 4000);
         
+        //remove blinking 'click to start slideshow' text
+        if(mainTag.className == 'landscape' && slideShowIntruction){
+            slideShowIntruction.className = '';
+            slideShowIntruction.style.visibility = 'hidden';
+            clearInterval(slideShowIntructionTimer)
+            slideShowIntruction.parentNode.removeChild(slideShowIntruction);
+        }
 
     }
-   
-    /*** CHANGE OVERLAY IMAGE TO NEXT OR PREVIOUS PHOTO ***/
+
+    function pauseSlideShow(){
+        clearInterval(interval);
+        playBtn.id = 'play-btn';
+        playImg.setAttribute('alt', 'play button');
+        playImg.src = '../images/play.png';
+        playImg.addEventListener('click', playSlideShow);
+        playImg.removeEventListener('click', pauseSlideShow);
+        
+       
+    }
+
+    /*** Change overlay image to next or previous photo ***/
     function changePhoto(){
         currentImage++;
 
@@ -202,13 +230,6 @@
         }
     }
 
-    function pauseSlideShow(){
-        clearInterval(interval);
-        playBtn.id = 'play-btn';
-        playImg.setAttribute('alt', 'play button');
-        playImg.src = '../images/play.png';
-        playImg.addEventListener('click', playSlideShow);
-        playImg.removeEventListener('click', pauseSlideShow);
-    }
+   
 
 })();
