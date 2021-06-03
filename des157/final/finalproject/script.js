@@ -177,7 +177,7 @@
         setTimeout(function(){
             overlayImg.src = `../images/${myImages[currentImage]}`;
             slideShowNum.textContent = `${currentImage +1}/6`;
-            overlayImg.className = ''
+            overlayImg.className = 'imageFadeIn'
 
             changeFigcaption(mainTag, currentImage)
             figcaptionTag.className = ''
