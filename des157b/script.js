@@ -65,7 +65,7 @@
     function changeBarColor(colorList){ 
         const bannerDivs = document.querySelectorAll('#banner div');
         let groupCount = 1;
-        let delayTime = 0.2;
+        let delayTime = 1;
         for(let i =0; i <7; i++){
             groups.push(randomInt(8,14));
         }
