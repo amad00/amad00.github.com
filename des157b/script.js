@@ -66,9 +66,13 @@
         const bannerDivs = document.querySelectorAll('#banner div');
         let groupCount = 1;
         let delayTime = 1;
-        for(let i =0; i <7; i++){
+        let remainingBars = 75;
+
+        for(let i =0; i <6; i++){
             groups.push(randomInt(8,14));
+            remainingBars -= groups[i];
         }
+        groups.push(remainingBars);
 
         for(let i =0; i <75; i++){
             bannerDivs[i].style.backgroundColor = colorList[randomNumCount];
