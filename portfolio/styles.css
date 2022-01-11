@@ -3,22 +3,48 @@ body {
 }
 
 #container {
+    /* display: flex; */
+    /* justify-content: space-between; */
+
+    width: 85vw;
+    min-width: 300px;
+    max-width: 1400px;
     margin: 2em;
 }
 
-#container > h6 {
+#container>h6 {
     position: absolute;
-    right: 0;
+    top: 2em;
+    right: 2em;
+    margin: 0;
 }
 
-#about header > p,
-#projects-section > p,
+#about header>p,
+#projects-section>p,
 h2,
 h3 {
     text-transform: uppercase;
-    font-weight: 500;
+    /* font-weight: 500; */
 }
 
 #about {
     margin-top: 5em;
+}
+
+header p {
+    margin-bottom: 0;
+    font-size: 0.8em;
+}
+
+header h1 {
+    margin: 0.2em 0 0.67em 0
+}
+
+#skills h3 {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+#projects h2 {
+    font-weight: 500;
 }
