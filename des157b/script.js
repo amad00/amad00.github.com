@@ -4,7 +4,6 @@
     const button = document.querySelector('button');
     const body = document.querySelector('body');
     const banner = document.querySelector('#banner'); 
-    const sectionHeaders = document.querySelectorAll('section h3')
     const sections = document.querySelectorAll('section');
     const musicImages = document.querySelectorAll('h3 img');
     const allSectionInfo = [];
@@ -101,7 +100,7 @@
        allSectionInfo.push(eachSection.getBoundingClientRect());
     });
     
-    /* Only show music not when hovering over that specific section */
+    /* Only show music note when hovering over that specific section */
     function musicNoteHover(mouseX, mouseY){
 
         for( let i=0; i< allSectionInfo.length; i++){
