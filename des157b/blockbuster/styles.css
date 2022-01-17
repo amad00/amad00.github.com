@@ -5,6 +5,7 @@
 body {
     font-family: 'Shadows Into Light', cursive;
     text-transform: lowercase;
+    color: white;
 }
 
 #container {
@@ -18,8 +19,9 @@ body {
 }
 
 #loading {
-    width: 15vw;
-    height: 10vw;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,6 +55,114 @@ body {
 
 }
 
+video {
+    display: block;
+    margin: auto;
+}
+
+video,
+#poem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#poem {
+    width: 1280px;
+    height: 600px;
+    /*   position: relative;
+    width: 1280px;
+    height: 723px;
+    margin: auto; */
+    /* grid-template-columns: ;
+    grid-template-rows: ;*/
+}
+
+#poem h3 {
+    position: fixed;
+    margin: 0;
+    font-size: 5em;
+    top: 80%;
+    right: 5%;
+    visibility: hidden;
+}
+
+#poem h3:first-of-type {
+    top: 65%;
+    visibility: hidden;
+}
+
+#poem h3:hover {
+    text-shadow: 2px 2px 1px rgb(255, 244, 97), 3px 3px 4px orange, 4px 4px 4px red;
+}
+
+#poem p {
+    position: fixed;
+    margin: 0;
+    max-width: 620px;
+    /* position: fixed; */
+    /* padding: 1em; */
+    font-size: 5em;
+    /* max-width: 1280px;
+    margin: 0 auto;
+    background-color: black; */
+    /* transition: all 2.5s; */
+    overflow: hidden;
+    letter-spacing: .1em;
+    white-space: nowrap;
+    width: 0;
+    /* animation: typewriter 2s forwards; */
+
+}
+
+#poem p:hover {
+    text-shadow: 2px 2px 1px rgb(255, 244, 97), 3px 3px 4px orange;
+}
+
+#line1 {
+    top: 10%;
+    left: 5%;
+}
+
+#line2 {
+    top: 22%;
+    left: 5%;
+}
+
+/* #line3 {
+    top: 43%;
+    left: 52%;
+} */
+
+#line3 {
+    top: 34%;
+    left: 5%;
+}
+
+#line4 {
+    top: 46%;
+    left: 5%;
+}
+
+#line5 {
+    top: 58%;
+    left: 5%;
+
+}
+
+.hidden {
+    opacity: 0;
+}
+
+
+.showing {
+    opacity: 1;
+}
+
+
+
+
 @keyframes hover {
     0% {
         transform: translateY(0);
@@ -67,12 +177,22 @@ body {
     }
 }
 
-@keyframes fadeAway {
+@keyframes fade {
     0% {
         opacity: 1;
     }
 
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
     }
 }
