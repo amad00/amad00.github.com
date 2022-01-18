@@ -16,6 +16,7 @@ body {
 
 }
 
+/**** LOADING ****/
 #loading {
     width: 100vw;
     height: 100vh;
@@ -49,6 +50,7 @@ body {
 
 }
 
+/**** VIDEO ****/
 video {
     display: block;
     margin: auto;
@@ -63,6 +65,7 @@ video,
     transform: translate(-50%, -50%);
 }
 
+/**** POEM ****/
 #poem {
     width: 1280px;
     height: 600px;
@@ -137,7 +140,7 @@ video,
     opacity: 1;
 }
 
-
+/**** ANIMATIONS ****/
 @keyframes hover {
     0% {
         transform: translateY(0);
