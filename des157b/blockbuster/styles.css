@@ -51,6 +51,11 @@ body {
 }
 
 /**** VIDEO ****/
+/* disable fullscreen button */
+video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
+
 video {
     display: block;
     margin: auto;
