@@ -3,20 +3,37 @@
 
     let globalData;
     let inSteps = true;
-    const button = document.querySelector('button');
+    const button = document.querySelector('#info button');
     const barDivs = document.querySelectorAll('.color-bar');
     const dataSectionP = document.querySelectorAll('#number-steps-mi p');
-    const circle =  document.querySelector('circle');
     const progressCircle = document.querySelector('.progress-circle');
     const steps = document.querySelectorAll('#activity-circle p')[0];
     const stepsText = document.querySelectorAll('#activity-circle p')[1];
     const totalinSteps = document.querySelectorAll('#activity-day > p')[0];
     const totalinMiles = document.querySelectorAll('#activity-day > p')[1];
+    const animationControl = document.querySelector('#footsteps button');
+    const footsteps = document.querySelectorAll('#footsteps i');
 
     let circumference = 502; 
-   
-   
-   
+    let play = true;
+    
+    animationControl.addEventListener('click', function(){
+        if(play){
+            animationControl.textContent = "play";
+            play = false;
+            footsteps.forEach(function(step){
+                step.style.animationPlayState = 'paused';
+                step.style.visibility = 'hidden';
+            });
+        } else {
+            animationControl.textContent = "stop";
+            play = true;
+            footsteps.forEach(function(step){
+                step.style.animationPlayState = 'running';
+                step.style.visibility = 'visible';
+            });
+        }
+    });
 
     /**** change to miles or steps  ****/
     button.addEventListener('click', function(){
@@ -90,7 +107,8 @@
         }
         
         
-        progressCircle.style.strokeDashoffset = circumference - ((currTotal / total)*circumference)
+        progressCircle.style.strokeDashoffset = circumference - ((currTotal / total)*circumference);
+    
     }
     
     /****  display times next to the graph ****/
