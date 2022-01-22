@@ -117,7 +117,8 @@ circle {
 }
 
 .progress-circle {
-    stroke: #6f20be;
+    stroke: #8015eb;
+    /*#6f20be;*/
     stroke-dasharray: 502;
     stroke-dashoffset: 502;
     transform: rotate(-90deg);
