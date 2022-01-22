@@ -17,25 +17,8 @@
    
    
    
-    function displayProgress(data, len){
-        const total = totalSteps(data);
-        let currTotal = 0;
 
-        for(let i=0; i<len + 1;i++){
-            if(inSteps){
-                currTotal += parseInt(data[i].steps.replace(',', ''));
-                steps.textContent = currTotal.toLocaleString();
-            } else {
-                currTotal += parseFloat(data[i].miles.replace(',', ''));
-                steps.textContent = currTotal.toFixed(2);
-            }
-          
-        }
-        
-        
-        progressCircle.style.strokeDashoffset = circumference - ((currTotal / total)*circumference)
-    }
-
+    /**** change to miles or steps  ****/
     button.addEventListener('click', function(){
         if(inSteps){
             button.textContent = 'steps';
@@ -54,7 +37,10 @@
     });
 
 
-
+    /****  
+     * when hovering over coloored part of bar, show the progroess on circle and show exact number
+     *  when not hovering, reset everything 
+     ****/
     for(let i =0; i<barDivs.length; i++){
         barDivs[i].addEventListener('mouseover', function(event){
             dataSectionP[i].style.visibility = 'visible';
@@ -83,8 +69,31 @@
         inSteps = true;
     }
     getData();
-    
 
+    /****  
+    * show progress circle when hovering over a certain time bar
+    * adds the total from the first time to the current one
+    ****/
+     function displayProgress(data, len){
+        const total = totalSteps(data);
+        let currTotal = 0;
+
+        for(let i=0; i<len + 1;i++){
+            if(inSteps){
+                currTotal += parseInt(data[i].steps.replace(',', ''));
+                steps.textContent = currTotal.toLocaleString();
+            } else {
+                currTotal += parseFloat(data[i].miles.replace(',', ''));
+                steps.textContent = currTotal.toFixed(2);
+            }
+          
+        }
+        
+        
+        progressCircle.style.strokeDashoffset = circumference - ((currTotal / total)*circumference)
+    }
+    
+    /****  display times next to the graph ****/
     function displayTimes(data){
         const timeSection = document.querySelector('#times');
        
@@ -95,8 +104,8 @@
         }
     }
 
+    /****  add exact steps and miles in tags (hidden until hovering) ****/
     function dataText(data){
-        
         for(let i=0; i<data.length; i++){
             if(inSteps){
                 dataSectionP[i].textContent = data[i].steps;
@@ -107,6 +116,7 @@
 
     }
 
+    /****  display data with the graph ****/
     function displayGraph(data){
        
         const maxLen = 2000;
@@ -118,6 +128,7 @@
 
     }
 
+    /****  counts total in steps and miles ****/
     function totalSteps(data){
         let sum = 0;
         for(let i=0; i<data.length; i++){
