@@ -117,15 +117,18 @@ button:hover,
 
 circle {
     fill: none;
-    stroke-width: 10;
+    stroke-width: 13;
     stroke-linecap: round;
     transform-origin: center;
     transition: all 1s ease-in-out;
 }
 
+circle:first-of-type {
+    stroke: #323232;
+}
+
 .progress-circle {
-    stroke: #8015eb;
-    /*#6f20be;*/
+    stroke: #A25EE7;
     stroke-dasharray: 502;
     stroke-dashoffset: 502;
     transform: rotate(-90deg);
