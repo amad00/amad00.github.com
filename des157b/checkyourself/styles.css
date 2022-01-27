@@ -129,6 +129,7 @@ circle:first-of-type {
 
 .progress-circle {
     stroke: #A25EE7;
+    /* the circumference of the circle */
     stroke-dasharray: 502;
     stroke-dashoffset: 502;
     transform: rotate(-90deg);
