@@ -8,6 +8,10 @@ const img2019 = document.querySelectorAll('#cont2019 img');
 const img2018P1 = [img2018[0], img2018[1]];
 const img2018P2 = [img2018[2], img2018[3]];
 
+const tippy1 = document.getElementById('img2018-1');
+const tippy2 = document.getElementById('img2018-2');
+const tippy3 = document.getElementById('img2018-3');
+const tippy4 = document.getElementById('img2018-4');
 
 img2015.forEach(function(eachImg){
     eachImg.addEventListener('click', function(){
@@ -31,18 +35,40 @@ img2019.forEach(function(eachImg){
 })
 
 
-function switchImages(images, clickedImg){
+function switchImages(images){
     console.log('in function')
-    // if(clickedImg.style.zIndex == 0){
-        let firstZ = window.document.defaultView.getComputedStyle(images[0]).getPropertyValue('z-index');
-        let SecZ = window.document.defaultView.getComputedStyle(images[1]).getPropertyValue('z-index');
-        console.log(firstZ)
-        images[0].style.zIndex = SecZ
-        images[1].style.zIndex = firstZ
-    // }
+    let firstZ = window.document.defaultView.getComputedStyle(images[0]).getPropertyValue('z-index');
+    let SecZ = window.document.defaultView.getComputedStyle(images[1]).getPropertyValue('z-index');
+    
+    images[0].style.zIndex = SecZ;
+    images[1].style.zIndex = firstZ;
+   
+    if(images[0].id == 'img2018-1' ){
+       
+        if(images[0].style.zIndex == -1){
+           instance1.disable();
+           instance2.enable();
+        } else {
+            instance1.enable();
+            instance2.disable();
+        }
+    }
+
+       
+    if(images[0].id == 'img2018-3' ){
+        if(images[0].style.zIndex == -1){
+            instance3.disable();
+            instance4.enable();
+        } else {
+            instance3.enable();
+            instance4.disable();
+        }
+    }
+
 
 
 }
+
 
 /**** tooltips ****/ 
 tippy('#cont2008', {
@@ -72,67 +98,44 @@ tippy('#cont2016', {
 
 });
 
-/* put these in loop to chnage which one shows */
-
-
-
-setInterval(function(){
-
-    let img1Z = window.document.defaultView.getComputedStyle(document.querySelector('#img2018-1')).getPropertyValue('z-index');
-
-    let img2Z = window.document.defaultView.getComputedStyle(document.querySelector('#img2018-2')).getPropertyValue('z-index');
-
-    let img3Z = window.document.defaultView.getComputedStyle(document.querySelector('#img2018-3')).getPropertyValue('z-index');
-
-    let img4Z = window.document.defaultView.getComputedStyle(document.querySelector('#img2018-4')).getPropertyValue('z-index');
-
-    if(img1Z == 0){
-        tippy('#img2018-1', {
-            content: 'high school graduation',
-            theme: 'light',
-            animation: 'scale-subtle'
-            // offset: [0, 20]
-        
-        });
-    }  
-
-    if(img2Z == 0){
-
-        tippy('#img2018-2', {
-            content: 'long beach',
-            theme: 'light',
-            animation: 'scale-subtle',
-            placement: 'bottom'
-            // offset: [0, 20]
-        });
-    }
-
-    if(img3Z == 0){
-
-        tippy('#img2018-3', {
-            content: 'half moon bay',
-            theme: 'light',
-            animation: 'scale-subtle',
-            placement: 'bottom'
-            // offset: [0, 20]
-        
-        });
-    }
+const instance1 =  tippy(tippy1, {
+    content: 'high school graduation',
+    theme: 'light',
+    animation: 'scale-subtle'
     
-    if(img4Z == 0){
+});
 
-        tippy('#img2018-4', {
-            content: 'oregon',
-            theme: 'light',
-            animation: 'scale-subtle'
-            // offset: [0, 20]
-        
-        });
-    }
+
+const instance2 =  tippy(tippy2, {
+    content: 'long beach',
+    theme: 'light',
+    animation: 'scale-subtle',
+    placement: 'bottom'
     
-}, 100)
+});
+
+instance2.disable();
 
 
+const instance3 = tippy(tippy3, {
+    content: 'half moon bay',
+    theme: 'light',
+    animation: 'scale-subtle',
+    placement: 'bottom'
+    // offset: [0, 20]
+
+});
+
+
+const instance4 = tippy(tippy4, {
+    content: 'oregon',
+    theme: 'light',
+    animation: 'scale-subtle'
+    // offset: [0, 20]
+
+});
+
+instance4.disable();
 
 tippy('#img2019-1', {
     content: 'visited portland',

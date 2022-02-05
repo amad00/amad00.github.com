@@ -6,7 +6,8 @@ body {
     font-family: 'DM Serif Text', serif;
     text-transform: lowercase;
     /* color: #878787; */
-    color: rgba(0, 0, 0, 0.45);
+    color: rgba(0, 0, 0, 0.55);
+    /* color: black; */
     /* background-color: lightgray; */
     background-image: url("images/wall.jpg");
     background-repeat: repeat-x;
