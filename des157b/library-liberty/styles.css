@@ -25,6 +25,8 @@ img {
     padding: 1.2em;
     background-color: white;
     transition: all ease-in-out;
+    filter: contrast(90%);
+    /* white was too bright against the background*/
 }
 
 #container div {
