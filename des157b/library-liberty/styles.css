@@ -5,20 +5,16 @@
 body {
     font-family: 'DM Serif Text', serif;
     text-transform: lowercase;
-    /* color: #878787; */
     color: rgba(0, 0, 0, 0.55);
-    /* color: black; */
-    /* background-color: lightgray; */
+    /* background-color: rgba(0, 0, 0, 0.8); linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))*/
     background-image: url("images/wall.jpg");
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     background-size: 100%;
     overflow-y: hidden;
 }
 
 #container {
-    /* width: auto; */
     height: 768px;
-
     position: relative;
     padding-right: 50px;
 }
@@ -39,13 +35,9 @@ img {
 
 header {
     position: absolute;
-    /* display: flex; */
     width: 300px;
-    /* justify-content: center; */
-    /* margin-left: 10vw; */
     top: 30vh;
     transform: rotate(-30deg);
-    /* left: 50%; */
 }
 
 h1 {
@@ -63,8 +55,6 @@ h1 {
     height: 10px;
     display: inline-block;
     border-radius: 50%;
-    /* margin-left: 48%; */
-    /* text-align: center; */
 }
 
 
@@ -76,7 +66,6 @@ h1 {
 #cont2019 p,
 #cont2021 p {
     font-size: 1.5em;
-    /* margin-left: 39%; */
     text-align: center;
 }
 
@@ -147,7 +136,6 @@ h1 {
 #img2018-1 {
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
-    /* z-index: -2; */
     z-index: 0;
 }
 
@@ -180,8 +168,6 @@ h1 {
 }
 
 /*** CARD2 & CARD3 ***/
-
-
 #container #card2 {
     width: 300px;
     height: 300px;
@@ -204,8 +190,6 @@ h1 {
     display: grid;
     grid-template-columns: 300px 50px 40px 340px;
     grid-template-rows: 30px 50px 300px;
-    /* width: 300px;
-    height: 300px; */
     top: 12vh;
     left: 2800px;
 
@@ -213,7 +197,6 @@ h1 {
 
 
 #cont2019 img:nth-child(2),
-
 #cont2019 img:nth-child(3) {
     width: 340px;
     height: 140px;
@@ -270,7 +253,6 @@ h1 {
 }
 
 #container #months {
-    /* position: absolute; */
     z-index: -5;
 
 }
@@ -391,12 +373,3 @@ h1 {
 .tippy-box[data-theme~='light'][data-placement^='right']>.tippy-arrow::before {
     border-right-color: white;
 }
-
-
-/* .simplebar-scrollbar::before {
-    background-color: rgb(140, 171, 211);
-}
-
-#scrollbar {
-    height: fit-content;
-} */
