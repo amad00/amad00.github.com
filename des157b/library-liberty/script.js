@@ -90,7 +90,7 @@ tippy('#cont2015', {
 });
 
 tippy('#cont2016', {
-    content: 'portland & voodoo donuts!',
+    content: 'michigan',
     theme: 'light',
     animation: 'scale-subtle',
     // placement: 'right-end'
@@ -138,7 +138,7 @@ const instance4 = tippy(tippy4, {
 instance4.disable();
 
 tippy('#img2019-1', {
-    content: 'visited portland',
+    content: 'portland & voodoo donuts!',
     theme: 'light',
     animation: 'scale-subtle'
     // offset: [0, 20]
