@@ -90,7 +90,7 @@ tippy('#cont2015', {
 });
 
 tippy('#cont2016', {
-    content: 'michigan',
+    content: 'flew to michigan',
     theme: 'light',
     animation: 'scale-subtle',
     // placement: 'right-end'
