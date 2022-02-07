@@ -209,7 +209,7 @@ h1 {
 
     grid-column: 3 / span 2;
     grid-row: 1 / span 1;
-
+    z-index: 0;
 }
 
 #cont2019 img:nth-child(1) {
@@ -228,7 +228,7 @@ h1 {
 /*** 2020 CONTENT/IMAGES ***/
 #container #card4 {
     top: 50vh;
-    left: 3650px;
+    left: 3575px;
     width: 300px;
     height: 300px;
     background-color: white;
@@ -239,7 +239,7 @@ h1 {
 /*** 2020 CONTENT/IMAGES ***/
 #container #cont2021 {
     top: 12vh;
-    left: 4100px;
+    left: 4000px;
     padding-right: 200px;
 }
 
@@ -286,13 +286,13 @@ h1 {
 }
 
 #container #months p:nth-child(6) {
-    top: 60vh;
-    left: 3450px;
+    top: 30vh;
+    left: 3600px;
 }
 
 #container #months p:nth-child(7) {
     top: 42vh;
-    left: 4270px;
+    left: 4170px;
 }
 
 /*** CARD TEXT ***/

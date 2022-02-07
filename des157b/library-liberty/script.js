@@ -3,10 +3,11 @@
 
 const img2015 = document.querySelectorAll('#cont2015 img');
 const img2018 = document.querySelectorAll('#cont2018 img');
-const img2019 = document.querySelectorAll('#cont2019 img');
+const allImg2019 = document.querySelectorAll('#cont2019 img');
 
 const img2018P1 = [img2018[0], img2018[1]];
 const img2018P2 = [img2018[2], img2018[3]];
+const img2019 = [allImg2019[1], allImg2019[2]];
 
 const tippy1 = document.getElementById('img2018-1');
 const tippy2 = document.getElementById('img2018-2');
