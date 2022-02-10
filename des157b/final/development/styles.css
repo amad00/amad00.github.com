@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#container {
+    width: 800px;
+    /* display: flex;
+    justify-content: center;
+    flex-wrap: wrap; */
+}
+
+img {
+    width: 100%;
+}
+
+h2 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.3em;
+}
