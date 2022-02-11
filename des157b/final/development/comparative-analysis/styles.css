@@ -1,0 +1,55 @@
+body {
+    font-family: 'Inter', sans-serif;
+    justify-content: center;
+}
+
+body,
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section {
+    width: 800px;
+    justify-content: space-between;
+    padding: 0 2em 1em 2em;
+    margin-bottom: 2em;
+}
+
+img {
+    width: 300px;
+    display: inline-block;
+    padding-bottom: 1em;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid black;
+}
+
+h2 {
+    text-transform: uppercase;
+    width: 100%;
+}
+
+div {
+    width: 30%;
+}
+
+p {
+    width: 60%;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: grey;
+}
