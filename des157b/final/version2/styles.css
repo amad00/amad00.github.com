@@ -3,12 +3,20 @@
 }
 
 body {
-    width: fit-content;
+    width: 100vw;
+    height: 100vh;
     position: relative;
-    margin: auto;
-    background-color: #0a1b2b;
+    /* margin: auto; */
+    /* background-color: #0a1b2b; */
     color: #fff;
     font-family: "DM Serif Display", serif;
+}
+
+main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 /* GENERAL */
@@ -17,7 +25,8 @@ body {
     height: 100vh;
     min-width: 410px;
     max-width: 1400px;
-
+    position: relative;
+    margin: auto;
     padding: 2em;
     display: flex;
     flex-wrap: wrap;
