@@ -162,6 +162,10 @@ form {
 
 @media only screen and (min-width: 500px) {
 
+    section {
+        align-items: center;
+    }
+
     /* WELCOME SECTION */
     #welcome p {
         width: 80%;
@@ -172,6 +176,11 @@ form {
     #welcome-btns {
         justify-content: space-around;
         max-width: 48%;
+    }
+
+    /*  QUESTIONS SECTION */
+    form {
+        width: 60%;
     }
 
 }
