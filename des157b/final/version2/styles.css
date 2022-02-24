@@ -1,4 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    width: fit-content;
+    position: relative;
+    margin: auto;
     background-color: #0a1b2b;
     color: #fff;
     font-family: "DM Serif Display", serif;
@@ -10,27 +17,40 @@ body {
     height: 100vh;
     min-width: 410px;
     max-width: 1400px;
+
     padding: 2em;
     display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+}
+
+#container i {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    color: #fff;
+    font-size: 1.4em;
 }
 
 section {
     max-width: 760px;
     background-color: #3b4f61;
     width: 100%;
-    height: 20em;
+    /* height: 20em; */
     border-radius: 0.5em;
     padding: 2.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-self: flex-end;
 }
 
 h1 {
     font-size: 3em;
     text-align: center;
+    margin: 0;
 }
 
 p,
@@ -64,7 +84,7 @@ button {
 
 /* WELCOME SECTION */
 #welcome p {
-    margin-bottom: 1.5em;
+    margin: 2.2em 0;
 }
 
 #welcome-btns {
@@ -169,6 +189,24 @@ form {
     margin: 0 5px;
 }
 
+/*  FOOTER SECTION */
+footer {
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    height: fit-content;
+    background-color: #0a1b2b;
+    padding-top: 2em;
+    align-self: flex-end;
+}
+
+footer p {
+    text-transform: uppercase;
+    /* line-height: 0.8em; */
+    margin: 0;
+    /* padding-left: 2em; */
+    /* align-self: flex-start; */
+}
 
 @media only screen and (min-width: 500px) {
 
@@ -185,7 +223,7 @@ form {
 
     #welcome-btns {
         justify-content: space-around;
-        max-width: 48%;
+        max-width: 50%;
     }
 
     /*  QUESTIONS SECTION */
