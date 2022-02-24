@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;700&display=swap"
         rel="stylesheet" />
     <link href="styles.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -44,7 +45,7 @@
                 <p>I am feeling...</p>
                 <label>Two words or less<input type="text" required /></label>
                 <div class="buttons">
-                    <button>Next</button>
+                    <button class="next-btn">Next</button>
                 </div>
             </form> -->
 
@@ -52,8 +53,16 @@
           <p>Describe how you see yourself right now</p>
           <label>One word<input type="text" required /></label>
           <div class="buttons">
-            <button>Next</button>
-            <button>Prev</button>
+            <button class="next-btn">Next</button>
+            <button class="prev-btn">Prev</button>
+          </div>
+        </form> -->
+            <!-- <form>
+          <p>How would someone close to you describe you?</p>
+          <label>One word<input type="text" required /></label>
+          <div class="buttons">
+            <button class="next-btn">Next</button>
+            <button class="prev-btn">Prev</button>
           </div>
         </form> -->
 
@@ -63,8 +72,8 @@
                 <label>Thirty words or less<textarea rows="5" cols="50" required></textarea>
                 </label>
                 <div class="buttons">
-                    <button>Next</button>
-                    <button>Prev</button>
+                    <button class="next-btn">Next</button>
+                    <button class="prev-btn">Prev</button>
                 </div>
             </form>
 
@@ -72,8 +81,8 @@
           <p>What are you proud of?</p>
           <label>One word or sentence<input type="text" required /></label>
           <div class="buttons">
-            <button>Next</button>
-            <button>Prev</button>
+            <button id="submit-btn">Submit</button>
+            <button class="prev-btn">Prev</button>
           </div>
         </form>
       </section> -->
