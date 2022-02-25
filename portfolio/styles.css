@@ -133,10 +133,6 @@ header h1 {
     padding-right: 0.3em;
 }
 
-.project-text button:first-child {
-    margin-right: 1em;
-}
-
 button {
     background: none;
     border: none;
