@@ -16,6 +16,7 @@ body {
     max-width: 1400px;
     padding: 2em;
     margin: 0 auto;
+    position: relative;
 }
 
 /* #container>h6 {
@@ -28,18 +29,24 @@ body {
 header h1,
 h2,
 h3,
-h5 {
+h5,
+#contact button,
+footer p {
     font-family: 'DM Serif Display', serif;
     text-transform: lowercase;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+p {
+    font-size: 1.18em;
 }
 
 /* ABOUT */
 #about {
     margin-top: 3.5em;
-}
-
-#about p {
-    font-size: 1.18em;
 }
 
 header p {
@@ -73,9 +80,7 @@ header h1 {
 }
 
 /* PROJECTS */
-#projects h2 {
-    font-size: 2.4em;
-}
+
 
 #projects h5 {
     font-size: 1.8em;
@@ -133,7 +138,7 @@ header h1 {
     padding-right: 0.3em;
 }
 
-button {
+.project-text button {
     background: none;
     border: none;
 
@@ -141,4 +146,46 @@ button {
 
 button:hover {
     cursor: pointer;
+}
+
+/* CONTACT */
+
+#contact {
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+#contact button {
+    width: 6em;
+    height: 2.3em;
+    font-size: 1.6em;
+    margin-top: 1.5em;
+    background: none;
+    border-color: #000;
+    border-radius: 0.3em;
+}
+
+/* CONTACT */
+footer {
+    width: fit-content;
+    margin-top: 5em;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+footer>div {
+    width: fit-content;
+    margin: auto;
+}
+
+footer button {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border-color: #000;
+    background-color: #000;
+    color: #fff;
 }
