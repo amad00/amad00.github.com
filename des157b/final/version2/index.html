@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="styles.css" rel="stylesheet" />
   <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js'></script>
+  <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
   <script src="script.js" defer></script>
 </head>
 
@@ -46,7 +47,7 @@
     <section id="questions">
       <form>
         <p>I am feeling...</p>
-        <label>Two words or less<input type="text" required /></label>
+        <label>Two words or less<input type="text" name="q1" class="responses" required /></label>
         <div class="buttons">
           <button class="next-btn">Next</button>
         </div>
@@ -54,7 +55,7 @@
 
       <form>
         <p>Describe how you see yourself right now</p>
-        <label>One word<input type="text" required /></label>
+        <label>One word<input type="text" name="q2" class="responses" required /></label>
         <div class="buttons">
           <button class="prev-btn">Prev</button>
           <button class="next-btn">Next</button>
@@ -62,7 +63,7 @@
       </form>
       <form>
         <p>How would someone close to you describe you?</p>
-        <label>One word<input type="text" required /></label>
+        <label>One word<input type="text" name="q3" class="responses" required /></label>
         <div class="buttons">
           <button class="prev-btn">Prev</button>
           <button class="next-btn">Next</button>
@@ -71,8 +72,8 @@
 
       <form>
         <p>Prompt&#58; Thoughts</p>
-        <!-- <p>Prompt 2&#58; Something I accomplished today...</p> -->
-        <label>Thirty words or less<textarea rows="5" cols="50" required></textarea>
+        <!-- <p>Prompt 2&#58; Something I accomplished today...</p> comment this line -->
+        <label>Thirty words or less<textarea rows="5" cols="50" name="q4" class="responses" required></textarea>
         </label>
         <div class="buttons">
           <button class="prev-btn">Prev</button>
@@ -82,7 +83,7 @@
 
       <form>
         <p>What are you proud of?</p>
-        <label>One word or sentence<input type="text" required /></label>
+        <label>One word or sentence<input type="text" name="q5" class="responses" required /></label>
         <div class="buttons">
           <button class="prev-btn">Prev</button>
           <button id="submit-btn">Submit</button>
@@ -102,7 +103,12 @@
       </section>
       <button>View gallery</button>
     </div>
-    <section id="gallery"></section>
+    <section id="gallery">
+
+
+    </section>
+
+
     <footer>
       <p>Title</p>
     </footer>

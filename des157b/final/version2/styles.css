@@ -7,7 +7,7 @@ body {
     height: 100vh;
     position: relative;
     /* margin: auto; */
-    /* background-color: #0a1b2b; */
+    background-color: #0a1b2b;
     color: #fff;
     font-family: "DM Serif Display", serif;
 }
@@ -53,7 +53,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-self: flex-end;
+    /* align-self: flex-end; */
 }
 
 h1 {
@@ -119,6 +119,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* align-self: flex-end; */
 }
 
 #intro-quote,
@@ -158,14 +159,14 @@ form {
 
 #questions p {
     font-family: "DM Serif Display", serif;
-    font-size: 28px;
+    font-size: 2em;
     text-align: center;
 }
 
 #questions label {
-    font-size: 10px;
+    font-size: 0.65em;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
 }
 
 #questions input,
@@ -173,19 +174,19 @@ form {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: 45px;
-    font-size: 25px;
+    height: 2.5em;
+    font-size: 2em;
     color: #fff;
     background: none;
     border: 2px solid #fff;
-    border-radius: 10px;
-    margin-bottom: 40px;
-    padding: 10px;
+    border-radius: 0.5em;
+    margin-bottom: 2em;
+    padding: 0.5em;
 }
 
 #questions textarea {
-    height: 120px;
-    font-size: 18px;
+    height: 8em;
+    font-size: 1.5em;
 }
 
 .buttons {
@@ -195,13 +196,51 @@ form {
 }
 
 #questions button {
-    margin: 0 5px;
+    margin: 0 0.3em;
+}
+
+
+/*  GALLERY SECTION */
+#gallery {
+    width: 100%;
+    height: fit-content;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 2em 2em;
+    background-color: #0a1b2b;
+    margin-bottom: 20em;
+
+}
+
+.gallery-item {
+    background-color: #3b4f61;
+    border-radius: 0.5em;
+    width: 18em;
+    height: 18em;
+    position: relative;
+}
+
+.gallery-item p {
+    width: 100%;
+    padding: 1em;
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#gallery-quote {
+    width: 38em;
 }
 
 /*  FOOTER SECTION */
 footer {
     width: 100%;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     height: fit-content;
     background-color: #0a1b2b;
@@ -213,7 +252,7 @@ footer p {
     text-transform: uppercase;
     /* line-height: 0.8em; */
     margin: 0;
-    /* padding-left: 2em; */
+    padding-left: 2em;
     /* align-self: flex-start; */
 }
 
