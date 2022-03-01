@@ -6,25 +6,18 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-/* GENERSL */
+/* GENERAL */
 #container {
     /* display: flex; */
     /* justify-content: space-between; */
 
     width: 100vw;
     min-width: 300px;
-    max-width: 1400px;
     padding: 2em;
     margin: 0 auto;
     position: relative;
 }
 
-/* #container>h6 {
-    position: absolute;
-    top: 2em;
-    right: 2em;
-    margin: 0;
-} */
 nav ul li,
 nav button,
 #name h1,
@@ -45,25 +38,49 @@ p {
     font-size: 1.18em;
 }
 
-#header-background {
-    position: absolute;
+#container nav button:hover,
+#container #contact button:hover {
+    background-color: #000;
+    color: #fff;
+}
 
+a {
+    text-decoration: none;
+    color: #000;
+
+}
+
+button:hover,
+a {
+    cursor: pointer;
+}
+
+/* HEADER */
+#header-background {
+    /* position: absolute; */
+    position: fixed;
     /* left: 2em; */
     width: 100%;
+    height: 10vh;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
 }
 
 #header-background.open {
+    position: absolute;
     width: 100vw;
     height: 100vh;
     background-color: rgba(196, 196, 196, 0.5);
-    top: 0;
-    left: 0;
+    /* top: 0; */
+
 }
 
 header {
 
     position: absolute;
-    /* top: 2em; */
+    top: 2em;
     right: 2em;
 }
 
@@ -112,20 +129,24 @@ nav ul li i {
     width: 5em;
 }
 
+nav a:hover {
+    color: #fff;
+}
+
 /* NAV ANIMATION */
 #nav-icon {
     width: 3.4em;
     /* height: 1.5em; */
     position: relative;
     margin-left: auto;
-    /* transition: .5s ease-in-out; */
+    transition: 1s ease-in-out;
     cursor: pointer;
-    right: 2em;
+    /* right: 2em; */
 }
 
 #nav-icon.open {
     top: 2em;
-    /* right: 2em; */
+    right: 2em;
 }
 
 
@@ -138,7 +159,7 @@ nav ul li i {
     border-radius: 1em;
     opacity: 1;
     /* left: 0; */
-    transition: .25s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 #nav-icon span:nth-child(1) {
@@ -177,7 +198,14 @@ nav ul li i {
 
 /* ABOUT */
 #about {
-    margin-top: 3.5em;
+    margin-top: 3.8em;
+}
+
+#about img {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    /* align-self: center; */
 }
 
 #name p {
@@ -275,9 +303,11 @@ nav ul li i {
 
 }
 
-button:hover {
-    cursor: pointer;
+.project-text button a:hover {
+    color: #8e8e8f;
 }
+
+
 
 /* CONTACT */
 
@@ -320,4 +350,153 @@ footer button {
     border-color: #000;
     background-color: #000;
     color: #fff;
+}
+
+
+@media only screen and (min-width: 500px) {
+    #container {
+        max-width: 80vw;
+    }
+
+    #header-background {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 12vh;
+    }
+
+    header {
+        width: 80vw;
+        position: static;
+        padding-right: 2em;
+
+    }
+
+    /* NAVIGATION */
+    #nav-icon,
+    nav .fa-solid {
+        display: none;
+
+    }
+
+    nav {
+        /* width: 40%; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        position: static;
+        top: 0;
+        transform: none;
+        /* align-items: center; */
+
+    }
+
+    nav ul {
+        width: fit-content;
+        /* align-self: center; */
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 1em;
+        font-size: 1.4em;
+    }
+
+    nav button {
+        margin-top: 0;
+        font-size: 1.4em;
+    }
+
+    /* ABOUT */
+    #about {
+        margin-top: 4.5em;
+    }
+
+    #projects h2 {
+        width: 100%;
+        /* font-size: 3em; */
+    }
+
+
+    #projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #projects>section {
+        max-width: 45%;
+    }
+
+}
+
+
+@media only screen and (min-width: 1000px) {
+    p {
+        font-size: 1.2em;
+        font-weight: 400;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    #container {
+        max-width: 1200px;
+    }
+
+
+    #about {
+        margin-top: 10%;
+        position: relative;
+    }
+
+    #about img {
+        /* width: 30%; */
+        width: 15em;
+        height: 15em;
+        position: absolute;
+        right: 10%;
+        top: 25%;
+        padding-left: 3em;
+    }
+
+    #about p,
+    #name,
+    #skills {
+        width: 60%;
+    }
+
+    #name p {
+        /* font-size: 1.2em; */
+        margin-bottom: -1.5em;
+    }
+
+    #name h1 {
+        font-size: 8em;
+        margin: 0;
+    }
+
+    #skills h3 {
+        width: auto;
+        padding-right: 1.5em;
+    }
+
+    #skills ul {
+        margin-top: 1.2em;
+    }
+
+
+
+
+
+
+    .project-text button {
+        font-size: 1.2em;
+    }
+
+    #contact {
+        margin-bottom: 10em;
+    }
 }
