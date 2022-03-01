@@ -50,10 +50,16 @@ a {
 
 }
 
+nav a:hover,
+#contact a:hover {
+    color: #fff;
+}
+
 button:hover,
 a {
     cursor: pointer;
 }
+
 
 /* HEADER */
 #header-background {
@@ -129,9 +135,7 @@ nav ul li i {
     width: 5em;
 }
 
-nav a:hover {
-    color: #fff;
-}
+
 
 /* NAV ANIMATION */
 #nav-icon {
@@ -422,11 +426,12 @@ footer button {
     #projects {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
+        column-gap: 3em;
     }
 
     #projects>section {
-        max-width: 45%;
+        max-width: 38%;
     }
 
 }
@@ -459,7 +464,7 @@ footer button {
         position: absolute;
         right: 10%;
         top: 25%;
-        padding-left: 3em;
+        margin-left: 3em;
     }
 
     #about p,
