@@ -25,8 +25,9 @@ body {
     right: 2em;
     margin: 0;
 } */
-
-header h1,
+nav ul li,
+nav button,
+#name h1,
 h2,
 h3,
 h5,
@@ -44,16 +45,146 @@ p {
     font-size: 1.18em;
 }
 
+#header-background {
+    position: absolute;
+
+    /* left: 2em; */
+    width: 100%;
+}
+
+#header-background.open {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(196, 196, 196, 0.5);
+    top: 0;
+    left: 0;
+}
+
+header {
+
+    position: absolute;
+    /* top: 2em; */
+    right: 2em;
+}
+
+header.open {
+    background-color: #fff;
+    width: 80vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+
+}
+
+nav {
+    display: none;
+    /* display: flex; */
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav ul {
+    width: 60%;
+    padding: 0;
+
+    /* padding-left: 50%; */
+}
+
+nav ul li {
+    list-style-type: none;
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    /* text-align: center; */
+
+}
+
+nav ul li i {
+    margin-right: 0.5em;
+}
+
+#container nav button {
+    width: 5em;
+}
+
+/* NAV ANIMATION */
+#nav-icon {
+    width: 3.4em;
+    /* height: 1.5em; */
+    position: relative;
+    margin-left: auto;
+    /* transition: .5s ease-in-out; */
+    cursor: pointer;
+    right: 2em;
+}
+
+#nav-icon.open {
+    top: 2em;
+    /* right: 2em; */
+}
+
+
+#nav-icon span {
+    display: block;
+    position: absolute;
+    height: 0.4em;
+    width: 100%;
+    background: #000;
+    border-radius: 1em;
+    opacity: 1;
+    /* left: 0; */
+    transition: .25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+    top: 0px;
+}
+
+#nav-icon span:nth-child(2),
+#nav-icon span:nth-child(3) {
+    top: 0.9em;
+}
+
+#nav-icon span:nth-child(4) {
+    top: 1.8em;
+}
+
+#nav-icon.open span:nth-child(1) {
+    top: 0.8em;
+    width: 0%;
+    left: 50%;
+}
+
+#nav-icon.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+#nav-icon.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+#nav-icon.open span:nth-child(4) {
+    top: 0.8em;
+    width: 0%;
+    left: 50%;
+}
+
+
 /* ABOUT */
 #about {
     margin-top: 3.5em;
 }
 
-header p {
+#name p {
     margin-bottom: 0;
 }
 
-header h1 {
+#name h1 {
     font-size: 3.5em;
     margin: 0 0 0.67em 0;
 }
@@ -155,6 +286,7 @@ button:hover {
     margin-bottom: 5em;
 }
 
+nav button,
 #contact button {
     width: 6em;
     height: 2.3em;
