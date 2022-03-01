@@ -123,14 +123,14 @@ async function displayGallery(){
 
       
       count++;
-      if (results.length >6){
+      if (results.length  == 10){
         if(count == results.length - 6){
         const div = document.createElement('div');
         div.setAttribute('id', 'gallery-quote');
         const quote = document.createElement('h3');
-        quote.textContent= "";
+        quote.textContent= "\"We delight in the beauty of the butterfly, but rarely admit the changed it has gone through to achieve that beauty.\""
         const author = document.createElement('h3');
-        author.textContent="- ";
+        author.textContent="- Maya Angelou ";
 
         div.append(quote);
         div.append(author);
