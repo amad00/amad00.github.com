@@ -81,6 +81,7 @@ a {
     top: 0;
     left: 0;
     transition: 0.5s ease-in-out;
+    z-index: 1;
 }
 
 #header-background.open {
@@ -140,10 +141,10 @@ nav ul li i {
     margin-right: 0.5em;
 }
 
-#container nav button {
+/* #container nav button {
     width: 5em;
 }
-
+ */
 
 
 /* NAV ANIMATION */
@@ -266,7 +267,7 @@ nav ul li i {
 #projects>section {
     margin-bottom: 3em;
     border-radius: 0.3em;
-    box-shadow: 0 0 0.4em 0.0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 0.2em 0.0 rgba(156, 156, 158, 0.5);
 }
 
 .project-image {
@@ -275,15 +276,17 @@ nav ul li i {
     /* background-color: #E5E5E5; */
     border-radius: 0.3em 0.3em 0 0;
     margin: 0;
+    overflow: hidden;
 }
 
 .project-image a {
     display: block;
+    height: 100%;
 }
 
 .project-image img {
     width: 100%;
-    /* height: 100%; */
+    height: 100%;
     /* filter: grayscale(80%); */
 }
 
@@ -342,13 +345,21 @@ nav ul li a:hover {
 
 nav button,
 #contact button {
-    width: 6em;
-    height: 2.3em;
+    width: fit-content;
+    height: fit-content;
     font-size: 1.6em;
     margin-top: 1.5em;
+    padding: 0;
     background: none;
     border-color: #000;
     border-radius: 0.3em;
+}
+
+nav button a,
+#contact button a {
+    display: block;
+    width: 6em;
+    line-height: 2.3em;
 }
 
 /* CONTACT */
@@ -460,7 +471,9 @@ footer button {
 
     #projects>section {
         max-width: 38%;
+        min-width: 420px;
     }
+
 
     .project-text ul li {
         font-size: 0.7em;
@@ -524,6 +537,7 @@ footer button {
     #skills ul {
         margin-top: 1.2em;
     }
+
 
     #contact {
         margin-bottom: 10em;
