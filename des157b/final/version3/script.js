@@ -31,12 +31,6 @@ Parse.serverURL = "https://parseapi.back4app.com/";
     window.addEventListener('resize', function(){
         resizeGallery();
         resizeGalleryQuotes();
-
-        /* inputs.forEach(function(eachInput){
-            console.log(eachInput)
-            eachInput.focus();
-        })
-         */
     });
 
     function resizeGallery(){
