@@ -1,4 +1,4 @@
-body {
+body{
     font-family: 'Playfair Display', serif;
 }
 
@@ -7,24 +7,24 @@ body {
     margin: 30px;
 }
 
-h1 {
+h1{
     font-size: 3em;
     text-align: center;
 }
 
 /*** SECTIONS ***/
-div>section {
+div > section{
     width: 800px;
     margin: 0 auto;
     display: flex;
 }
 
-section h2 {
+section h2{
     width: 30%;
     margin-right: 30px;
 }
 
-section>p {
+section > p{
     width: 75%;
 }
 
@@ -35,20 +35,18 @@ p {
 }
 
 section div {
-    width: 75%;
-    ;
+    width: 75%;;
 }
 
-section>section {
+section > section {
     width: 600px;
 }
 
-section>section p {
+section > section p{
     width: 100%;
 }
 
-h2,
-p {
+h2, p{
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -67,11 +65,11 @@ figure {
     margin: 20px 0 0 0;
 }
 
-figcaption {
+figcaption{
     margin-top: 10px;
 }
 
-section>section img {
+section > section img {
     margin-bottom: 20px;
 }
 
@@ -85,4 +83,15 @@ a {
 a:hover {
     color: grey;
     border-color: grey;
+}
+
+/*** FOOTER ***/
+footer{
+    margin: 20px 50px;
+    text-align: right;
+    
+}
+
+footer a{
+    margin: 0 5px;
 }
