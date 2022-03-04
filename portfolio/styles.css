@@ -262,12 +262,14 @@ nav ul li i {
 
 #projects {
     margin-top: 4em;
+
 }
 
 #projects>section {
     margin-bottom: 3em;
     border-radius: 0.3em;
     box-shadow: 0 0 0.2em 0.0 rgba(156, 156, 158, 0.5);
+    position: relative;
 }
 
 .project-image {
@@ -305,31 +307,35 @@ nav ul li i {
 }
 
 .skills-links {
+    position: absolute;
+    bottom: 0;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    padding: 0 1.2em;
 }
 
-.project-text ul {
+.skills-links ul {
     list-style-type: none;
     white-space: nowrap;
     padding-left: 0;
 }
 
-.project-text ul li {
+.skills-links ul li {
     display: inline;
     font-size: 0.9em;
     padding-right: 0.3em;
 }
 
-.project-text button {
+.skills-links button {
     background: none;
     border: none;
 
 }
 
-.project-text button a:hover,
+.skills-links button a:hover,
 nav ul li a:hover {
     color: #9c9c9e;
 }
@@ -475,7 +481,7 @@ footer button {
     }
 
 
-    .project-text ul li {
+    .skills-links ul li {
         font-size: 0.7em;
     }
 
