@@ -6,7 +6,6 @@ body {
     width: 100vw;
     height: 100vh;
     position: relative;
-    /* margin: auto; */
     background-color: #0a1b2b;
     color: #fff;
     font-family: "DM Serif Display", serif;
@@ -19,7 +18,7 @@ main {
     z-index: -1;
 }
 
-/* GENERAL */
+/**** GENERAL ****/
 #container {
     width: 100vw;
     height: 100vh;
@@ -30,12 +29,11 @@ main {
     padding: 2em;
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
 }
 
-#container i {
+#container>i {
     position: absolute;
     top: 1em;
     right: 1em;
@@ -47,13 +45,11 @@ section {
     max-width: 760px;
     background-color: #3b4f61;
     width: 100%;
-    /* height: 20em; */
     border-radius: 0.5em;
     padding: 2.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-self: flex-end; */
 }
 
 h1 {
@@ -73,6 +69,7 @@ p {
 }
 
 button {
+    cursor: pointer;
     text-transform: uppercase;
     border: none;
     border-radius: 0.2em;
@@ -91,7 +88,40 @@ button {
     display: none;
 }
 
-/* WELCOME SECTION */
+
+#add-btn {
+    display: none;
+    position: fixed;
+    bottom: 2em;
+    right: 1em;
+    background: none;
+    padding: 0;
+    z-index: 1;
+}
+
+#add-btn i {
+    color: #fff;
+    font-size: 4em;
+}
+
+#exit-form {
+    padding: 0;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    color: #fff;
+    background: none;
+
+}
+
+#exit-form i {
+    font-size: 2em;
+}
+
+
+/**** WELCOME SECTION ****/
 #welcome p {
     margin: 2.2em 0;
 }
@@ -111,8 +141,7 @@ button {
     font-weight: 600;
 }
 
-/* QUOTES SECTION */
-
+/**** QUOTES SECTION ****/
 .quotes {
     width: fit-content;
     max-width: 760px;
@@ -148,13 +177,15 @@ button {
     color: #fff;
     font-weight: 500;
     margin-top: 2em;
-    /* margin: auto; */
-    /* text-align: center; */
 }
 
-/*  QUESTIONS SECTION */
+/****  QUESTIONS SECTION ****/
 form {
     width: 100%;
+}
+
+#questions {
+    position: relative;
 }
 
 #questions p {
@@ -199,26 +230,24 @@ form {
     margin: 0 0.3em;
 }
 
-
-/*  GALLERY SECTION */
+/****  GALLERY SECTION ****/
 #gallery {
-    width: 100%;
-    height: fit-content;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-rows: 1fr; */
+    column-gap: 1em;
+    row-gap: 1em;
+    /* grid-auto-flow: dense; */
     max-width: 100%;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 2em 2em;
     background-color: #0a1b2b;
     margin-bottom: 20em;
-
+    padding: 2.5em 0.5em 8em 0.5em;
 }
 
 .gallery-item {
     background-color: #3b4f61;
     border-radius: 0.5em;
-    width: 18em;
-    height: 18em;
+    width: 100%;
+    aspect-ratio: 1/1;
     position: relative;
 }
 
@@ -227,17 +256,17 @@ form {
     padding: 1em;
     margin: 0;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.2em;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
 
-#gallery-quote {
-    width: 38em;
+/* .gallery-quote {
+    height: 100%;
 }
-
-/*  FOOTER SECTION */
+ */
+/****  FOOTER SECTION ****/
 footer {
     width: 100%;
     position: fixed;
@@ -253,16 +282,16 @@ footer p {
     /* line-height: 0.8em; */
     margin: 0;
     padding-left: 2em;
+    padding-bottom: 1em;
     /* align-self: flex-start; */
 }
 
 @media only screen and (min-width: 500px) {
-
     section {
         align-items: center;
     }
 
-    /* WELCOME SECTION */
+    /**** WELCOME SECTION ****/
     #welcome p {
         width: 80%;
         align-self: center;
@@ -274,9 +303,19 @@ footer p {
         max-width: 50%;
     }
 
-    /*  QUESTIONS SECTION */
+    /****  QUESTIONS SECTION ****/
     form {
         width: 60%;
     }
+
+    /****  GALLERY SECTION ****/
+    #gallery {
+        padding: 2.5em 2.5em 6em 2.5em;
+    }
+
+    .gallery-item p {
+        font-size: 2em;
+    }
+
 
 }

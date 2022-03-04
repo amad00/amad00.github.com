@@ -12,9 +12,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link href="styles.css" rel="stylesheet" />
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
   <script src="script.js" defer></script>
 </head>
@@ -45,7 +45,8 @@
     </div>
 
     <section id="questions">
-      <form class="showing">
+      <button id="exit-form"><i class="fa-solid fa-rectangle-xmark"></i></button>
+      <form>
         <p>I am feeling...</p>
         <label>Two words or less<input type="text" name="q1" class="responses" /></label>
         <div class="buttons">
@@ -71,7 +72,7 @@
       </form>
 
       <form>
-        <p>Prompt&#58; Thoughts</p>
+        <p>Share how you are feeling</p>
         <!-- <p>Prompt 2&#58; Something I accomplished today...</p> comment this line -->
         <label>Thirty words or less<textarea rows="5" cols="50" name="q4" class="responses"></textarea>
         </label>
@@ -103,12 +104,8 @@
       </section>
       <button>View gallery</button>
     </div>
-    <section id="gallery">
-
-
-    </section>
-
-
+    <section id="gallery"></section>
+    <button id="add-btn"><i class="fa-solid fa-circle-plus"></i></button>
     <footer>
       <p>Title</p>
     </footer>
