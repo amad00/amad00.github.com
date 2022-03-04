@@ -302,27 +302,6 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 
             gallerySection.insertBefore(div, galleryItems[count]);
             count += 8;
-
-          
-            /* if(window.innerWidth < 700){
-                div.style.gridColumn = "1 / span 2";
-            }
-            else if(window.innerWidth < 1000){
-                div.style.gridColumn = "1 / span 3";
-            } else {
-
-                if(left){
-                    div.style.gridColumn = "1 / span 2";
-                    left = false;
-                    console.log(left, "in true")
-                } else {
-                    div.style.gridColumn = "3 / span 2";
-                    left = true;
-                    console.log(left, "in false")
-                }
-                console.log(left);
-            } */
-
         }
         galleryQuotes = document.querySelectorAll('.gallery-quote');
         resizeGalleryQuotes();
