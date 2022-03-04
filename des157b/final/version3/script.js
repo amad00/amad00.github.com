@@ -31,6 +31,12 @@ Parse.serverURL = "https://parseapi.back4app.com/";
     window.addEventListener('resize', function(){
         resizeGallery();
         resizeGalleryQuotes();
+
+        /* inputs.forEach(function(eachInput){
+            console.log(eachInput)
+            eachInput.focus();
+        })
+         */
     });
 
     function resizeGallery(){
@@ -64,6 +70,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
         forms[0].style.display = "block";
         gallerySection.style.display = "none";
         newResponseBtn.style.display = "none";
+        inputs[0].focus();
        
 
     });
@@ -98,6 +105,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
         quotes[0].style.display = "none";
         questions.style.display = "flex";
         forms[0].style.display = "block";
+        inputs[0].focus();
 
         quotes[0].className = "quotes"; // NEW
         forms[0].className = "showing"; // NEW
@@ -129,6 +137,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
             }
             forms[i].style.display = "none";
             forms[i + 1].style.display = "block";
+            inputs[i + 1].focus();
 
             // NEW
             forms[i].removeAttribute("class");
@@ -175,6 +184,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
                     forms[count + 1].className = "showing";
                     count++;
                     console.log(`enter ++: ${count}`);
+                    inputs[count].focus();
 
                 } else {
                     submitBtn.className = "showing";
@@ -192,6 +202,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 
             quotes[0].className = "quotes";
             forms[0].className = "showing";
+            inputs[0].focus();
         }
 
         if (submitBtn.className === "showing" && event.key === "Enter") {
