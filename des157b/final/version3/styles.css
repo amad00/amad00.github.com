@@ -267,7 +267,7 @@ form {
 }
  */
 /****  FOOTER SECTION ****/
-footer {
+/* footer {
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -279,12 +279,12 @@ footer {
 
 footer p {
     text-transform: uppercase;
-    /* line-height: 0.8em; */
+   
     margin: 0;
     padding-left: 2em;
     padding-bottom: 1em;
-    /* align-self: flex-start; */
-}
+    
+} */
 
 @media only screen and (min-width: 500px) {
     section {
@@ -314,8 +314,20 @@ footer p {
     }
 
     .gallery-item p {
-        font-size: 2em;
+        font-size: 1.6em;
     }
 
 
+}
+
+
+@media only screen and (min-width: 1000px) {
+
+    .gallery-item p {
+        font-size: 2em;
+    }
+
+    .gallery-quote h3 {
+        font-size: 1.8em;
+    }
 }

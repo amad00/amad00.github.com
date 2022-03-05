@@ -5,6 +5,7 @@ Parse.initialize(
 Parse.serverURL = "https://parseapi.back4app.com/";
 
 (function () {
+    AOS.init();
     "use strict";
     const participateBtn = document.querySelector("#welcome-btns button");
     const galleryBtn = document.querySelectorAll("#welcome-btns button")[1];
@@ -26,8 +27,28 @@ Parse.serverURL = "https://parseapi.back4app.com/";
     const exitFormBtn = document.querySelector("#exit-form");
 
     let main;
+
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
    
-    
+    /****  DATE ****/
+    const date = new Date();
+
+    const pst = date.toLocaleString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    });
+    // console.log(pst);
+    const pstDateArr = pst.split(',');
+    const pstDate = pstDateArr[0].split('/');
+    const pstTime = pstDateArr[1].split(':');
+    const pstTime2 = pstDateArr[1].split(' ');
+
+    /* THESE ARE THE ONES TO USE */
+    const currDate = `${months[pstDate[0] - 1]} ${pstDate[1]}`;
+    const currTime = `${pstTime[0]}:${pstTime[1]} ${pstTime2[pstTime2.length - 1]}`;
+
+    /**** DATE END ****/
+
+
     window.addEventListener('resize', function(){
         resizeGallery();
         resizeGalleryQuotes();
@@ -269,7 +290,8 @@ Parse.serverURL = "https://parseapi.back4app.com/";
                 const q5 = eachResponse.get("q5");
 
                 const thedDivItem = document.createElement("div");
-                thedDivItem.setAttribute("class", "gallery-item");
+                thedDivItem.setAttribute("class", "gallery-item aos-animate");
+                thedDivItem.setAttribute("data-aos", "fade-up")
                 const thePItem = document.createElement("p");
                 thePItem.textContent = q5;
                 thedDivItem.append(thePItem);
