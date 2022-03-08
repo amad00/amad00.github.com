@@ -9,6 +9,7 @@ body {
   background-color: #0a1b2b;
   color: #fff;
   font-family: "DM Serif Display", serif;
+  overflow-x: hidden;
 }
 
 main {
@@ -34,7 +35,7 @@ main {
 #container {
   width: 100vw;
   height: 100vh;
-  /* min-width: 300px; */
+  min-width: 300px;
   max-width: 1400px;
   position: relative;
   margin: auto;
@@ -270,6 +271,7 @@ form {
   background-color: #0a1b2b;
   margin-bottom: 20em;
   padding: 2.5em 0.5em 8em 0.5em;
+  overflow: hidden;
 }
 
 .gallery-item {
