@@ -23,11 +23,12 @@
             body.style.overflow = 'initial';
             navOpen = false;
         } else{
+            body.style.overflow = 'hidden';
             headerBackground.className = 'open';
             header.className = 'open';
             navIcon.className = 'open'; 
             nav.style.display = 'flex';
-            body.style.overflow = 'hidden';
+           
             navOpen = true;
             
         }

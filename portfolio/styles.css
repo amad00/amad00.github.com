@@ -92,12 +92,12 @@ a {
     background-color: #fff;
     top: 0;
     left: 0;
-    transition: 0.5s ease-in-out;
+
     z-index: 1;
 }
 
 #header-background.open {
-    position: absolute;
+    /* position: absolute; */
     width: 100vw;
     height: 100vh;
     background-color: rgba(196, 196, 196, 0.5);
@@ -118,7 +118,7 @@ header.open {
     height: 100vh;
     top: 0;
     right: 0;
-
+    /* transition: 0.5s ease-in-out; */
 }
 
 nav {
@@ -414,7 +414,7 @@ footer button {
 }
 
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 600px) {
 
     p,
     #skills ul,
