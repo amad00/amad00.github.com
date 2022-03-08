@@ -449,7 +449,10 @@ Parse.serverURL = "https://parseapi.back4app.com/";
         overlay.className = "hide";
         overlayBg.className = "hide";
         document.querySelector("body").style.overflow = "initial";
-        document.querySelector("body").style.position = "initial";
+        document.body.ontouchmove = (e) => {
+            e.preventDefault();
+            return true;
+        };
         overlayBg.removeEventListener("click", closeOverlay);
     }
 
@@ -474,12 +477,14 @@ Parse.serverURL = "https://parseapi.back4app.com/";
                 timeTags[1].textContent = `${newDate[1]}`;
 
                 overlayBg.style.height = "100vh";
-                document.querySelector("body").style.backgroundColor = "red";
+                document.querySelector("body").style.backgroundColor = "green";
                 overlayBg.className = "show";
                 overlay.className = "show";
                 document.querySelector("body").style.overflow = "hidden";
-                document.querySelector("body").style.position = "fixed";
-
+                document.body.ontouchmove = (e) => {
+                    e.preventDefault();
+                    return false;
+                };
                 overlayBg.addEventListener("click", closeOverlay);
             });
         } catch (error) {
