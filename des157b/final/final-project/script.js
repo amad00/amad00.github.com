@@ -449,6 +449,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
         overlay.className = "hide";
         overlayBg.className = "hide";
         document.querySelector("body").style.overflow = "initial";
+        document.querySelector("body").style.position = "initial";
         overlayBg.removeEventListener("click", closeOverlay);
     }
 
@@ -477,6 +478,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
                 overlayBg.className = "show";
                 overlay.className = "show";
                 document.querySelector("body").style.overflow = "hidden";
+                document.querySelector("body").style.position = "fixed";
 
                 overlayBg.addEventListener("click", closeOverlay);
             });
