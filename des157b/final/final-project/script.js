@@ -473,6 +473,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
                 timeTags[1].textContent = `${newDate[1]}`;
 
                 overlayBg.style.height = "100vh";
+                overlayBg.style.backgroundColor = "red";
                 overlayBg.className = "show";
                 overlay.className = "show";
                 document.querySelector("body").style.overflow = "hidden";
