@@ -1,415 +1,533 @@
 Parse.initialize(
-    "H2YRuCmKc8rIRzwcAUHNomzPtjKlwb2FQicjGV9t",
-    "xFnT8tgOuksTxhBlLFjTuGlHq11jRAdyeUpdKN3d"
+  "H2YRuCmKc8rIRzwcAUHNomzPtjKlwb2FQicjGV9t",
+  "xFnT8tgOuksTxhBlLFjTuGlHq11jRAdyeUpdKN3d"
 );
 Parse.serverURL = "https://parseapi.back4app.com/";
 
 (function () {
-    AOS.init();
-    "use strict";
-    const participateBtn = document.querySelector("#welcome-btns button");
-    const galleryBtn = document.querySelectorAll("#welcome-btns button")[1];
-    const continueBtnIntro = document.querySelectorAll(".quotes > button")[0];
-    const prevBtns = document.querySelectorAll(".prev-btn");
-    const nextBtns = document.querySelectorAll(".next-btn");
-    const submitBtn = document.querySelector("#submit-btn");
-    const viewGalleryBtn = document.querySelectorAll(".quotes > button")[1];
+  AOS.init();
+  ("use strict");
 
-    const welcomeSection = document.querySelector("#welcome");
-    const quotes = document.querySelectorAll(".quotes");
-    const questions = document.querySelector("#questions");
-    const forms = document.querySelectorAll("form");
-    const inputs = document.querySelectorAll(".responses");
-    const gallerySection = document.querySelector("#gallery");
-    let galleryQuotes;
+  const title = document.querySelector("header h2");
+  const participateBtn = document.querySelector("#welcome-btns button");
+  const galleryBtn = document.querySelectorAll("#welcome-btns button")[1];
+  const continueBtnIntro = document.querySelectorAll(".quotes > button")[0];
+  const prevBtns = document.querySelectorAll(".prev-btn");
+  const nextBtns = document.querySelectorAll(".next-btn");
+  const submitBtn = document.querySelector("#submit-btn");
+  const viewGalleryBtn = document.querySelectorAll(".quotes > button")[1];
 
-    const newResponseBtn = document.querySelector("#add-btn");
-    const exitFormBtn = document.querySelector("#exit-form");
+  const welcomeSection = document.querySelector("#welcome");
+  const quotes = document.querySelectorAll(".quotes");
+  const questions = document.querySelector("#questions");
+  const forms = document.querySelectorAll("form");
+  const inputs = document.querySelectorAll(".responses");
+  const gallerySection = document.querySelector("#gallery");
+  let galleryQuotes;
+  let cardID;
+  let itemNumber;
 
-    let main;
+  const newResponseBtn = document.querySelector("#add-btn");
+  const exitFormBtn = document.querySelector("#exit-form");
 
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
-   
-    /****  DATE ****/
-    const date = new Date();
+  let fromWelcome = true;
 
-    const pst = date.toLocaleString('en-US', {
-    timeZone: 'America/Los_Angeles',
+  let count = 0;
+
+  //   OVERLAY
+  const overlayBg = document.querySelector("#overlay-background");
+  const overlay = document.querySelector("#overlay");
+  const overlayXbtn = document.querySelector("#overlay .fa-rectangle-xmark");
+  overlayNavBtns = document.querySelectorAll("#overlay .nav");
+  const timeTags = document.querySelectorAll("#time p");
+  const wordTags = document.querySelectorAll(".description p");
+  const paragraphTag = document.querySelector("#paragraph");
+
+  let main;
+
+  const volumeIcon = document.querySelector("header i");
+  const music = new Audio('media/music.mp3');
+//   music.play();
+//   music.loop = true;
+//   music.muted = false;
+document.addEventListener("mousemove", function () {
+    music.play();
+})
+  
+
+  volumeIcon.addEventListener("click", function(){
+    if (volumeIcon.className === "fa-solid fa-volume-high") {
+        volumeIcon.className = "fa-solid fa-volume-xmark";
+        music.pause();
+    }
+    else {
+        volumeIcon.className = "fa-solid fa-volume-high";
+        music.play();
+    }
+    
+  });
+
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  title.addEventListener("click", function(){
+    welcomeSection.style.display = "flex";
+    fromWelcome = true;
+    main.style.display = "block";
+
+    overlay.className = "hide";
+    overlayBg.className = "hide";
+
+    quotes[0].style.display = "none";
+    questions.style.display = "none";
+
+    gallerySection.style.display = "none";
+    newResponseBtn.style.display = "none";
+
+    resetFormFields();
+
+    forms.forEach(function(eachForm){
+        eachForm .style.display = "none";
     });
-    // console.log(pst);
-    const pstDateArr = pst.split(',');
-    const pstDate = pstDateArr[0].split('/');
-    const pstTime = pstDateArr[1].split(':');
-    const pstTime2 = pstDateArr[1].split(' ');
+    count = 0;
+  })
 
-    /* THESE ARE THE ONES TO USE */
-    const currDate = `${months[pstDate[0] - 1]} ${pstDate[1]}`;
+  /****  Convert DATE ****/
+  function convertDate(givenDate){
+    const date = new Date(givenDate);
+
+    const pst = date.toLocaleString("en-US", {
+      timeZone: "America/Los_Angeles",
+    });
+
+    const pstDateArr = pst.split(",");
+    const pstDate = pstDateArr[0].split("/");
+    const pstTime = pstDateArr[1].split(":");
+    const pstTime2 = pstDateArr[1].split(" ");
+
+ 
+    const currDate = `${months[pstDate[0] - 1]} ${pstDate[1]}, ${pstDate[2]} `;
     const currTime = `${pstTime[0]}:${pstTime[1]} ${pstTime2[pstTime2.length - 1]}`;
-
-    /**** DATE END ****/
-
-
-    window.addEventListener('resize', function(){
-        resizeGallery();
-        resizeGalleryQuotes();
-    });
-
-    function resizeGallery(){
-        if (window.innerWidth < 700){
-            gallerySection.style.gridTemplateColumns = "repeat(2, 1fr)";
-            gallerySection.style.columnGap= "1em";
-            gallerySection.style.rowGap= "1em";
-
-        } else if(window.innerWidth < 1000){
-            gallerySection.style.gridTemplateColumns = "repeat(3, 1fr)";
-            gallerySection.style.columnGap= "1em";
-            gallerySection.style.rowGap= "1em";
-
-        } else {
-            gallerySection.style.gridTemplateColumns = "repeat(4, 1fr)";
-            gallerySection.style.columnGap= "1.5em";
-            gallerySection.style.rowGap= "1.5em";
-        }
-
-    }
-
-    window.addEventListener("load", function(){
-        /* alert("Hello! Here are the three tasks for you to complete: \n 1. Use the participate button \n 2. Use the plus button\n \t a. Add another response \n \t OR \n \t b. Exit form \n 3. Use gallery button on welcome page" ); */
-        resizeGallery();
-        main = document.querySelector("main");
-    });
-
-    newResponseBtn.addEventListener("click", function () {
-        console.log(forms[0]);
-        questions.style.display = "flex";
-        forms[0].style.display = "block";
-        gallerySection.style.display = "none";
-        newResponseBtn.style.display = "none";
-        inputs[0].focus();
-       
-
-    });
-
-    exitFormBtn.addEventListener("click", function(){
-        questions.style.display = "none";
-        displayGallery();
-        resetFormFields();
-
-        forms.forEach(function(eachForm){
-            eachForm.style.display = "none";
-        })
-
-        count = 0;
-    });
-    // NEW
-    let count = 0;
-
-    galleryBtn.addEventListener("click", function () {
-        welcomeSection.style.display = "none";
-        displayGallery();
-        
-    });
-
-    participateBtn.addEventListener("click", function () {
-        welcomeSection.style.display = "none";
-        quotes[0].style.display = "flex";
-        quotes[0].className = "quotes showing"; // NEW
-    });
-
-    continueBtnIntro.addEventListener("click", function () {
-        quotes[0].style.display = "none";
-        questions.style.display = "flex";
-        forms[0].style.display = "block";
-        inputs[0].focus();
-
-        quotes[0].className = "quotes"; // NEW
-        forms[0].className = "showing"; // NEW
-    });
-
-    for (let i = 0; i < prevBtns.length; i++) {
-        prevBtns[i].addEventListener("click", function (event) {
-            event.preventDefault();
-            forms[i + 1].style.display = "none";
-            forms[i].style.display = "block";
-
-            // NEW
-            forms[i + 1].removeAttribute("class");
-            forms[i].className = "showing";
-            if (submitBtn.className == "showing") {
-                submitBtn.removeAttribute("class");
-            }
-            count--;
-            console.log(`prev: ${count}`);
-        });
-    }
-
-    for (let i = 0; i < nextBtns.length; i++) {
-        nextBtns[i].addEventListener("click", function (event) {
-            event.preventDefault();
-            if (inputs[i].value == "") {
-                alert("Please input your response");
-                return;
-            }
-            forms[i].style.display = "none";
-            forms[i + 1].style.display = "block";
-            inputs[i + 1].focus();
-
-            // NEW
-            forms[i].removeAttribute("class");
-            forms[i + 1].className = "showing";
-            if (i == nextBtns.length - 1) {
-                submitBtn.className = "showing";
-            }
-            count++;
-            console.log(`next: ${count}`);
-        });
-    }
-
-    submitBtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        // SOME NEW
-        if (inputs[4].value == "") {
-            alert("Please input your response");
-            return;
-        } else {
-            forms[4].style.display = "none";
-            questions.style.display = "none";
-            quotes[1].style.display = "flex";
-            forms[4].removeAttribute("class");
-            viewGalleryBtn.className = "showing";
-        }
-    });
-
-    viewGalleryBtn.addEventListener("click", function (event) {
-        event.preventDefault();
-        addResponse();
-        viewGalleryBtn.removeAttribute("class"); // NEW
-    });
-
-    // NEW
-    document.addEventListener("keydown", function (event) {
-        if (forms[count].className === "showing" && event.key === "Enter") {
-            event.preventDefault();
-            console.log(`enter: ${count}`);
-            if (inputs[count].value != "") {
-                forms[count].style.display = "none";
-                forms[count].removeAttribute("class");
-                if (count < 4) {
-                    forms[count + 1].style.display = "block";
-                    forms[count + 1].className = "showing";
-                    count++;
-                    console.log(`enter ++: ${count}`);
-                    inputs[count].focus();
-
-                } else {
-                    submitBtn.className = "showing";
-                    count = 0;
-                }
-            } else {
-                alert("Please input your response");
-            }
-        }
-
-        if (quotes[0].className === "quotes showing" && event.key === "Enter") {
-            quotes[0].style.display = "none";
-            questions.style.display = "flex";
-            forms[0].style.display = "block";
-
-            quotes[0].className = "quotes";
-            forms[0].className = "showing";
-            inputs[0].focus();
-        }
-
-        if (submitBtn.className === "showing" && event.key === "Enter") {
-            if (inputs[4].value == "") {
-                alert("Please input your response");
-                return;
-            } else {
-                forms[4].style.display = "none";
-                questions.style.display = "none";
-                quotes[1].style.display = "flex";
-                forms[4].removeAttribute("class");
-                viewGalleryBtn.className = "showing";
-            }
-        }
-
-        if (viewGalleryBtn.className === "showing" && event.key === "Enter") {
-            addResponse();
-            viewGalleryBtn.removeAttribute("class");
-        }
-    });
-
-    // DATABASE
-    async function addResponse() {
-        const newResponse = {};
-
-        for (let i = 0; i < inputs.length; i++) {
-            let key = inputs[i].getAttribute("name");
-            let value = inputs[i].value;
-            newResponse[key] = value;
-        }
-
-        const newResponseData = new Parse.Object("Responses");
-        newResponseData.set("q1", newResponse.q1);
-        newResponseData.set("q2", newResponse.q2);
-        newResponseData.set("q3", newResponse.q3);
-        newResponseData.set("q4", newResponse.q4);
-        newResponseData.set("q5", newResponse.q5);
-
-        try {
-            await newResponseData.save();
-            quotes[1].style.display = "none";
-
-            while (gallerySection.firstChild) {
-                gallerySection.removeChild(gallerySection.firstChild);
-            }
-            displayGallery();
-            resetFormFields();
-        } catch (error) {
-            console.error("Error while creating response: ", error);
-        }
-    }
+    
+    return [currDate, currTime];
 
     
+  }
 
-    async function displayGallery() {
-       
-        const responses = Parse.Object.extend("Responses");
-        const query = new Parse.Query(responses);
 
-        try {
-            const results = await query.descending("createdAt").find();
-            let count = 0;
 
-            results.forEach(function (eachResponse) {
-                const id = eachResponse.id;
-                const q1 = eachResponse.get("q1");
-                const q2 = eachResponse.get("q2");
-                const q3 = eachResponse.get("q3");
-                const q4 = eachResponse.get("q4");
-                const q5 = eachResponse.get("q5");
+  window.addEventListener("resize", function () {
+    resizeGallery();
+    resizeGalleryQuotes();
+    
+  });
 
-                const thedDivItem = document.createElement("div");
-                thedDivItem.setAttribute("class", "gallery-item aos-animate");
-                thedDivItem.setAttribute("data-aos", "fade-up")
-                const thePItem = document.createElement("p");
-                thePItem.textContent = q5;
-                thedDivItem.append(thePItem);
-                gallerySection.append(thedDivItem);
+  function resizeGallery() {
+    if (window.innerWidth < 700) {
+      gallerySection.style.gridTemplateColumns = "repeat(2, 1fr)";
+      gallerySection.style.columnGap = "1em";
+      gallerySection.style.rowGap = "1em";
+    } else if (window.innerWidth < 1000) {
+      gallerySection.style.gridTemplateColumns = "repeat(3, 1fr)";
+      gallerySection.style.columnGap = "1em";
+      gallerySection.style.rowGap = "1em";
+    } else {
+      gallerySection.style.gridTemplateColumns = "repeat(4, 1fr)";
+      gallerySection.style.columnGap = "1.5em";
+      gallerySection.style.rowGap = "1.5em";
+    }
+  }
 
-            });
-            addQuoteToGallery(results.length);
-            gallerySection.style.display = "grid";
-            newResponseBtn.style.display = "block";
-            main.style.display = "none";
-        } catch (error) {
-            console.log("Error while fetching responses", error);
+  window.addEventListener("load", function () {
+    main = document.querySelector("main");
+  
+  });
+
+  newResponseBtn.addEventListener("click", function () {
+    console.log(forms[0]);
+    questions.style.display = "flex";
+    forms[0].style.display = "block";
+    gallerySection.style.display = "none";
+    newResponseBtn.style.display = "none";
+    inputs[0].focus();
+    fromWelcome = false;
+  });
+
+  exitFormBtn.addEventListener("click", function () {
+    questions.style.display = "none";
+
+    if(fromWelcome){
+        welcomeSection.style.display = "flex";
+        main.style.display = "block";
+    } else {
+        displayGallery();
+
+    }
+  
+    resetFormFields();
+
+    forms.forEach(function (eachForm) {
+      eachForm.style.display = "none";
+    });
+
+    count = 0;
+  });
+  // NEW
+
+  galleryBtn.addEventListener("click", function () {
+    welcomeSection.style.display = "none";
+    displayGallery();
+  });
+
+  participateBtn.addEventListener("click", function () {
+    welcomeSection.style.display = "none";
+    quotes[0].style.display = "flex";
+  });
+
+  continueBtnIntro.addEventListener("click", function () {
+    quotes[0].style.display = "none";
+    questions.style.display = "flex";
+    forms[0].style.display = "block";
+    inputs[0].focus();
+
+    forms[0].className = "showing"; // NEW
+  });
+
+  for (let i = 0; i < prevBtns.length; i++) {
+    prevBtns[i].addEventListener("click", function (event) {
+      event.preventDefault();
+      forms[i + 1].style.display = "none";
+      forms[i].style.display = "block";
+
+      // NEW
+      forms[i + 1].removeAttribute("class");
+      forms[i].className = "showing";
+      count--;
+    });
+  }
+
+  for (let i = 0; i < nextBtns.length; i++) {
+    nextBtns[i].addEventListener("click", function (event) {
+      event.preventDefault();
+      if (inputs[i].value == "") {
+        alert("Please input your response");
+        return;
+      }
+      forms[i].style.display = "none";
+      forms[i + 1].style.display = "block";
+      inputs[i + 1].focus();
+
+      // NEW
+      forms[i].removeAttribute("class");
+      forms[i + 1].className = "showing";
+      count++;
+    });
+  }
+
+  submitBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    // SOME NEW
+    if (inputs[4].value == "") {
+      alert("Please input your response");
+      return;
+    } else {
+      forms[4].style.display = "none";
+      questions.style.display = "none";
+      quotes[1].style.display = "flex";
+      forms[4].removeAttribute("class");
+    }
+  });
+
+  viewGalleryBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    addResponse();
+  });
+
+  // NEW
+  document.addEventListener("keydown", function (event) {
+    if (forms[count].className === "showing" && event.key === "Enter") {
+      event.preventDefault();
+      if (inputs[count].value != "") {
+        forms[count].style.display = "none";
+        forms[count].removeAttribute("class");
+        if (count < 4) {
+          forms[count + 1].style.display = "block";
+          forms[count + 1].className = "showing";
+          count++;
+          inputs[count].focus();
+        } else {
+          questions.style.display = "none";
+          quotes[1].style.display = "flex";
+          count = 0;
         }
+      } else {
+        alert("Please input your response");
+      }
+    }
+  });
+
+  // DATABASE
+  async function addResponse() {
+    const newResponse = {};
+
+    for (let i = 0; i < inputs.length; i++) {
+      let key = inputs[i].getAttribute("name");
+      let value = inputs[i].value;
+      newResponse[key] = value;
     }
 
-    function addQuoteToGallery(numOfResponses){
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        let count = 6;
-        
-        for(let i = numOfResponses ; i > 0 ; i -= 8){
-            if (i < 6){
-                break;
-            }
-           
-            const div = document.createElement("div");
-            div.setAttribute("class", "gallery-quote");
-            const quote = document.createElement("h3");
-            quote.textContent =
-                '"We delight in the beauty of the butterfly, but rarely admit the changed it has gone through to achieve that beauty."';
-            const author = document.createElement("h3");
-            author.textContent = "- Maya Angelou ";
+    const newResponseData = new Parse.Object("Responses");
+    newResponseData.set("q1", newResponse.q1);
+    newResponseData.set("q2", newResponse.q2);
+    newResponseData.set("q3", newResponse.q3);
+    newResponseData.set("q4", newResponse.q4);
+    newResponseData.set("q5", newResponse.q5);
 
-            div.append(quote);
-            div.append(author);
+    try {
+      await newResponseData.save();
+      quotes[1].style.display = "none";
 
-            gallerySection.insertBefore(div, galleryItems[count]);
-            count += 8;
-        }
-        galleryQuotes = document.querySelectorAll('.gallery-quote');
-        resizeGalleryQuotes();
+      while (gallerySection.firstChild) {
+        gallerySection.removeChild(gallerySection.firstChild);
+      }
+      displayGallery();
+      resetFormFields();
+    } catch (error) {
+      console.error("Error while creating response: ", error);
+    }
+  }
+
+  async function displayGallery() {
+    const responses = Parse.Object.extend("Responses");
+    const query = new Parse.Query(responses);
+
+    try {
+      const results = await query.descending("createdAt").find();
+      let count = 0;
+
+      results.forEach(function (eachResponse) {
        
+        const id = eachResponse.id;
+        const q5 = eachResponse.get("q5");
+
+        const thedDivItem = document.createElement("div");
+        thedDivItem.setAttribute("id", `r-${id}`);
+        thedDivItem.setAttribute("class", `gallery-item n-${count}`);
+        thedDivItem.setAttribute("data-aos", "fade-up");
+        const thePItem = document.createElement("p");
+        thePItem.textContent = q5;
+        thedDivItem.append(thePItem);
+        gallerySection.append(thedDivItem);
+        count++;
+      });
+      addQuoteToGallery(results.length);
+      gallerySection.style.display = "grid";
+      newResponseBtn.style.display = "block";
+      main.style.display = "none";
+      activateOverlayListener();
+      resizeGallery();
+    } catch (error) {
+      console.log("Error while fetching responses", error);
     }
+  }
 
-    function resizeGalleryQuotes(){
-        let left = false;
+  async function addQuoteToGallery(numOfResponses) {
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    let count = 6;
+    let quoteCount = 0;
+    const allQuotes = await fetch('data/data.json');
+    const data = await allQuotes.json();
 
-        galleryQuotes.forEach(function(eachQuote){
-            if(window.innerWidth < 700){
-                eachQuote.style.gridColumn = "1 / span 2";
-            }
-            else if(window.innerWidth < 1000){
-                eachQuote.style.gridColumn = "1 / span 3";
-            } else {
+    for (let i = numOfResponses; i > 0; i -= 8) {
+      if (i < 6) {
+        break;
+      }
 
-                if(left){
-                    eachQuote.style.gridColumn = "1 / span 2";
-                    left = false;
-                   
-                } else {
-                    eachQuote.style.gridColumn = "3 / span 2";
-                    left = true;
-                    
-                }
-           
-            }
+      const div = document.createElement("div");
+      div.setAttribute("class", "gallery-quote");
+      const quote = document.createElement("h3");
+      quote.textContent =`“${data[quoteCount].quote}”`;
+      const author = document.createElement("h3");
+      author.textContent = `- ${data[quoteCount].author}`;
 
-        })
+      div.append(quote);
+      div.append(author);
+
+      gallerySection.insertBefore(div, galleryItems[count]);
+      count += 8;
+      quoteCount++;
     }
+    galleryQuotes = document.querySelectorAll(".gallery-quote");
+    resizeGalleryQuotes();
+  }
 
-    function resetFormFields(){
-        inputs.forEach(function(eachInput){
-            eachInput.value = "";
-        })
+  function resizeGalleryQuotes() {
+    let left = false;
+
+    galleryQuotes.forEach(function (eachQuote) {
+      if (window.innerWidth < 700) {
+        eachQuote.style.gridColumn = "1 / span 2";
+      } else if (window.innerWidth < 1000) {
+        eachQuote.style.gridColumn = "1 / span 3";
+      } else {
+        if (left) {
+          eachQuote.style.gridColumn = "1 / span 2";
+          left = false;
+        } else {
+          eachQuote.style.gridColumn = "3 / span 2";
+          left = true;
+        }
+      }
+    });
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (overlay.className === "show" && event.key === "Escape") {
+      overlay.className = "hide";
+      overlayBg.className = "hide";
+      document.querySelector("body").style.overflow = "initial";
     }
+  });
+
+  function activateArrowKeys() {
+    document.addEventListener("keydown", function (event) {
+      if (
+        (event.keyCode === 37 && overlay.className == "show") ||
+        (event.keyCode === 39 && overlay.className == "show")
+      ) {
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        if (itemNumber == galleryItems.length - 1 && event.keyCode === 39) {
+          itemNumber = 0;
+        } else if (itemNumber == 0 && event.keyCode === 37) {
+          itemNumber = galleryItems.length - 1;
+        } else {
+          event.keyCode === 37 ? itemNumber-- : itemNumber++;
+        }
+        cardID = galleryItems[itemNumber].getAttribute("id").slice(2);
+        displayResponseOverlay(cardID);
+      }
+    });
+  }
+
+  // ACTIVATE OVERLAY EVENT LISTENER
+  function activateOverlayListener() {
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    let classItems;
+
+    galleryItems.forEach(function (eachItem) {
+      eachItem.addEventListener("click", function () {
+        cardID = eachItem.getAttribute("id").slice(2);
+        classItems = eachItem.getAttribute("class").split(" ");
+        itemNumber = classItems[1].slice(2);
+        console.log(itemNumber);
+        displayResponseOverlay(cardID);
+      });
+    });
+    activateArrowKeys();
+  }
+
+  function closeOverlay(){
+    gallerySection.style.height = "auto";
+    gallerySection.style.overflow = "auto";
+    overlay.className = "hide";
+    overlayBg.className = "hide";
+    document.querySelector("body").style.overflow = "initial";
+    overlayBg.removeEventListener("click", closeOverlay);
+  }
+
+  overlayXbtn.addEventListener("click", closeOverlay);
+
+  // DISPLAY RESPONSE OVERLAY
+  async function displayResponseOverlay(cardID) {
+    const responses = Parse.Object.extend("Responses");
+    const query = new Parse.Query(responses);
+    query.equalTo("objectId", cardID);
+    try {
+      const results = await query.find();
+      results.forEach(function (thisResponse) {
+        wordTags[0].textContent = `${thisResponse.get("q1")}`;
+        wordTags[1].textContent = `${thisResponse.get("q2")}`;
+        wordTags[2].textContent = `${thisResponse.get("q3")}`;
+        paragraphTag.textContent = `${thisResponse.get("q4")}`;
+        const date = thisResponse.get("createdAt");
+
+        const newDate = convertDate(date);
+        timeTags[0].textContent = `${newDate[0]}`;
+        timeTags[1].textContent = `${newDate[1]}`;
+
+        overlayBg.className = "show";
+        overlay.className = "show";
+        document.querySelector("body").style.overflow = "hidden";
+
+        overlayBg.addEventListener("click", closeOverlay);
+      });
+    } catch (error) {
+      console.error("Error while fetching responses", error);
+    }
+  }
+
+  function resetFormFields() {
+    inputs.forEach(function (eachInput) {
+      eachInput.value = "";
+    });
+  }
 })();
+
 // BACKGROUND
 
 // this class describes the properties of a single particle.
 class Particle {
-    // setting the co-ordinates, radius and the
-    // speed of a particle in both the co-ordinates axes.
-    constructor() {
-        this.x = random(0, width);
-        this.y = random(0, height);
-        this.r = random(1, 10);
-        this.xSpeed = random(-0.5, 0.5);
-        this.ySpeed = random(-0.5, 0.5);
-    }
+  // setting the co-ordinates, radius and the
+  // speed of a particle in both the co-ordinates axes.
+  constructor() {
+    this.x = random(0, width);
+    this.y = random(0, height);
+    this.r = random(1, 10);
+    this.xSpeed = random(-0.5, 0.5);
+    this.ySpeed = random(-0.5, 0.5);
+  }
 
-    // creation of a particle.
-    createParticle() {
-        noStroke();
-        fill("rgba(56,81,103,0.75)");
-        circle(this.x, this.y, this.r);
-    }
+  // creation of a particle.
+  createParticle() {
+    noStroke();
+    fill("rgba(56,81,103,0.75)");
+    circle(this.x, this.y, this.r);
+  }
 
-    // setting the particle in motion.
-    moveParticle() {
-        if (this.x < 0 || this.x > width) this.xSpeed *= -1;
-        if (this.y < 0 || this.y > height) this.ySpeed *= -1;
-        this.x += this.xSpeed;
-        this.y += this.ySpeed;
-    }
+  // setting the particle in motion.
+  moveParticle() {
+    if (this.x < 0 || this.x > width) this.xSpeed *= -1;
+    if (this.y < 0 || this.y > height) this.ySpeed *= -1;
+    this.x += this.xSpeed;
+    this.y += this.ySpeed;
+  }
 }
 // an array to add multiple particles
 let particles = [];
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    for (let i = 0; i < width / 10; i++) {
-        particles.push(new Particle());
-    }
+  createCanvas(windowWidth, windowHeight);
+  for (let i = 0; i < width / 10; i++) {
+    particles.push(new Particle());
+  }
 }
 
 function draw() {
-    background("#0a1b2b");
-    for (let i = 0; i < particles.length; i++) {
-        particles[i].createParticle();
-        particles[i].moveParticle();
-    }
+  background("#0a1b2b");
+  for (let i = 0; i < particles.length; i++) {
+    particles[i].createParticle();
+    particles[i].moveParticle();
+  }
 }

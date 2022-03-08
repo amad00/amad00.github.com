@@ -13,7 +13,7 @@
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link href="styles.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
@@ -23,7 +23,11 @@
 
 <body>
   <div id="container">
-    <i class="fa-solid fa-volume-high"></i>
+    <header>
+      <h2>Mindful</h2>
+      <i class="fa-solid fa-volume-high"></i>
+    </header>
+
     <section id="welcome">
       <h1>Welcome</h1>
       <p>
@@ -47,7 +51,9 @@
     </div>
 
     <section id="questions">
-      <button id="exit-form"><i class="fa-solid fa-rectangle-xmark"></i></button>
+      <button id="exit-form">
+        <i class="fa-solid fa-rectangle-xmark"></i>
+      </button>
       <form>
         <p>I am feeling...</p>
         <label>Two words or less<input type="text" name="q1" class="responses" /></label>
@@ -65,7 +71,7 @@
         </div>
       </form>
       <form>
-        <p>How would someone close to you describe you?</p>
+        <p>How would someone you are close with describe you?</p>
         <label>One word<input type="text" name="q3" class="responses" /></label>
         <div class="buttons">
           <button class="prev-btn">Prev</button>
@@ -74,7 +80,7 @@
       </form>
 
       <form>
-        <p>Share how you are feeling</p>
+        <p>Describe a trait or quality your love most about yourself</p>
         <!-- <p>Prompt 2&#58; Something I accomplished today...</p> comment this line -->
         <label>Thirty words or less<textarea rows="5" cols="50" name="q4" class="responses"></textarea>
         </label>
@@ -108,6 +114,29 @@
     </div>
     <section id="gallery"></section>
     <button id="add-btn"><i class="fa-solid fa-circle-plus"></i></button>
+
+    <div class="hide" id="overlay-background"></div>
+    <div class="hide" id="overlay">
+      <i class="fa-solid fa-rectangle-xmark"></i>
+      <div id="time">
+        <p>Jan 9, 2022</p>
+        <p>10:20pm</p>
+      </div>
+      <div class="description">
+        <h4>Feelings</h4>
+        <p></p>
+        <h4>Self Perception</h4>
+        <p></p>
+        <h4>Perceived As</h4>
+        <p></p>
+      </div>
+
+      <div class="description">
+        <h4>Self Love</h4>
+        <p id="paragraph"></p>
+      </div>
+
+    </div>
     <!--  <footer>
       <p>Title</p>
     </footer> -->
