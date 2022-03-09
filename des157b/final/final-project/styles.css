@@ -278,7 +278,7 @@ form {
   background-color: #3b4f61;
   border-radius: 0.5em;
   width: 100%;
-  aspect-ratio: 1/1;
+  /* aspect-ratio: 1/1; */
   position: relative;
   cursor: pointer;
 }
@@ -439,12 +439,7 @@ form {
 
 @media only screen and (min-width: 1000px) {
 
-  #gallery {
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 1.5em;
-    row-gap: 1.5em;
-  }
-
+  /**** GALLERY SECTION ****/
   .gallery-item p {
     font-size: 2em;
   }

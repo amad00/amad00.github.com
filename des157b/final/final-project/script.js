@@ -24,6 +24,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
     const forms = document.querySelectorAll("form");
     const inputs = document.querySelectorAll(".responses");
     const gallerySection = document.querySelector("#gallery");
+
     let galleryQuotes;
     let cardID;
     let itemNumber;
@@ -130,6 +131,10 @@ Parse.serverURL = "https://parseapi.back4app.com/";
     }
 
 
+    window.addEventListener("load", function () {
+        main = document.querySelector("main");
+
+    });
 
     window.addEventListener("resize", function () {
         resizeGallery();
@@ -140,6 +145,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
     });
 
     function resizeGallery() {
+        const galleryItems = document.querySelectorAll(".gallery-item");
         if (window.innerWidth < 700) {
             gallerySection.style.gridTemplateColumns = "repeat(2, 1fr)";
             gallerySection.style.columnGap = "1em";
@@ -153,12 +159,18 @@ Parse.serverURL = "https://parseapi.back4app.com/";
             gallerySection.style.columnGap = "1.5em";
             gallerySection.style.rowGap = "1.5em";
         }
+        // console.log(galleryItems);
+        let size = galleryItems[0].getBoundingClientRect();
+        let itemWidth = size.width;
+
+        // console.log(itemWidth);
+        galleryItems.forEach(function (eachItem) {
+            eachItem.style.height = `${itemWidth}px`;
+        })
+
     }
 
-    window.addEventListener("load", function () {
-        main = document.querySelector("main");
 
-    });
 
     newResponseBtn.addEventListener("click", function () {
         console.log(forms[0]);
