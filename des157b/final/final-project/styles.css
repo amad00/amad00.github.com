@@ -404,6 +404,11 @@ form {
     padding: 2.5em 4em;
   }
 
+  #intro-quote h3,
+  #submit-quote h3 {
+    font-size: 1.7em;
+  }
+
   /****  QUESTIONS SECTION ****/
   form {
     width: 60%;

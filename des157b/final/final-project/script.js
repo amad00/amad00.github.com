@@ -323,10 +323,10 @@ Parse.serverURL = "https://parseapi.back4app.com/";
                 count++;
             });
             addQuoteToGallery(results.length);
-            resizeGallery();
-
+            gallerySection.style.display = "grid";
             newResponseBtn.style.display = "block";
             main.style.display = "none";
+            resizeGallery();
             activateOverlayListener();
 
         } catch (error) {
@@ -350,7 +350,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
             gallerySection.style.rowGap = "1.5em";
         }
 
-        gallerySection.style.display = "grid";
+
         console.log(galleryItems);
         let size = galleryItems[0].getBoundingClientRect();
         let itemWidth = size.width;
