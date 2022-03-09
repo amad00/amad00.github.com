@@ -460,8 +460,8 @@ Parse.serverURL = "https://parseapi.back4app.com/";
     }
 
     function closeOverlay() {
-        gallerySection.style.height = "auto";
-        gallerySection.style.overflow = "auto";
+        // gallerySection.style.height = "auto";
+        gallerySection.style.overflow = "initial";
         overlay.className = "hide";
         overlayBg.className = "hide";
         document.querySelector("body").style.overflow = "initial";
