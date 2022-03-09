@@ -132,6 +132,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 
 
     window.addEventListener("load", function () {
+        // resizeGallery();
         main = document.querySelector("main");
 
     });
@@ -350,11 +351,12 @@ Parse.serverURL = "https://parseapi.back4app.com/";
                 count++;
             });
             addQuoteToGallery(results.length);
+            resizeGallery();
             gallerySection.style.display = "grid";
             newResponseBtn.style.display = "block";
             main.style.display = "none";
             activateOverlayListener();
-            resizeGallery();
+
         } catch (error) {
             console.log("Error while fetching responses", error);
         }
