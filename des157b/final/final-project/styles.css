@@ -193,13 +193,14 @@ header>i {
   align-self: flex-end;
 }
 
-#intro-quote h3 {
+/* #intro-quote h3 {
   font-size: 1.7em;
-}
+} */
 
+/* #intro-quote h3,
 #submit-quote h3 {
   font-size: 1.4em;
-}
+} */
 
 .quotes button,
 #questions button {
