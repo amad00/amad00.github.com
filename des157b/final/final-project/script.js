@@ -145,34 +145,6 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 
     });
 
-    function resizeGallery() {
-        const galleryItems = document.querySelectorAll(".gallery-item");
-        if (window.innerWidth < 700) {
-            gallerySection.style.gridTemplateColumns = "repeat(2, 1fr)";
-            gallerySection.style.columnGap = "1em";
-            gallerySection.style.rowGap = "1em";
-        } else if (window.innerWidth < 1000) {
-            gallerySection.style.gridTemplateColumns = "repeat(3, 1fr)";
-            gallerySection.style.columnGap = "1em";
-            gallerySection.style.rowGap = "1em";
-        } else {
-            gallerySection.style.gridTemplateColumns = "repeat(4, 1fr)";
-            gallerySection.style.columnGap = "1.5em";
-            gallerySection.style.rowGap = "1.5em";
-        }
-        // console.log(galleryItems);
-        let size = galleryItems[0].getBoundingClientRect();
-        let itemWidth = size.width;
-
-        // console.log(itemWidth);
-        galleryItems.forEach(function (eachItem) {
-            eachItem.style.height = `${itemWidth}px`;
-        })
-
-    }
-
-
-
     newResponseBtn.addEventListener("click", function () {
         console.log(forms[0]);
         questions.style.display = "flex";
@@ -352,7 +324,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
             });
             addQuoteToGallery(results.length);
             resizeGallery();
-            gallerySection.style.display = "grid";
+
             newResponseBtn.style.display = "block";
             main.style.display = "none";
             activateOverlayListener();
@@ -361,6 +333,36 @@ Parse.serverURL = "https://parseapi.back4app.com/";
             console.log("Error while fetching responses", error);
         }
     }
+
+    function resizeGallery() {
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        if (window.innerWidth < 700) {
+            gallerySection.style.gridTemplateColumns = "repeat(2, 1fr)";
+            gallerySection.style.columnGap = "1em";
+            gallerySection.style.rowGap = "1em";
+        } else if (window.innerWidth < 1000) {
+            gallerySection.style.gridTemplateColumns = "repeat(3, 1fr)";
+            gallerySection.style.columnGap = "1em";
+            gallerySection.style.rowGap = "1em";
+        } else {
+            gallerySection.style.gridTemplateColumns = "repeat(4, 1fr)";
+            gallerySection.style.columnGap = "1.5em";
+            gallerySection.style.rowGap = "1.5em";
+        }
+
+        gallerySection.style.display = "grid";
+        console.log(galleryItems);
+        let size = galleryItems[0].getBoundingClientRect();
+        let itemWidth = size.width;
+
+        console.log(size);
+        console.log(galleryItems[0].innerWidth);
+        galleryItems.forEach(function (eachItem) {
+            eachItem.style.height = `${itemWidth}px`;
+        })
+
+    }
+
 
     async function addQuoteToGallery(numOfResponses) {
         const galleryItems = document.querySelectorAll(".gallery-item");

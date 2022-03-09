@@ -9,7 +9,7 @@ body {
   background-color: #0a1b2b;
   color: #fff;
   font-family: "DM Serif Display", serif;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 main {
