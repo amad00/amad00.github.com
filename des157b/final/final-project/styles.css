@@ -438,6 +438,13 @@ form {
 }
 
 @media only screen and (min-width: 1000px) {
+
+  #gallery {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1.5em;
+    row-gap: 1.5em;
+  }
+
   .gallery-item p {
     font-size: 2em;
   }
@@ -465,13 +472,4 @@ form {
     align-self: center;
   }
 
-  /* #overlay h4,
-  #time p {
-    font-size: 1.2em;
-  }
-
-  .description p,
-  #paragraph {
-    font-size: 1.9em;
-  } */
 }
