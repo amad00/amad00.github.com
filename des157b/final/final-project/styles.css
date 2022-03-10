@@ -9,7 +9,7 @@ body {
   background-color: #0a1b2b;
   color: #fff;
   font-family: "DM Serif Display", serif;
-  /* overflow-x: hidden; */
+
 }
 
 main {
@@ -22,13 +22,11 @@ main {
 .hide {
   visibility: hidden;
   opacity: 0;
-  /* z-index: -1; */
 }
 
 .show {
   visibility: visible;
   opacity: 1;
-  /* z-index: 2; */
 }
 
 /**** GENERAL ****/
@@ -81,16 +79,18 @@ button {
   padding: 0.8em;
 }
 
-#welcome button,
-.quotes button {
-  width: 10em;
-}
 
 #container .quotes,
 #container form,
 #questions,
 #gallery {
   display: none;
+}
+
+/**** BUTTONS ****/
+#welcome button,
+.quotes button {
+  width: 10em;
 }
 
 #add-btn {
@@ -139,10 +139,7 @@ header {
   cursor: pointer;
 }
 
-header > i {
-  /* position: absolute; */
-  /* top: 1em; */
-  /* right: 1em; */
+header>i {
   margin: 1em;
   color: #fff;
   font-size: 1.4em;
@@ -193,7 +190,7 @@ header > i {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* align-self: flex-end; */
+
 }
 
 #intro-quote,
@@ -208,15 +205,6 @@ header > i {
   letter-spacing: 0.01em;
   align-self: flex-end;
 }
-
-/* #intro-quote h3 {
-  font-size: 1.7em;
-} */
-
-/* #intro-quote h3,
-#submit-quote h3 {
-  font-size: 1.4em;
-} */
 
 .quotes button,
 #questions button {
@@ -244,7 +232,6 @@ form {
 #questions label {
   font-size: 0.65em;
   text-transform: uppercase;
-  /* margin-bottom: 5px; */
 }
 
 #questions input,
@@ -280,10 +267,8 @@ form {
 /****  GALLERY SECTION ****/
 #gallery {
   grid-template-columns: repeat(2, 1fr);
-  /* grid-template-rows: 1fr; */
   column-gap: 1em;
   row-gap: 1em;
-  /* grid-auto-flow: dense; */
   max-width: 100%;
   background-color: #0a1b2b;
   margin-bottom: 20em;
@@ -295,7 +280,6 @@ form {
   background-color: #3b4f61;
   border-radius: 0.5em;
   width: 100%;
-  /* aspect-ratio: 1/1; */
   position: relative;
   cursor: pointer;
 }
@@ -314,11 +298,6 @@ form {
   top: 50%;
   transform: translateY(-50%);
 }
-
-/* .gallery-quote {
-    height: 100%;
-}
- */
 
 /**** OVERLAY SECTION ****/
 #overlay-background,
@@ -343,10 +322,8 @@ form {
   position: fixed;
   background-color: #3b4f61;
   border-radius: 0.5em;
-  /* margin: 1.875em; */
   margin: auto;
   padding: 2.5em;
-  /* padding: 1.25em; */
 }
 
 #overlay .fa-rectangle-xmark {
@@ -361,7 +338,6 @@ form {
 }
 
 #time {
-  /* font-size: 0.625em; */
   width: 100%;
   text-align: right;
   text-transform: uppercase;
@@ -383,18 +359,12 @@ form {
   font-size: 0.625em;
 }
 
-/* 
-#paragraph p {
-  font-size: 1.125em;
-}
- */
 .description p {
   margin: 0.05em 0 0.68em 0;
 }
 
 #paragraph {
   margin-top: 0;
-  /* margin: 0.05em 0 2.19em 0; */
 }
 
 @media only screen and (min-width: 600px) {
@@ -459,6 +429,7 @@ form {
 }
 
 @media only screen and (min-width: 1000px) {
+
   /**** GALLERY SECTION ****/
   .gallery-item p {
     font-size: 2em;
@@ -474,7 +445,6 @@ form {
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-around;
-    /* height: 375px; */
   }
 
   .description:first-of-type {
