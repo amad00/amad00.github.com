@@ -431,9 +431,6 @@ form {
 @media only screen and (min-width: 1000px) {
 
   /**** GALLERY SECTION ****/
-  .gallery-item p {
-    font-size: 2em;
-  }
 
   .gallery-quote h3 {
     font-size: 1.8em;
