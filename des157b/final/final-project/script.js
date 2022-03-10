@@ -160,6 +160,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 		newResponseBtn.style.display = "none";
 		inputs[0].focus();
 		fromWelcome = false;
+		main.style.display = "block";
 	});
 
 	exitFormBtn.addEventListener("click", function () {
