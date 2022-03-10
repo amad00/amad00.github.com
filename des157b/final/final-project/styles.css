@@ -46,7 +46,6 @@ main {
   align-items: center;
 }
 
-
 section {
   max-width: 760px;
   background-color: #3b4f61;
@@ -140,14 +139,31 @@ header {
   cursor: pointer;
 }
 
-
-header>i {
+header > i {
   /* position: absolute; */
   /* top: 1em; */
   /* right: 1em; */
   margin: 1em;
   color: #fff;
   font-size: 1.4em;
+}
+
+.message {
+  width: 215px;
+  position: absolute;
+  top: 2.9em;
+  right: 0.5em;
+  transition-property: visibility, opacity;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+#msg-text {
+  width: 195px;
+  font-size: 0.95em;
+  text-align: center;
+  top: 4.7em;
+  right: 1.15em;
 }
 
 /**** WELCOME SECTION ****/
@@ -362,7 +378,6 @@ form {
   margin: 0;
 }
 
-
 #overlay h4,
 #time p {
   font-size: 0.625em;
@@ -444,7 +459,6 @@ form {
 }
 
 @media only screen and (min-width: 1000px) {
-
   /**** GALLERY SECTION ****/
   .gallery-item p {
     font-size: 2em;
@@ -461,7 +475,6 @@ form {
     width: 100%;
     justify-content: space-around;
     /* height: 375px; */
-
   }
 
   .description:first-of-type {
@@ -472,5 +485,4 @@ form {
     width: 50%;
     align-self: center;
   }
-
 }
