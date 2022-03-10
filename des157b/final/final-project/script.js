@@ -326,6 +326,10 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 				thedDivItem.setAttribute("data-aos", "fade-up");
 				const thePItem = document.createElement("p");
 				thePItem.textContent = q5;
+				console.log(q5.split(" ").length)
+				if (q5.split(" ").length > 10 && window.innerWidth < 500) {
+					thePItem.style.fontSize = "0.8em";
+				}
 				thedDivItem.append(thePItem);
 				gallerySection.append(thedDivItem);
 				count++;
