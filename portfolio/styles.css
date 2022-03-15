@@ -4,6 +4,7 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    color: #262626;
 }
 
 /* GENERAL */
@@ -34,13 +35,14 @@ h2 {
     font-size: 2.4em;
 }
 
+/* 
 p {
     font-size: 1.18em;
-}
+} */
 
 #container nav button:hover,
 #container #contact button:hover {
-    background-color: #000;
+    background-color: #262626;
     color: #fff;
 }
 
@@ -48,7 +50,7 @@ nav a,
 .skills-links a,
 #contact a {
     text-decoration: none;
-    color: #000;
+    color: #262626;
 
 }
 
@@ -79,6 +81,7 @@ a {
     flex-wrap: nowrap;
     justify-content: center;
     margin: 0;
+    margin-top: 2em;
 
 }
 
@@ -161,7 +164,7 @@ nav ul li i {
 
 /* NAV ANIMATION */
 #nav-icon {
-    width: 3.4em;
+    width: 3em;
     /* height: 1.5em; */
     position: relative;
     margin-left: auto;
@@ -179,7 +182,7 @@ nav ul li i {
 #nav-icon span {
     display: block;
     position: absolute;
-    height: 0.4em;
+    height: 0.3em;
     width: 100%;
     background: #000;
     border-radius: 1em;
@@ -194,11 +197,11 @@ nav ul li i {
 
 #nav-icon span:nth-child(2),
 #nav-icon span:nth-child(3) {
-    top: 0.9em;
+    top: 0.7em;
 }
 
 #nav-icon span:nth-child(4) {
-    top: 1.8em;
+    top: 1.4em;
 }
 
 #nav-icon.open span:nth-child(1) {
@@ -257,7 +260,7 @@ nav ul li i {
 #skills ul {
     margin-top: 0;
     list-style-type: none;
-    font-size: 1.18em;
+    /* font-size: 1.18em; */
 }
 
 #skills ul:first-of-type {
@@ -268,7 +271,7 @@ nav ul li i {
 
 
 #projects h5 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     margin: 0;
 }
 
@@ -318,11 +321,10 @@ nav ul li i {
     /* margin-top: -0.2em; */
 }
 
-.project-text p {
+/* .project-text p {
     color: #9c9c9e;
-    font-size: 1.2em;
-    /* line-height: 1.25em; */
-}
+   
+} */
 
 .skills-links {
     /* position: absolute;
@@ -384,7 +386,7 @@ nav button,
 nav button a,
 #contact button a {
     display: block;
-    width: 6em;
+    width: 4.5em;
     line-height: 2.3em;
 }
 
@@ -469,7 +471,7 @@ footer button {
     nav ul li {
         display: inline;
         margin-right: 1em;
-        /* font-size: 1.4em; */
+        font-size: 1.4em;
     }
 
     nav button {
@@ -516,7 +518,7 @@ footer button {
 
 
     h2 {
-        font-size: 3em;
+        font-size: 2.5em;
     }
 
     #container {
@@ -551,7 +553,7 @@ footer button {
     }
 
     #name h1 {
-        font-size: 8em;
+        font-size: 6em;
         margin: 0;
     }
 
