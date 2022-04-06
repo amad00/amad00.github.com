@@ -15,36 +15,40 @@
 
     navIcon.addEventListener('click', function () {
 
-        if (navOpen) {
-            headerBackground.classList.remove('open');
-            header.classList.remove('open');
-            navIcon.classList.remove('open');
-            nav.style.display = 'none';
-            body.style.overflow = 'initial';
-            navOpen = false;
-        } else {
-            body.style.overflow = 'hidden';
-            headerBackground.className = 'open';
-            header.className = 'open';
-            navIcon.className = 'open';
-            nav.style.display = 'flex';
+        if (window.innerWidth < 600) {
+            if (navOpen) {
+                headerBackground.classList.remove('open');
+                header.classList.remove('open');
+                navIcon.classList.remove('open');
+                nav.style.display = 'none';
+                body.style.overflow = 'initial';
+                navOpen = false;
+            } else {
+                body.style.overflow = 'hidden';
+                headerBackground.className = 'open';
+                header.className = 'open';
+                navIcon.className = 'open';
+                nav.style.display = 'flex';
 
-            navOpen = true;
+                navOpen = true;
 
+            }
         }
 
     });
 
     navLinks.forEach(function (eachLink) {
-        eachLink.addEventListener('click', function () {
-            headerBackground.classList.remove('open');
-            header.classList.remove('open');
-            navIcon.classList.remove('open');
-            nav.style.display = 'none';
-            body.style.overflow = 'initial';
-            navOpen = false;
+        if (window.innerWidth < 600) {
+            eachLink.addEventListener('click', function () {
+                headerBackground.classList.remove('open');
+                header.classList.remove('open');
+                navIcon.classList.remove('open');
+                nav.style.display = 'none';
+                body.style.overflow = 'initial';
+                navOpen = false;
 
-        })
+            })
+        }
     });
 
     window.addEventListener('scroll', function () {

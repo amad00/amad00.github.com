@@ -10,9 +10,6 @@ body {
 
 /* GENERAL */
 #container {
-    /* display: flex; */
-    /* justify-content: space-between; */
-
     width: 100vw;
     min-width: 300px;
     padding: 2em;
@@ -26,35 +23,45 @@ nav button,
 h2,
 h3,
 h5,
+.skills-links ul li,
 #contact button,
 footer p {
-    font-family: 'DM Serif Display', serif;
-    text-transform: lowercase;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'DM Serif Display', serif; */
+    text-transform: uppercase;
 }
 
 h2 {
-    font-size: 2.4em;
+    font-size: 1.7em;
 }
 
-/* 
-p {
-    font-size: 1.18em;
-} */
+/* LINKS & BUTTONS */
+button {
+    background: none;
+    border: none;
+}
 
-#container nav button:hover,
-#container #contact button:hover {
-    background-color: #262626;
-    color: #fff;
+button:hover,
+a {
+    cursor: pointer;
 }
 
 nav a,
+#project2 ol li a,
 .skills-links a,
 #contact a {
     text-decoration: none;
-    color: #262626;
+    color: #000;
+    /* #262626; */
 
 }
 
+#container nav button:hover,
+#container #contact button:hover {
+    /* background-color: #858F99; */
+    background-color: #000;
+    color: #fff;
+}
 
 footer a,
 nav button a:hover,
@@ -62,29 +69,30 @@ nav button a:hover,
     color: #fff;
 }
 
-/* nav button a,
-#contact a {
-    line-height: 100%;
-} */
 
-button:hover,
-a {
-    cursor: pointer;
+nav button,
+#contact button {
+    width: fit-content;
+    height: fit-content;
+    font-size: 1.2em;
+    margin-top: 1.5em;
+    padding: 0;
+    background: none;
+    border-color: #000;
+    border-radius: 0.3em;
+    border: solid black;
 }
 
-/* #container>section:first-of-type,
-#container>section:last-of-type */
-
-#container>section:first-of-type {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    margin: 0;
-    margin-top: 2em;
-
+nav button a,
+#contact button a {
+    display: block;
+    width: 5.5em;
+    line-height: 1.8em;
+    font-weight: 600;
 }
+
+
+
 
 /* HEADER */
 #header-background {
@@ -141,15 +149,29 @@ nav {
 nav ul {
     width: 60%;
     padding: 0;
-
-    /* padding-left: 50%; */
 }
 
 nav ul li {
     list-style-type: none;
     font-size: 1.8em;
     margin-bottom: 1em;
-    /* text-align: center; */
+
+}
+
+/* Underline animation when hovering over it */
+nav li a:after {
+    content: '';
+    display: flex;
+    width: 0;
+    height: 0.15em;
+    background: #000;
+    /* CHange this Color */
+    transition: width 0.6s ease-in-out;
+}
+
+nav li a:hover:after,
+button img {
+    width: 100%;
 
 }
 
@@ -157,21 +179,13 @@ nav ul li i {
     margin-right: 0.5em;
 }
 
-/* #container nav button {
-    width: 5em;
-}
- */
-
-
 /* NAV ANIMATION */
 #nav-icon {
-    width: 3em;
-    /* height: 1.5em; */
+    width: 2.5em;
     position: relative;
     margin-left: auto;
     transition: 1s ease-in-out;
     cursor: pointer;
-    /* right: 2em; */
 }
 
 #nav-icon.open {
@@ -186,7 +200,7 @@ nav ul li i {
     height: 0.3em;
     width: 100%;
     background: #000;
-    border-radius: 1em;
+    border-radius: 0.1em;
     opacity: 1;
     /* left: 0; */
     transition: 0.2s ease-in-out;
@@ -227,6 +241,18 @@ nav ul li i {
 
 
 /* ABOUT */
+
+#container>section:first-of-type {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 0;
+    /* margin-top: 2em; */
+
+}
+
 #about {
     margin-top: 3.8em;
 }
@@ -243,8 +269,8 @@ nav ul li i {
 }
 
 #name h1 {
-    font-size: 3.5em;
-    margin: 0 0 0.67em 0;
+    font-size: 2.8em;
+    margin: 0;
 }
 
 #skills {
@@ -254,7 +280,7 @@ nav ul li i {
 
 #skills h3 {
     width: 100%;
-    font-size: 1.8em;
+    font-size: 1.4em;
     margin: 0.5em 0;
 }
 
@@ -269,10 +295,8 @@ nav ul li i {
 }
 
 /* PROJECTS */
-
-
 #projects h5 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin: 0;
 }
 
@@ -281,23 +305,40 @@ nav ul li i {
 
 }
 
+#project2 p a {
+    /* color: #858F99; */
+
+    /* font-weight: 700; */
+}
+
 #projects>section {
     display: flex;
     flex-direction: column;
-    gap: 1em;
     margin-bottom: 3em;
-    border-radius: 0.3em;
-    box-shadow: 0 0 0.2em 0.0 rgba(156, 156, 158, 0.5);
     position: relative;
 }
 
-.project-image {
+.project-image,
+.project-text {
+    border-radius: 0.3em;
+}
+
+.project-image,
+.project-text,
+.skills-links {
     width: 100%;
-    height: 50%;
-    /* background-color: #E5E5E5; */
-    border-radius: 0.3em 0.3em 0 0;
+}
+
+.project-image {
+    height: 10em;
+    box-shadow: 0 0 0.2em 0.0 rgba(156, 156, 158, 0.4);
     margin: 0;
     overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.project-image:hover {
+    transform: scale(1.05);
 }
 
 .project-image a {
@@ -306,58 +347,43 @@ nav ul li i {
 }
 
 .project-image img {
-    /* width: 100%; */
+    width: 110%;
+    height: 100%;
     margin-left: 50%;
     transform: translateX(-50%);
-
-    /* filter: grayscale(80%); */
 }
 
 .project-text {
-    width: 100%;
-    height: 38%;
-    padding: 1.2em;
+    /* height: 38%; */
+    margin: 1.2em 0;
     background-color: #fff;
-    border-radius: 0.3em;
-    /* margin-top: -0.2em; */
+
 }
 
-/* .project-text p {
-    color: #9c9c9e;
-   
-} */
-
 .skills-links {
-    /* position: absolute;
-    bottom: 0; */
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 1.2em;
+    /* align-items: center; */
 }
 
 .skills-links ul {
     list-style-type: none;
     white-space: nowrap;
     padding-left: 0;
+    margin-top: 0;
 }
 
 .skills-links ul li {
     display: inline;
-    font-size: 0.9em;
+    font-size: 0.7em;
+    font-weight: 400;
     padding-right: 0.3em;
+    color: #858F99;
+    /* #5F6673; */
 }
 
-.skills-links button {
-    background: none;
-    border: none;
-
-}
-
-.skills-links button a:hover,
-nav ul li a:hover {
+.skills-links button a:hover {
     color: #9c9c9e;
 }
 
@@ -372,25 +398,6 @@ nav ul li a:hover {
     padding: 2em 0 5em;
 }
 
-nav button,
-#contact button {
-    width: fit-content;
-    height: fit-content;
-    font-size: 1.6em;
-    margin-top: 1.5em;
-    padding: 0;
-    background: none;
-    border-color: #000;
-    border-radius: 0.3em;
-}
-
-nav button a,
-#contact button a {
-    display: block;
-    width: 4.5em;
-    line-height: 2.3em;
-}
-
 /* FOOTER */
 footer {
     width: fit-content;
@@ -400,6 +407,10 @@ footer {
     left: 50%;
     transform: translateX(-50%);
 
+}
+
+footer>p {
+    font-size: 0.7em;
 }
 
 footer>div {
@@ -414,6 +425,10 @@ footer button {
     border-color: #000;
     background-color: #000;
     color: #fff;
+}
+
+footer button:hover {
+    background-color: #858F99;
 }
 
 
@@ -466,18 +481,21 @@ footer button {
 
     nav ul {
         width: fit-content;
+        height: 1.2em;
         /* align-self: center; */
     }
 
     nav ul li {
-        display: inline;
+        display: inline-block;
         margin-right: 1em;
-        font-size: 1.4em;
+        margin-bottom: 0;
+        font-size: 1.2em;
+        font-weight: 600
     }
 
     nav button {
         margin-top: 0;
-        font-size: 1.4em;
+
     }
 
     /* ABOUT */
@@ -501,6 +519,10 @@ footer button {
     #projects>section {
         max-width: 38%;
         min-width: 420px;
+    }
+
+    .project-image {
+        height: 14em;
     }
 
 
@@ -549,12 +571,11 @@ footer button {
     }
 
     #name p {
-        /* font-size: 1.2em; */
-        margin-bottom: -1.5em;
+        font-size: 1.1em;
     }
 
     #name h1 {
-        font-size: 6em;
+        font-size: 5em;
         margin: 0;
     }
 
@@ -567,6 +588,31 @@ footer button {
         margin-top: 1.2em;
     }
 
+    #projects {
+        row-gap: 5em;
+    }
+
+    #projects>section {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        max-width: 90%;
+        justify-content: space-between;
+    }
+
+    .project-image {
+        width: 50%;
+        height: 100%;
+    }
+
+    .project-text {
+        width: 45%;
+        margin: 0;
+        align-self: center;
+    }
+
+    #projects h5 {
+        font-size: 1.7em;
+    }
 
     /* #contact {
         max-width: 800px;
