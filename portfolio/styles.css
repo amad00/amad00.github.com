@@ -100,7 +100,7 @@ nav button,
 #contact button {
     width: fit-content;
     height: fit-content;
-    font-size: 1.2em;
+    font-size: 1em;
     margin-top: 1.5em;
     padding: 0;
     background: none;
@@ -510,7 +510,7 @@ footer button:first-of-type {
         display: inline-block;
         margin-right: 1em;
         margin-bottom: 0;
-        font-size: 1.2em;
+        font-size: 1.1em;
         /* font-weight: 600 */
     }
 
