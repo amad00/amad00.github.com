@@ -60,10 +60,4 @@
         scrollValue = window.scrollY;
     })
 
-    window.addEventListener('load', function () {
-        alert('Hello, my portfolio site is still under construction, but please feel free to look around.');
-    })
-
-    /* .classList.remove('open') */
-
 })();
