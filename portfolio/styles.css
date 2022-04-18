@@ -446,7 +446,10 @@ nav ul li i {
 }
 
 .skills-links>div {
-    width: fit-content;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-end;
+    /* width: fit-content; */
 }
 
 
