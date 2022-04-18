@@ -521,6 +521,14 @@ footer button i {
 
     }
 
+    nav button a,
+    #contact button a {
+
+        width: 6em;
+        line-height: 2em;
+
+    }
+
     /* NAVIGATION */
     #nav-icon,
     nav .fa-solid {
@@ -607,14 +615,6 @@ footer button i {
 
     #container {
         max-width: 1200px;
-    }
-
-    nav button a,
-    #contact button a {
-
-        width: 6em;
-        line-height: 2em;
-
     }
 
     #about {
