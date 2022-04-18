@@ -46,6 +46,7 @@ a {
 }
 
 #project3 ol li,
+#project4 ol li,
 nav ul li,
 #skills ul,
 .skills-links ul {
@@ -54,6 +55,7 @@ nav ul li,
 
 nav a,
 #project3 ol li a,
+#project4 ol li a,
 .skills-links a,
 #contact a {
     text-decoration: none;
@@ -62,16 +64,20 @@ nav a,
 
 }
 
-#project3 ol li {
+#project3 ol li,
+#project4 ol li {
     margin-bottom: 0.1em;
 }
 
-#project3 ol li a {
+#project3 ol li a,
+#project4 ol li a {
     display: inline-block;
 }
 
 #project3 ol li a,
-#project3 ol li i {
+#project3 ol li i,
+#project4 ol li a,
+#project4 ol li i {
     vertical-align: middle;
 }
 
@@ -214,7 +220,8 @@ nav ul li {
 
 /* Underline animation when hovering over it */
 nav li a:after,
-#project3 ol a:after {
+#project3 ol a:after,
+#project4 ol a:after {
     content: '';
     display: flex;
     width: 0;
@@ -226,6 +233,7 @@ nav li a:after,
 
 nav li a:hover:after,
 #project3 ol a:hover:after,
+#project4 ol a:hover:after,
 button img {
     width: 100%;
 
@@ -360,7 +368,8 @@ nav ul li i {
 
 }
 
-#project3 ol i {
+#project3 ol i,
+#project4 ol i {
     margin-right: 0.3em;
 }
 
