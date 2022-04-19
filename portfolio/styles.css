@@ -445,11 +445,15 @@ nav ul li i {
     /* #5F6673; */
 }
 
-.skills-links>div {
+/* .skills-links>div {
     display: flex;
     align-items: flex-start;
     align-content: flex-end;
-    /* width: fit-content; */
+     width: fit-content;
+} */
+
+.skills-links>div button {
+    padding: 0 1em 0 0;
 }
 
 
