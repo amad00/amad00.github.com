@@ -1,0 +1,523 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/**** GENERAL ****/
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    min-width: 375px;
+    min-height: 812px;
+    width: 100vw;
+    height: 100vh;
+}
+
+h2,
+span,
+h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+span {
+    font-weight: 700;
+}
+
+h3 {
+    margin: 0.2em auto;
+    width: fit-content;
+    font-size: 0.55em;
+    font-weight: 500;
+
+}
+
+ul {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#hero a {
+    color: #fff;
+}
+
+#sticky-bkgd a {
+    color: #414f6b;
+}
+
+/**** HERO & STICKY NAV ****/
+#hero {
+    height: 24vh;
+    position: relative;
+
+}
+
+#hero nav img {
+    height: 100%;
+}
+
+#hero>img,
+#history>img,
+.mountains-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+}
+
+
+#hero nav {
+    margin-top: 0.4em;
+}
+
+/* centering horizontally */
+#hero nav,
+#history>div:first-of-type,
+#climb>div:first-of-type {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#hero nav,
+#sticky-bkgd nav,
+footer>div {
+    width: 60vw;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5%;
+}
+
+#hero nav ul li {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+ul li:first-of-type {
+    margin-right: 5em;
+}
+
+#hero nav ul li,
+#sticky-bkgd nav ul li {
+    display: inline-block;
+    font-size: 3px;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: uppercase;
+
+}
+
+#sticky-bkgd {
+    position: sticky;
+    bottom: 0;
+    width: 100vw;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+#sticky-bkgd nav div {
+    height: 1em;
+}
+
+#sticky-bkgd nav img {
+    height: 100%;
+}
+
+#sticky-bkgd ul li {
+    color: #414f6b;
+    border-bottom: 1px solid #414f6b;
+}
+
+
+/**** HISTORY SECTION ****/
+#history {
+    position: relative;
+    height: 29vh;
+}
+
+#history>div:first-of-type {
+    margin-top: 0.8em;
+}
+
+#history>div:first-of-type,
+#climb>div:first-of-type {
+    width: 60vw;
+    height: 30%;
+
+
+}
+
+h2,
+span,
+p,
+#history div:first-of-type,
+#climb>div:first-of-type,
+#carousel {
+    position: absolute;
+}
+
+#climb span {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+span {
+    font-size: 2em;
+    color: rgba(65, 79, 107, .5);
+}
+
+h2 {
+    font-size: 9px;
+    color: #414f6b;
+}
+
+p {
+    font-size: 4.5px;
+    font-weight: 300;
+    line-height: 7px;
+}
+
+#history span {
+    margin-left: -0.5em;
+}
+
+#history h2 {
+    top: 1.4em;
+    left: 1.6em;
+}
+
+#history p {
+    top: 7.5em;
+}
+
+/* Carousel */
+#carousel {
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 22%;
+    background-color: rgba(65, 79, 107, 0.8);
+}
+
+#history #carousel-imgs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 0.4em;
+}
+
+#carousel-imgs img {
+    width: 24%;
+}
+
+#circle-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 10%;
+    width: 4%;
+    position: absolute;
+    bottom: 0.1em;
+}
+
+#history #circle-nav div {
+    position: static;
+    width: 0.15em;
+    height: 0.15em;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0;
+}
+
+#history #circle-nav div:first-of-type {
+    background-color: #fff;
+}
+
+
+#climb>div:first-of-type {
+    height: 100%;
+}
+
+#climb {
+    height: 7vh;
+    position: relative;
+    background-color: #fff;
+}
+
+
+#climb h2 {
+    top: 30%;
+    left: 3.9em;
+}
+
+#climb p {
+    width: 75%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15em;
+}
+
+/**** CLIMB SECTION ****/
+#mountains {
+    height: 19vh;
+}
+
+#tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    background-color: #414f6b;
+}
+
+#tabs button {
+    border: none;
+    background-color: #414f6b;
+    color: #b0b4be;
+    width: 12%;
+    height: 100%;
+    padding: 0;
+
+}
+
+#tabs button:first-of-type {
+    margin-left: 17%;
+
+}
+
+#tabs .active {
+    background-color: #b0b4be;
+    color: #414f6b;
+
+}
+
+#tabs .active h3 {
+    border-bottom: 1px solid #414f6b;
+}
+
+#tabs button:hover {
+    background-color: #b0b4be;
+    color: #414f6b;
+    cursor: pointer;
+}
+
+#tabs button:hover h3 {
+    border-bottom: 1px solid #414f6b;
+}
+
+
+.mountains-section {
+    height: 90%;
+    position: relative;
+}
+
+#mountains2 {
+    display: none;
+}
+
+.mountains-section img {
+    object-position: bottom -1em right 0;
+}
+
+.schedule {
+    position: absolute;
+    top: 18%;
+    left: 21%;
+    width: 22%;
+    height: 45%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0.2em 0.6em;
+}
+
+.schedule h2 {
+    width: 100%;
+    margin: 0;
+    line-height: normal;
+}
+
+.schedule p {
+    font-size: 4.1px;
+    line-height: 2em;
+}
+
+.schedule h2,
+.schedule p,
+footer p {
+    position: static;
+
+}
+
+.schedule div {
+    height: 70%;
+}
+
+#mountains1 p:nth-child(1),
+#mountains1 p:nth-child(2) {
+    margin: 0;
+}
+
+#mountains2 p:nth-child(2),
+#mountains2 p:nth-child(3) {
+    margin: 0;
+}
+
+#mountains2 p:nth-child(1) {
+    margin-top: 0;
+}
+
+/**** FOOTER ****/
+footer {
+    width: 100vw;
+    height: 2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #414f6b;
+}
+
+footer img {
+    height: 1em;
+}
+
+footer p {
+    color: #63769d;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+@media only screen and (min-width: 500px) {
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 0.92em;
+        line-height: 1.3em;
+    }
+
+    #hero nav ul li,
+    #sticky-bkgd nav ul li {
+        font-size: 0.4em;
+    }
+
+    #hero {
+        height: 75%;
+    }
+
+    #mountains {
+        height: 60%;
+    }
+
+    #sticky-bkgd,
+    #sticky-bkgd nav {
+        height: 3em;
+    }
+
+    #sticky-bkgd nav div {
+        height: 65%;
+    }
+
+    #history {
+        height: 100%;
+    }
+
+    #history>div:first-of-type {
+        margin-top: 0;
+        top: 3%;
+    }
+
+    span {
+        font-size: 7em;
+    }
+
+    #history h2 {
+        top: 1.8em;
+        top: 1.8em;
+    }
+
+    #history p {
+        top: 8.5em;
+    }
+
+    #history #carousel-imgs {
+        margin-top: 1.5em;
+    }
+
+    #history #circle-nav div {
+        width: 0.5em;
+        height: 0.5em;
+    }
+
+    #cirle-nav {
+        bottom: 0.3em
+    }
+
+    #climb {
+        height: 20%;
+    }
+
+    #climb h2 {
+        left: 4.3em;
+    }
+
+    #tabs {
+        height: 6%;
+    }
+
+    .mountains-section {
+        display: block;
+        height: 95%;
+    }
+
+    .mountains-section img {
+        object-position: bottom -1em right 0;
+    }
+
+    .schedule {
+        height: 35%;
+        padding: 1% 3%;
+    }
+
+    footer {
+        height: 8%;
+    }
+
+    footer p {
+        font-size: 0.5;
+    }
+
+    footer img {
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    .schedule p {
+        font-size: 0.6em;
+    }
+}
