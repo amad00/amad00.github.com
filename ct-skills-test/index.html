@@ -65,14 +65,10 @@
         </div>
     </section>
     <section id="mountains">
-        <div id="tabs">
-            <button>
-                <h3>Mountain 1</h3>
-            </button>
-            <button>
-                <h3>Mountain 2</h3>
-            </button>
-        </div>
+
+        <button>
+            <h3>Mountain 1</h3>
+        </button>
         <section id="mountains1" class="mountains-section">
             <img src="images/mountains3.jpg" alt="Snow covered mountain top">
             <div class="schedule">
@@ -91,6 +87,11 @@
                 </div>
             </div>
         </section>
+        <button>
+            <h3>Mountain 2</h3>
+        </button>
+
+
         <section id="mountains2" class="mountains-section">
             <img src="images/mountains4.jpg" alt="Snow covered mountain top">
             <div class="schedule">
@@ -142,25 +143,43 @@
     (function () {
         'use strict';
         const mountainBtns = document.querySelectorAll('button');
+        const mountain = document.querySelector('#mountains');
         const mountainSections = document.querySelectorAll('.mountains-section');
-        mountainBtns[0].classList.toggle('active');
+
+        if (window.innerWidth >= 850) {
+            mountainBtns[0].classList.toggle('active');
+        }
+
 
         for (let i = 0; i < mountainBtns.length; i++) {
             mountainBtns[i].addEventListener('click', function () {
 
                 mountainBtns[i].classList.toggle('active');
+                if (window.innerWidth < 850) {
+                    if (mountainSections[i].style.display == 'block') {
+                        mountainSections[i].style.display = 'none'
+                        mountainBtns[i].style.height = 'initial'
+                    } else {
+                        mountainSections[i].style.display = 'block'
+                        mountain.style.height = 'fit-content'
+                        mountainBtns[i].style.height = '1em'
 
-                if (i == 0) {
-                    if (mountainSections[i].style.display != 'block') {
-                        mountainSections[i + 1].style.display = 'none'
-                        mountainBtns[i + 1].classList.toggle('active');
-                        mountainSections[i].style.display = 'block'
                     }
-                } else {
-                    if (mountainSections[i].style.display != 'block') {
-                        mountainSections[i - 1].style.display = 'none'
-                        mountainBtns[i - 1].classList.toggle('active');
-                        mountainSections[i].style.display = 'block'
+                }
+
+                if (window.innerWidth >= 850) {
+                    if (i == 0) {
+                        if (mountainSections[i].style.display != 'block') {
+                            mountainSections[i + 1].style.display = 'none'
+                            mountainBtns[i + 1].classList.toggle('active');
+                            mountainSections[i].style.display = 'block'
+                        }
+                    } else {
+                        if (mountainSections[i].style.display != 'block') {
+                            mountainSections[i - 1].style.display = 'none'
+                            mountainBtns[i - 1].classList.toggle('active');
+                            mountainSections[i].style.display = 'block'
+                        }
                     }
                 }
 

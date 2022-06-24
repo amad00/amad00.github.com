@@ -274,60 +274,45 @@ p {
 
 /**** CLIMB SECTION ****/
 #mountains {
-    height: 19vh;
-}
-
-#tabs {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    height: 10%;
-    background-color: #414f6b;
+    flex-wrap: wrap;
 }
 
-#tabs button {
+#mountains button {
     border: none;
     background-color: #414f6b;
     color: #b0b4be;
-    width: 12%;
-    height: 100%;
+    width: 100%;
     padding: 0;
 
 }
 
-#tabs button:first-of-type {
-    margin-left: 17%;
-
-}
-
-#tabs .active {
+#mountains .active {
     background-color: #b0b4be;
     color: #414f6b;
 
+
 }
 
-#tabs .active h3 {
+#mountains .active h3 {
     border-bottom: 1px solid #414f6b;
 }
 
-#tabs button:hover {
+#mountains button:hover {
     background-color: #b0b4be;
     color: #414f6b;
     cursor: pointer;
 }
 
-#tabs button:hover h3 {
+#mountains button:hover h3 {
     border-bottom: 1px solid #414f6b;
 }
 
 
-.mountains-section {
-    height: 90%;
+#mountains .mountains-section {
+    height: 18vh;
+    width: 100%;
     position: relative;
-}
-
-#mountains2 {
     display: none;
 }
 
@@ -405,6 +390,11 @@ footer p {
     font-style: italic;
 }
 
+footer,
+#sticky-nav {
+    min-width: 375px;
+}
+
 
 @media only screen and (min-width: 500px) {
     h2 {
@@ -427,10 +417,6 @@ footer p {
 
     #hero {
         height: 75%;
-    }
-
-    #mountains {
-        height: 60%;
     }
 
     #sticky-bkgd,
@@ -499,8 +485,12 @@ footer p {
     }
 
     .schedule {
-        height: 35%;
+        height: 38%;
         padding: 1% 3%;
+    }
+
+    .schedule h2 {
+        font-size: 9px;
     }
 
     footer {
@@ -517,6 +507,42 @@ footer p {
 }
 
 @media only screen and (min-width: 850px) {
+
+    #mountains {
+        height: 60%;
+        display: grid;
+        grid-template-columns: 20% 10% 10% 80%;
+        grid-template-rows: 7% 93%;
+        background-color: #414f6b;
+    }
+
+    #mountains button:first-of-type {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    #mountains button:last-of-type {
+        grid-column: 3 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    #mountains .mountains-section {
+        grid-column: 1 / span 4;
+        grid-row: 2 / span 1;
+        height: auto;
+        max-width: 100vw;
+        /* position: static; */
+
+    }
+
+    #mountains .mountains-section:first-of-type {
+        display: block;
+    }
+
+    .schedule h2 {
+        font-size: 1.8em;
+    }
+
     .schedule p {
         font-size: 0.6em;
     }
