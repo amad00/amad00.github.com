@@ -170,7 +170,13 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 			welcomeSection.style.display = "flex";
 			main.style.display = "block";
 		} else {
-			displayGallery();
+			if (gallerySection.firstChild) {
+				gallerySection.style.display = "grid";
+				newResponseBtn.style.display = "block";
+			} else {
+				displayGallery();
+			}
+
 		}
 
 		resetFormFields();
@@ -185,7 +191,13 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 
 	galleryBtn.addEventListener("click", function () {
 		welcomeSection.style.display = "none";
-		displayGallery();
+		if (gallerySection.firstChild) {
+			gallerySection.style.display = "grid";
+			newResponseBtn.style.display = "block";
+		} else {
+			displayGallery();
+		}
+
 	});
 
 	participateBtn.addEventListener("click", function () {
@@ -300,6 +312,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 			while (gallerySection.firstChild) { //Reset gallery so information is not duplicated when displaying
 				gallerySection.removeChild(gallerySection.firstChild);
 			}
+
 			displayGallery();
 			resetFormFields();
 		} catch (error) {
@@ -309,6 +322,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 
 	/****  DISPLAY GALLERY ****/
 	async function displayGallery() {
+
 		const responses = Parse.Object.extend("Responses");
 		const query = new Parse.Query(responses);
 
@@ -343,6 +357,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 		} catch (error) {
 			console.log("Error while fetching responses", error);
 		}
+
 	}
 
 	/****  RESIZE GALLERY FOR DIFFERENT SCREEN SIZES ****/
