@@ -419,6 +419,7 @@ nav ul li i {
 }
 
 .project-image img {
+    object-fit: cover;
     /* width: 110%; */
     /* height: 100%; */
     min-height: 100%;
