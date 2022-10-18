@@ -80,6 +80,13 @@ nav a,
     margin-bottom: 0.1em;
 }
 
+#project2 ol li i,
+#project3 ol li i,
+#project4 ol li i,
+#project5 ol li i {
+    margin-bottom: 0.15em;
+}
+
 #project2 ol li a,
 #project3 ol li a,
 #project4 ol li a,
