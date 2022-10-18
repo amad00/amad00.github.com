@@ -154,8 +154,9 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 	/****  ADD NEW RESPONSE ONCE ON GALLERY PAGE ****/
 	newResponseBtn.addEventListener("click", function () {
 		console.log(forms[0]);
-		questions.style.display = "flex";
-		forms[0].style.display = "block";
+		quotes[0].style.display = "flex";
+		// questions.style.display = "flex";
+		// forms[0].style.display = "block";
 		gallerySection.style.display = "none";
 		newResponseBtn.style.display = "none";
 		inputs[0].focus();
