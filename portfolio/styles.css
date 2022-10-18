@@ -56,6 +56,10 @@ nav ul li,
     list-style-type: none;
 }
 
+#project2 a {
+    color: #000;
+}
+
 nav a,
 #project2 ol li a,
 #project3 ol li a,
