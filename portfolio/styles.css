@@ -542,7 +542,8 @@ footer button {
     position: relative;
 }
 
-footer button:first-of-type {
+footer button:nth-child(1),
+footer button:nth-child(2) {
     margin-right: 0.5em;
 }
 
