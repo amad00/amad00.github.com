@@ -67,6 +67,11 @@
                 navIcon.classList.remove('open');
                 nav.style.display = 'none';
                 body.style.overflow = 'initial';
+
+                aboutSection.style.filter = 'blur(0)';
+                projectSection.style.filter = 'blur(0)';
+                contactSection.style.filter = 'blur(0)';
+
                 navOpen = false;
 
             })
