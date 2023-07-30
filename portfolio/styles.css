@@ -372,6 +372,10 @@ nav ul li i {
     margin: 0;
 }
 
+#about span {
+    font-weight: 900;
+}
+
 #skills {
     display: flex;
     flex-wrap: wrap;
