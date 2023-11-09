@@ -51,8 +51,12 @@ h2 {
     margin: 0.5em 0;
 }
 
+#project-categories button:nth-child(1) h2 {
+    color: #262626;
+}
+
 #project-categories button:nth-child(2) h2,
-button:nth-child(3) h2 {
+#project-categories button:nth-child(3) h2 {
     color:#858F99;
 }
 
