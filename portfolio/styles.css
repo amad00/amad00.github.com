@@ -1,10 +1,25 @@
 * {
     box-sizing: border-box;
+   
+}
+
+/* to prevent cutoff when going to section by clicking from the nav menu */
+html {
+    scroll-padding-top: 20vh;
 }
 
 body {
     font-family: 'Lato', sans-serif;
     color: #262626;
+}
+
+/* show/hide for whichever category projects are being shown */
+#projects>section.showing{
+    display: flex;
+}
+
+#projects>section.hiding {
+    display: none;
 }
 
 /* GENERAL */
@@ -18,7 +33,7 @@ body {
 }
 
 nav ul li,
-nav button,
+#resume,
 #name h1,
 h2,
 h3,
@@ -33,6 +48,12 @@ footer p {
 
 h2 {
     font-size: 1.7em;
+    margin: 0.5em 0;
+}
+
+#project-categories button:nth-child(2) h2,
+button:nth-child(3) h2 {
+    color:#858F99;
 }
 
 /* LINKS & BUTTONS */
@@ -62,6 +83,7 @@ nav ul li,
 }
 
 nav a,
+#resume a,
 #project2 ol li a,
 #project3 ol li a,
 #project4 ol li a,
@@ -119,35 +141,42 @@ footer button:hover {
 }
 
 
-#container nav button:hover,
+#container #resume:hover,
 #container #contact button:hover {
     /* background-color: #858F99; */
     background-color: #262626;
-    color: #fff;
+   
 }
 
 footer a,
-nav button a:hover,
-#contact a:hover {
+#resume a:hover,
+#contact a:hover{
     color: #fff;
 }
 
+#resume:hover,
+#contact button:hover{
+    transform: scale(1.05);
+}
 
-nav button,
+#resume,
 #contact button {
     width: fit-content;
     height: fit-content;
     font-size: 1em;
-    margin-top: 1.5em;
+    margin: 1.5em auto;
     padding: 0;
-    background: none;
-    border-color: #262626;
+    background-color: #ffffff;
+    /* border-color: #262626; */
     border-radius: 0.3em;
     border: solid #262626;
+    transition: 0.2s ease-in-out;
+    
 }
 
-nav button a,
+#resume a,
 #contact button a {
+    /* color: #262626; */
     display: block;
     /* width: 5.5em;
     line-height: 1.8em; */
@@ -399,6 +428,16 @@ nav ul li i {
 }
 
 /* PROJECTS */
+
+#project-categories{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 1.5em;
+    margin-bottom: 2em;
+}
+
 #projects h5 {
     font-size: 1.2em;
     margin: 0;
@@ -505,6 +544,17 @@ nav ul li i {
 }
 
 
+/* DESIGN GALLERY */
+#gallery a img {
+    width: 100%;
+}
+
+#gallery a img {
+   max-width: 100%;
+   object-fit: cover;
+}
+
+
 /* CONTACT */
 
 #contact {
@@ -559,7 +609,17 @@ footer button i {
 }
 
 
+ /*********************** IPAD WIDTH ************************/
 @media only screen and (min-width: 600px) {
+
+    #gallery a img {
+        width: auto;
+    }
+
+    #gallery a:nth-child(4) img,
+    #gallery a:nth-child(5) img {
+        width: 48%;
+    }
 
     p,
     #skills ul,
@@ -586,7 +646,7 @@ footer button i {
 
     }
 
-    nav button a,
+    #resume a,
     #contact button a {
 
         width: 6em;
@@ -628,7 +688,7 @@ footer button i {
         /* font-weight: 600 */
     }
 
-    nav button {
+    #resume {
         margin-top: 0;
 
     }
@@ -637,12 +697,8 @@ footer button i {
     #about {
         margin-top: 4.5em;
     }
-
-    #projects h2 {
-        width: 100%;
-    }
-
-
+    
+    /* PROJECTS */
     #projects {
         display: flex;
         flex-wrap: wrap;
@@ -654,6 +710,11 @@ footer button i {
         max-width: 38%;
         min-width: 420px;
     }
+
+    #project-categories{
+        column-gap: 1em;
+    }
+
 
     .project-image {
         height: 14em;
@@ -670,7 +731,7 @@ footer button i {
 
 }
 
-
+  /*********************** DESKTOP WIDTH ************************/
 @media only screen and (min-width: 1000px) {
 
 
@@ -698,10 +759,19 @@ footer button i {
 
     #about p,
     #name,
-    #skills {
+    #skills{
         width: 60%;
     }
 
+    #resume{
+        margin: 1.5em 10em;
+    }
+
+    #resume a, 
+    #contact a {
+        font-size: 1.1em;
+    }
+    
     #name p {
         font-size: 1.1em;
     }
@@ -719,6 +789,11 @@ footer button i {
     #skills ul {
         margin-top: 1.2em;
     }
+
+    #project-categories{
+        column-gap: 3em;
+    }
+
 
     #projects {
         row-gap: 5em;

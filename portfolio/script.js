@@ -1,3 +1,5 @@
+
+
 (function () {
     'use strict';
 
@@ -13,12 +15,20 @@
     const projectSection = document.querySelector('#projects');
     const contactSection = document.querySelector('#contact');
 
+    const projectCategories = document.querySelectorAll('#project-categories button');
+    const allProjects = document.querySelectorAll('#projects > section');
+    let category = 'Development'
+    displayProjects(category)
+    
+
     let navOpen = false;
     let scrollValue = window.scrollY;
 
+    //if nav icon in clicked
     navIcon.addEventListener('click', function () {
-
+        //if mobile screen size
         if (window.innerWidth < 600) {
+            //if nav is open, then close it
             if (navOpen) {
                 header.style.animation = 'moveOut 1s ease-in-out';
                 headerBackground.classList.remove('open');
@@ -35,6 +45,7 @@
 
                 navOpen = false;
             } else {
+                //if nav is not open then open is
                 body.style.overflow = 'hidden';
                 setTimeout(function () {
                     headerBackground.className = 'open';
@@ -48,10 +59,6 @@
                 nav.style.display = 'flex';
                 header.style.animation = 'moveIn 1s ease-in-out';
 
-
-
-
-
                 navOpen = true;
 
             }
@@ -59,9 +66,18 @@
 
     });
 
+   // when nav is open on mobile 
     navLinks.forEach(function (eachLink) {
+        //if nav is open on mobile and you click and element then close nav
+        // console.log(eachLink.textContent)
         if (window.innerWidth < 600) {
             eachLink.addEventListener('click', function () {
+               /*  if (eachLink.textContent == 'Projects'){
+                    projectSection.style.paddingTop = '20vh'
+                    console.log(eachLink.textContent)
+                    console.log("added padding")
+                } */
+
                 headerBackground.classList.remove('open');
                 header.classList.remove('open');
                 navIcon.classList.remove('open');
@@ -79,12 +95,59 @@
     });
 
     window.addEventListener('scroll', function () {
+        //if scrolling down remove nav header bar
         if (window.scrollY > 100 && window.scrollY >= scrollValue) {
             headerBackground.style.marginTop = '-15vh';
         } else {
+            //if scrolling up show nav header bar
             headerBackground.style.marginTop = '0';
+            
         }
         scrollValue = window.scrollY;
+       
     })
+
+
+    //PROJECT SECTION CATEGORIES DISPLAY
+    const categoryBtns = document.querySelectorAll("#project-categories button h2")
+
+    function changeCategoryColor(category){
+        for (let i=0; i < categoryBtns.length; i++){
+            //if the project category is selected, change the color of corresponding category text
+            if(categoryBtns[i].textContent == category){
+                categoryBtns[i].style.color = '#262626'
+            } else {
+                categoryBtns[i].style.color = '#858F99'
+            }
+        }
+    }
+
+    //display projects of corresponding category
+    function displayProjects(category){
+        allProjects.forEach(function(eachProject){
+            let projectClass = eachProject.className.split(" ")[0]
+            console.log(projectClass)
+            if(projectClass == category){
+                eachProject.classList.remove("hiding")
+                eachProject.classList.add("showing")
+            } else {
+                eachProject.classList.remove("showing")
+                eachProject.classList.add("hiding")
+            }
+        })
+    }
+
+
+    //if project category title is selected change the tile color and show corresponding projects
+    projectCategories.forEach(function (categoryTitle){
+        categoryTitle.addEventListener('click', function(){
+            category = categoryTitle.firstElementChild.textContent
+            changeCategoryColor(category)
+            displayProjects(category)
+        })
+       
+    })
+   
+     
 
 })();

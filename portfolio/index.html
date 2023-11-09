@@ -17,7 +17,19 @@
     <link href="styles.css" rel="stylesheet" type="text/css">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css">
+    <script type="module">
+        import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '#gallery',
+            children: 'a',
+            pswpModule: () => import('https://unpkg.com/photoswipe')
+        });
+        lightbox.init();
+    </script>
+
     <script src="script.js" defer></script>
+
 
 </head>
 
@@ -39,7 +51,7 @@
                         <li><a href="#projects"><i class="fa-solid fa-caret-right"></i>Projects</a></li>
                         <li><a href="#contact"><i class="fa-solid fa-caret-right"></i>Contact</a></li>
                     </ul>
-                    <button><a href="dadzie-resume.pdf" target="_blank">Resume</a></button>
+                    <!-- <button><a href="dadzie-resume.pdf" target="_blank">Resume</a></button> -->
                 </nav>
             </header>
         </div>
@@ -76,14 +88,26 @@
 
             </section>
             <p>I’m currently looking for opportunities and would be happy to hear from you! </p>
+            <button id="resume"><a href="dadzie-resume.pdf" target="_blank">Resume</a></button>
             <!-- <button>Email Me</button> -->
             <!-- <footer></footer> -->
         </section>
 
         <section id="projects" class="aos-animate" data-aos="fade-up">
-            <h2>Featured Projects</h2>
+            <!-- <h2>Featured Projects</h2> -->
+            <div id="project-categories">
+                <button id="development-title">
+                    <h2>Development</h2>
+                </button>
+                <button id="ui-title">
+                    <h2>UI/UX</h2>
+                </button>
+                <button id="design-title">
+                    <h2>Design</h2>
+                </button>
+            </div>
 
-            <section id="project1" class="aos-animate" data-aos="fade-up">
+            <section id="project1" class="Development showing" data-aos="fade-up">
                 <figure class="project-image">
                     <a href="https://placemaking-uc.org/home-is/index.html" target="_blank"><img src="images/homeis.png"
                             alt="Home Is home screen showing different responses on squares that look like quilts"></a>
@@ -113,7 +137,7 @@
                     </div>
                 </section>
             </section>
-            <section id="project2" class="aos-animate" data-aos="fade-up">
+            <section id="project2" class="Development showing" data-aos="fade-up">
                 <figure class="project-image">
                     <a href="https://amad00.github.io/des157b/final/final-project/index.html" target="_blank"><img
                             src="images/mindful.png"
@@ -154,7 +178,8 @@
                     </div>
                 </section>
             </section>
-            <section id="project3" class="aos-animate" data-aos="fade-up">
+            <section id="project3" class="UI/UX hiding" data-aos="fade-up">
+                <!-- class="aos-animate"  -->
                 <figure class="project-image">
                     <a href="https://www.figma.com/proto/9dVfJmwNfauj4lSvsd1ItM/Balanced-Box?node-id=0%3A3&scaling=scale-down&page-id=0%3A1&starting-point-node-id=0%3A3"
                         target="_blank"><img src="images/balancedbox.png" alt="Balanced Box Project Logo"></a>
@@ -190,7 +215,7 @@
                 </section>
             </section>
 
-            <section id="project4" class="aos-animate" data-aos="fade-up">
+            <section id="project4" class="UI/UX hiding" data-aos="fade-up">
                 <figure class="project-image">
                     <a href="healthyliving.pdf" target="_blank"><img src="images/healthyliving.png"
                             alt="Healthy Living landing page showing the header and logo as well as an image of monther and son with a short description of the site"></a>
@@ -218,7 +243,7 @@
                 </section>
             </section>
 
-            <section id="project5" class="aos-animate" data-aos="fade-up">
+            <section id="project5" class="UI/UX hiding" data-aos="fade-up">
                 <figure class="project-image">
                     <a href="https://www.figma.com/proto/Pk3CVhHskuAuzMNhxttYAd/ECS164-Project?node-id=70%3A1130&scaling=scale-down&page-id=70%3A234&starting-point-node-id=70%3A1130"
                         target="_blank"><img src="images/leftovers.jpg"
@@ -255,7 +280,7 @@
                 </section>
             </section>
 
-            <section id="project6" class="aos-animate" data-aos="fade-up">
+            <section id="project6" class="Development showing" data-aos="fade-up">
                 <figure class="project-image">
                     <a href="https://amad00.github.io/des157/final/finalproject/index.html"><img
                             src="images/portfolio.png"
@@ -294,7 +319,7 @@
                 </section>
             </section>
 
-            <section id="project7" class="aos-animate" data-aos="fade-up">
+            <section id="project7" class="Development showing" data-aos="fade-up">
                 <figure class="project-image">
                     <a href="../des157/studio1/index.html"><img src="images/madlibs.png"
                             alt=" Mad Libs Project with the text 'lets take a trip!' on the left and they madlibs questions on the right"></a>
@@ -324,6 +349,53 @@
                     </div>
                 </section>
             </section>
+            <section id="design-gallery" class="Design hiding">
+                <div class="pswp-gallery pswp-gallery--single-column" id="gallery">
+                    <a href="images/rubiks-roll.jpg" data-pswp-width="1800" data-pswp-height="887" target="_blank">
+                        <img src="images/rubiks-roll.jpg" alt="" />
+                    </a>
+                    <a href="images/daily-steps.jpg" data-pswp-width="1800" data-pswp-height="1012" target="_blank">
+                        <img src="images/daily-steps.jpg" alt="" />
+                    </a>
+                    <a href="images/memorable-moments.jpg" data-pswp-width="3698" data-pswp-height="768"
+                        data-cropped="true" target="_blank">
+                        <img src="images/memorable-moments.jpg" alt="" />
+                    </a>
+                    <a href="images/solve.jpg" data-pswp-width="1440" data-pswp-height="1800" target="_blank">
+                        <img src="images/solve.jpg" alt="" />
+                    </a>
+                    <a href="images/cancer.jpg" data-pswp-width="1391" data-pswp-height="1800" target="_blank">
+                        <img src="images/cancer.jpg" alt="" />
+                    </a>
+                    <!-- cropped thumbnail: -->
+                    <!-- <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg"
+                        data-pswp-width="1875" data-pswp-height="2500" data-cropped="true" target="_blank">
+                        <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-200.jpg" alt="" />
+                        Cropped
+                    </a>
+                 
+                    <a href="https://unsplash.com"
+                        data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
+                        data-pswp-width="2500" data-pswp-height="1666" target="_blank">
+                        <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" alt="" />
+                    </a>
+             
+                    <a href="http://example.com"
+                        data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-2500.jpg"
+                        data-pswp-width="2500" data-pswp-height="1668" target="_blank">
+                        No thumbnail
+                    </a>
+                   
+                    <div>
+                        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"
+                            data-pswp-width="2500" data-pswp-height="1667" target="_blank">
+                            <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg" alt="" />
+                        </a>
+                    </div> -->
+                </div>
+
+            </section>
+
         </section>
         <section id="contact" data-aos="fade-up">
             <h2>Get in touch with me!</h2>
