@@ -3,8 +3,6 @@
 (function () {
     'use strict';
 
-    AOS.init();
-
     const body = document.querySelector('body');
     const headerBackground = document.querySelector('#header-background');
     const header = document.querySelector('header');
@@ -135,6 +133,8 @@
                 eachProject.classList.add("hiding")
             }
         })
+        AOS.init(); // moved here so that it adds the animation whenever the screen shows/hides different projects otherwise it will only work on the projects that are first diplayed when the page loads
+
     }
 
 
