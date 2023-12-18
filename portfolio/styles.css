@@ -374,7 +374,7 @@ nav ul li i {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    margin: 0;
+    /* margin: 0; */
 
 }
 
