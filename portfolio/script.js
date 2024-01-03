@@ -38,7 +38,6 @@
                 navIcon.classList.remove('open');
                 nav.style.display = 'none';
                 body.style.overflow = 'initial';
-                body.style.height = 'auto';
 
                 aboutSection.style.filter = 'blur(0)';
                 projectSection.style.filter = 'blur(0)';
@@ -51,7 +50,6 @@
             } else {
                 //if nav is not open then open is
                 body.style.overflow = 'hidden';
-                body.style.height = '100%';
                 setTimeout(function () {
                     headerBackground.className = 'open';
                     headerBackground.style.display = 'block'
