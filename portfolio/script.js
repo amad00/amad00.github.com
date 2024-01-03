@@ -9,6 +9,7 @@
     const navIcon = document.querySelector('#nav-icon');
     const nav = document.querySelector('nav');
     const navLinks = document.querySelectorAll('nav ul li');
+    const nameLogo = document.querySelector('#logo');
     const aboutSection = document.querySelector('#about');
     const projectSection = document.querySelector('#projects');
     const contactSection = document.querySelector('#contact');
@@ -30,6 +31,7 @@
             if (navOpen) {
                 header.style.animation = 'moveOut 1s ease-in-out';
                 headerBackground.classList.remove('open');
+                headerBackground.style.display = 'flex'
                 setTimeout(function () {
                     header.classList.remove('open');
                 }, 800)
@@ -40,6 +42,9 @@
                 aboutSection.style.filter = 'blur(0)';
                 projectSection.style.filter = 'blur(0)';
                 contactSection.style.filter = 'blur(0)';
+                navIcon.style.top = '0'
+
+                nameLogo.style.display = 'flex'
 
                 navOpen = false;
             } else {
@@ -47,15 +52,20 @@
                 body.style.overflow = 'hidden';
                 setTimeout(function () {
                     headerBackground.className = 'open';
+                    headerBackground.style.display = 'block'
                     aboutSection.style.filter = 'blur(5px)';
                     projectSection.style.filter = 'blur(5px)';
                     contactSection.style.filter = 'blur(5px)';
+                    navIcon.style.top = '2em'
                 }, 800)
 
                 header.className = 'open';
                 navIcon.className = 'open';
                 nav.style.display = 'flex';
                 header.style.animation = 'moveIn 1s ease-in-out';
+               
+
+                nameLogo.style.display = 'none'
 
                 navOpen = true;
 
