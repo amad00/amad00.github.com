@@ -25,7 +25,7 @@ body {
 /*************** GENERAL ***************/
 #container {
     width: 100vw;
-    min-width: 300px;
+    min-width: 375px;
     padding: 2em;
     margin: 0 auto;
     position: relative;
@@ -435,7 +435,7 @@ nav ul li i {
     margin-top: 0;
 }
 
-#skills ul:first-of-type {
+#skills ul:first-of-type, #skills ul:last-child {
     padding-left: 0;
 }
 
@@ -686,6 +686,10 @@ footer button i {
     #resume {
         margin-top: 0;
 
+    }
+
+    #skills ul:last-child {
+        padding-left: revert;
     }
 
     /* ABOUT */
