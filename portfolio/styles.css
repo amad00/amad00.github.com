@@ -142,15 +142,15 @@ nav a,
     vertical-align: middle;
 }
 
-.skills-links button:hover,
-footer button:hover {
+.skills-links button:hover{
     transition: all 0.5s ease-in-out;
     transform: scale(1.2);
 }
 
 
 #container #resume:hover,
-#container #contact button:hover {
+#container #contact button:hover,
+footer button:hover {
     /* background-color: #858F99; */
     background-color: #262626;
    
@@ -158,14 +158,15 @@ footer button:hover {
 
 footer a,
 #resume a:hover,
-#contact a:hover{
+#contact a:hover,
+footer button:hover i{
     color: #fff;
 }
 
-#resume:hover,
+/* #resume:hover,
 #contact button:hover{
     transform: scale(1.05);
-}
+} */
 
 #resume,
 #contact button {
@@ -174,10 +175,12 @@ footer a,
     font-size: 1em;
     margin: 1.5em auto;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #F0F0F0;
     border-radius: 0.3em;
-    border: solid #262626;
-    transition: 0.2s ease-in-out;
+    /* background-color: #ffffff;
+    border-radius: 0.3em;
+    border: solid #262626; */
+    transition: background-color 0.2s ease-in-out;
     
 }
 
@@ -439,6 +442,11 @@ nav ul li i {
     padding-left: 0;
 }
 
+#skills ul li:first-child{
+    font-weight: 600;
+}
+
+
 /***************** PROJECTS *****************/
 
 #project-categories{
@@ -568,7 +576,6 @@ footer {
     margin-top: 5em;
     padding-bottom: 2em;
     position: absolute;
-    /* bottom: 0; */
     left: 50%;
     transform: translateX(-50%);
 
@@ -585,13 +592,13 @@ footer>div {
 }
 
 footer button {
-    width: 2em;
-    height: 2em;
+    width: 2.5em;
+    height: 2.5em;
     border-radius: 50%;
     border-color: #262626;
-    background-color: #262626;
-    color: #fff;
+    background-color: #F0F0F0;
     position: relative;
+    transition: background-color 0.2s ease-in-out;
 }
 
 footer button:nth-child(1),
@@ -604,6 +611,8 @@ footer button i {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: #262626;
+    font-size: 1.3em;
 }
 
 
@@ -631,9 +640,6 @@ footer button i {
     }
 
     #header-background {
-        /* display: flex; */
-        /* align-items: center; */
-        /* justify-content: flex-end; */
         justify-content: space-between;
         height: 12vh;
     }
@@ -648,8 +654,8 @@ footer button i {
     #resume a,
     #contact button a {
 
-        width: 6em;
-        line-height: 2em;
+        width: 7.2em;
+        line-height: 2.6em;
 
     }
 
