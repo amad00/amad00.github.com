@@ -1,0 +1,74 @@
+#project-overview,
+#searchbar,
+#searchbar-green,
+.project-overview-text {
+    display: flex;
+}
+
+#project-overview,
+#searchbar-green{
+    justify-content: center;
+}
+
+#searchbar,
+.project-overview-text {
+    justify-content: space-between;
+    width: 90%;
+
+}
+
+#project-overview{
+    margin-top: 15vh;
+    flex-wrap: wrap;
+    background-color: rgba(66, 106, 90, 17%);
+    border-radius: 1em;
+}
+
+
+#project-overview img{
+    width: 70%;
+}
+
+#searchbar{
+    height: 1.8em;
+    background-color: #F6F1DC;
+    border-radius: 1em;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+#searchbar-green{
+    width: 12%;
+    height: 1.8em;
+    background-color: #426A5A;
+    border-radius: 0 1em 1em 0;
+    align-items: center;
+}
+
+#searchbar i {
+    color: #F6F1DC;
+    font-size: 0.9em;
+}
+
+#searchbar p, 
+.project-overview-text{
+    font-size: 0.6em;
+}
+
+#searchbar p{
+    padding-left: 1.5em;
+}
+
+span{
+    font-size: 1em;
+    font-weight: 600;
+    color: #426A5A;
+    padding-right: 0.5em;
+}
+
+.project-overview-text {
+    align-items: center;
+    margin-bottom: 1.5em;
+
+}

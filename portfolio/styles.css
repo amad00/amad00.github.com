@@ -40,7 +40,8 @@ h3,
 h5,
 .skills-links ul li,
 #contact button,
-footer p {
+footer p,
+span {
     font-family: 'Poppins', sans-serif;
     /* font-family: 'DM Serif Display', serif; */
     text-transform: uppercase;
