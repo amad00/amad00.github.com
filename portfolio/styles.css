@@ -447,6 +447,10 @@ nav ul li i {
     font-weight: 600;
 }
 
+#skills ul:last-child {
+    width: 100%;
+}
+
 
 /***************** PROJECTS *****************/
 
@@ -697,6 +701,7 @@ footer button i {
 
     #skills ul:last-child {
         padding-left: revert;
+        width: auto;
     }
 
     /* ABOUT */
