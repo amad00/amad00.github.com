@@ -3,58 +3,28 @@ body {
 }
 
 #container {
-    width: 1366px;
-    margin: 30px;
+    min-width: 375px;
+    max-width: 1366px;
+    /* margin: 30px; */
 }
 
 h1 {
     font-size: 3em;
     text-align: center;
 }
-
-/*** SECTIONS ***/
-div>section {
-    width: 800px;
-    margin: 0 auto;
-    display: flex;
-}
-
-section h2 {
-    width: 30%;
-    margin-right: 30px;
-}
-
-section>p {
-    width: 75%;
-}
-
 p {
     font-family: 'Oxygen', sans-serif;
     font-weight: 300;
     line-height: 1.3em;
 }
 
-section div {
-    width: 75%;
-    ;
-}
-
-section>section {
-    width: 600px;
-}
-
-section>section p {
-    width: 100%;
-}
-
-h2,
-p {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-h3 {
-    margin-top: 27px;
+/*** SECTIONS ***/
+div>section {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 /*** FIGURE / IMAGE ***/
@@ -75,6 +45,17 @@ section>section img {
     margin-bottom: 20px;
 }
 
+/*** FOOTER ***/
+footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+footer a {
+    margin-right: 20px;
+}
+
 /*** LINKS ***/
 a {
     color: black;
@@ -85,4 +66,47 @@ a {
 a:hover {
     color: grey;
     border-color: grey;
+}
+
+@media only screen and (min-width: 1000px) {
+
+    /*** SECTIONS ***/
+    div>section {
+        flex-direction: row;
+        
+    }
+
+    section h2 {
+        width: 30%;
+        margin-right: 30px;
+    }
+
+    section>p {
+        width: 75%;
+    }
+
+
+    section div {
+        width: 75%;
+        
+    }
+
+    /* section>section {
+        width: 600px;
+    } */
+
+    /* section>section p {
+        width: 100%;
+    } */
+
+    h2,
+    p {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* h3 {
+        margin-top: 27px;
+    } */
+
 }

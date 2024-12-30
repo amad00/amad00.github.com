@@ -64,7 +64,7 @@
     }
 
     function displayTurn(){
-        gameText.textContent = `Roll the dice for the ${gameData.players[gameData.index]}`;
+        gameText.textContent = `Roll the dice for ${gameData.players[gameData.index]}`;
         let currPlayerImg = document.querySelector(`#player${gameData.index + 1} img`);
         currPlayerImg.style.display = 'flex';
 
