@@ -3,7 +3,9 @@ body {
 }
 
 #container {
-    width: 1366px;
+    min-width: 300px;
+    max-width: 1440px;
+    /* width: 1366px; */
     margin: 30px;
 }
 
@@ -14,33 +16,16 @@ h1 {
 
 /*** SECTIONS ***/
 div>section {
-    width: 800px;
+    /* width: 800px; */
     margin: 0 auto;
     display: flex;
-}
-
-section h2 {
-    width: 30%;
-    margin-right: 30px;
-}
-
-section>p {
-    width: 75%;
+    flex-direction: column;
 }
 
 p {
     font-family: 'Oxygen', sans-serif;
     font-weight: 300;
     line-height: 1.3em;
-}
-
-section div {
-    width: 75%;
-    ;
-}
-
-section>section {
-    width: 600px;
 }
 
 section>section p {
@@ -67,4 +52,21 @@ a {
 
 a:hover {
     border-bottom: 2px solid grey;
+}
+
+@media only screen and (min-width: 1000px) {
+     /*** SECTIONS ***/
+     div>section {
+        flex-direction: row;
+        width: 70%;
+        
+    }
+    section h2 {
+        width: 30%;
+        margin-right: 30px;
+    }
+    
+    section>p {
+        width: 75%;
+    }
 }
